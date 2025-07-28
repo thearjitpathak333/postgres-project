@@ -1,0 +1,1202 @@
+[
+  {
+    "title": "ERROR: permission denied for table",
+    "description": "A user attempted to access a table without the necessary privileges.",
+    "common_causes": "User lacks SELECT, INSERT, UPDATE, or DELETE privileges on the table, table ownership issues, schema access restrictions.",
+    "resolution": "- Grant appropriate table privileges: `GRANT SELECT ON table_name TO username;`.\\n- Check current privileges: `SELECT * FROM information_schema.table_privileges;`.\\n- Grant schema usage: `GRANT USAGE ON SCHEMA schema_name TO username;`.\\n- Consider using roles for easier privilege management."
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 1",
+    "description": "User lacks required privileges to perform requested database operation (Variation 1)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 1",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 1)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 2",
+    "description": "User lacks required privileges to perform requested database operation (Variation 2)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 2",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 2)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 3",
+    "description": "User lacks required privileges to perform requested database operation (Variation 3)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 3",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 3)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 4",
+    "description": "User lacks required privileges to perform requested database operation (Variation 4)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 4",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 4)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 5",
+    "description": "User lacks required privileges to perform requested database operation (Variation 5)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 5",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 5)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 6",
+    "description": "User lacks required privileges to perform requested database operation (Variation 6)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 6",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 6)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 7",
+    "description": "User lacks required privileges to perform requested database operation (Variation 7)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 7",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 7)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 8",
+    "description": "User lacks required privileges to perform requested database operation (Variation 8)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 8",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 8)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 9",
+    "description": "User lacks required privileges to perform requested database operation (Variation 9)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 9",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 9)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 10",
+    "description": "User lacks required privileges to perform requested database operation (Variation 10)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 10",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 10)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 11",
+    "description": "User lacks required privileges to perform requested database operation (Variation 11)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 11",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 11)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 12",
+    "description": "User lacks required privileges to perform requested database operation (Variation 12)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 12",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 12)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 13",
+    "description": "User lacks required privileges to perform requested database operation (Variation 13)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 13",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 13)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 14",
+    "description": "User lacks required privileges to perform requested database operation (Variation 14)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 14",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 14)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 15",
+    "description": "User lacks required privileges to perform requested database operation (Variation 15)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 15",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 15)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 16",
+    "description": "User lacks required privileges to perform requested database operation (Variation 16)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 16",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 16)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 17",
+    "description": "User lacks required privileges to perform requested database operation (Variation 17)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 17",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 17)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 18",
+    "description": "User lacks required privileges to perform requested database operation (Variation 18)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 18",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 18)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 19",
+    "description": "User lacks required privileges to perform requested database operation (Variation 19)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 19",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 19)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 20",
+    "description": "User lacks required privileges to perform requested database operation (Variation 20)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 20",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 20)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 21",
+    "description": "User lacks required privileges to perform requested database operation (Variation 21)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 21",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 21)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 22",
+    "description": "User lacks required privileges to perform requested database operation (Variation 22)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 22",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 22)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 23",
+    "description": "User lacks required privileges to perform requested database operation (Variation 23)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 23",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 23)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 24",
+    "description": "User lacks required privileges to perform requested database operation (Variation 24)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 24",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 24)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 25",
+    "description": "User lacks required privileges to perform requested database operation (Variation 25)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 25",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 25)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 26",
+    "description": "User lacks required privileges to perform requested database operation (Variation 26)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 26",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 26)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 27",
+    "description": "User lacks required privileges to perform requested database operation (Variation 27)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 27",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 27)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 28",
+    "description": "User lacks required privileges to perform requested database operation (Variation 28)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 28",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 28)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 29",
+    "description": "User lacks required privileges to perform requested database operation (Variation 29)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 29",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 29)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 30",
+    "description": "User lacks required privileges to perform requested database operation (Variation 30)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 30",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 30)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 31",
+    "description": "User lacks required privileges to perform requested database operation (Variation 31)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 31",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 31)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 32",
+    "description": "User lacks required privileges to perform requested database operation (Variation 32)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 32",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 32)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 33",
+    "description": "User lacks required privileges to perform requested database operation (Variation 33)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 33",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 33)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 34",
+    "description": "User lacks required privileges to perform requested database operation (Variation 34)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 34",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 34)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 35",
+    "description": "User lacks required privileges to perform requested database operation (Variation 35)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 35",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 35)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 36",
+    "description": "User lacks required privileges to perform requested database operation (Variation 36)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 36",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 36)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 37",
+    "description": "User lacks required privileges to perform requested database operation (Variation 37)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 37",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 37)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 38",
+    "description": "User lacks required privileges to perform requested database operation (Variation 38)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 38",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 38)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 39",
+    "description": "User lacks required privileges to perform requested database operation (Variation 39)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 39",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 39)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 40",
+    "description": "User lacks required privileges to perform requested database operation (Variation 40)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 40",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 40)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 41",
+    "description": "User lacks required privileges to perform requested database operation (Variation 41)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 41",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 41)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 42",
+    "description": "User lacks required privileges to perform requested database operation (Variation 42)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 42",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 42)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 43",
+    "description": "User lacks required privileges to perform requested database operation (Variation 43)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 43",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 43)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 44",
+    "description": "User lacks required privileges to perform requested database operation (Variation 44)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 44",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 44)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 45",
+    "description": "User lacks required privileges to perform requested database operation (Variation 45)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 45",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 45)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 46",
+    "description": "User lacks required privileges to perform requested database operation (Variation 46)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 46",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 46)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 47",
+    "description": "User lacks required privileges to perform requested database operation (Variation 47)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 47",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 47)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 48",
+    "description": "User lacks required privileges to perform requested database operation (Variation 48)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 48",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 48)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 49",
+    "description": "User lacks required privileges to perform requested database operation (Variation 49)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 49",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 49)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 50",
+    "description": "User lacks required privileges to perform requested database operation (Variation 50)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 50",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 50)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 51",
+    "description": "User lacks required privileges to perform requested database operation (Variation 51)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 51",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 51)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 52",
+    "description": "User lacks required privileges to perform requested database operation (Variation 52)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 52",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 52)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 53",
+    "description": "User lacks required privileges to perform requested database operation (Variation 53)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 53",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 53)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 54",
+    "description": "User lacks required privileges to perform requested database operation (Variation 54)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 54",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 54)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 55",
+    "description": "User lacks required privileges to perform requested database operation (Variation 55)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 55",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 55)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 56",
+    "description": "User lacks required privileges to perform requested database operation (Variation 56)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 56",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 56)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 57",
+    "description": "User lacks required privileges to perform requested database operation (Variation 57)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 57",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 57)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 58",
+    "description": "User lacks required privileges to perform requested database operation (Variation 58)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 58",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 58)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 59",
+    "description": "User lacks required privileges to perform requested database operation (Variation 59)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 59",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 59)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 60",
+    "description": "User lacks required privileges to perform requested database operation (Variation 60)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 60",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 60)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 61",
+    "description": "User lacks required privileges to perform requested database operation (Variation 61)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 61",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 61)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 62",
+    "description": "User lacks required privileges to perform requested database operation (Variation 62)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 62",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 62)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 63",
+    "description": "User lacks required privileges to perform requested database operation (Variation 63)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 63",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 63)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 64",
+    "description": "User lacks required privileges to perform requested database operation (Variation 64)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 64",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 64)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 65",
+    "description": "User lacks required privileges to perform requested database operation (Variation 65)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 65",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 65)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 66",
+    "description": "User lacks required privileges to perform requested database operation (Variation 66)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 66",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 66)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 67",
+    "description": "User lacks required privileges to perform requested database operation (Variation 67)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 67",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 67)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 68",
+    "description": "User lacks required privileges to perform requested database operation (Variation 68)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 68",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 68)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 69",
+    "description": "User lacks required privileges to perform requested database operation (Variation 69)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 69",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 69)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 70",
+    "description": "User lacks required privileges to perform requested database operation (Variation 70)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 70",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 70)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 71",
+    "description": "User lacks required privileges to perform requested database operation (Variation 71)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 71",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 71)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 72",
+    "description": "User lacks required privileges to perform requested database operation (Variation 72)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 72",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 72)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 73",
+    "description": "User lacks required privileges to perform requested database operation (Variation 73)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 73",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 73)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 74",
+    "description": "User lacks required privileges to perform requested database operation (Variation 74)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 74",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 74)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 75",
+    "description": "User lacks required privileges to perform requested database operation (Variation 75)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 75",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 75)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 76",
+    "description": "User lacks required privileges to perform requested database operation (Variation 76)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 76",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 76)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 77",
+    "description": "User lacks required privileges to perform requested database operation (Variation 77)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 77",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 77)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 78",
+    "description": "User lacks required privileges to perform requested database operation (Variation 78)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 78",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 78)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 79",
+    "description": "User lacks required privileges to perform requested database operation (Variation 79)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 79",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 79)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 80",
+    "description": "User lacks required privileges to perform requested database operation (Variation 80)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 80",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 80)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 81",
+    "description": "User lacks required privileges to perform requested database operation (Variation 81)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 81",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 81)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 82",
+    "description": "User lacks required privileges to perform requested database operation (Variation 82)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 82",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 82)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 83",
+    "description": "User lacks required privileges to perform requested database operation (Variation 83)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 83",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 83)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 84",
+    "description": "User lacks required privileges to perform requested database operation (Variation 84)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 84",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 84)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 85",
+    "description": "User lacks required privileges to perform requested database operation (Variation 85)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 85",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 85)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 86",
+    "description": "User lacks required privileges to perform requested database operation (Variation 86)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 86",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 86)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 87",
+    "description": "User lacks required privileges to perform requested database operation (Variation 87)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 87",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 87)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 88",
+    "description": "User lacks required privileges to perform requested database operation (Variation 88)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 88",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 88)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 89",
+    "description": "User lacks required privileges to perform requested database operation (Variation 89)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 89",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 89)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 90",
+    "description": "User lacks required privileges to perform requested database operation (Variation 90)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 90",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 90)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 91",
+    "description": "User lacks required privileges to perform requested database operation (Variation 91)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 91",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 91)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 92",
+    "description": "User lacks required privileges to perform requested database operation (Variation 92)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 92",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 92)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 93",
+    "description": "User lacks required privileges to perform requested database operation (Variation 93)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 93",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 93)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 94",
+    "description": "User lacks required privileges to perform requested database operation (Variation 94)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 94",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 94)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 95",
+    "description": "User lacks required privileges to perform requested database operation (Variation 95)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 95",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 95)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 96",
+    "description": "User lacks required privileges to perform requested database operation (Variation 96)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 96",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 96)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 97",
+    "description": "User lacks required privileges to perform requested database operation (Variation 97)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 97",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 97)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 98",
+    "description": "User lacks required privileges to perform requested database operation (Variation 98)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 98",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 98)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 99",
+    "description": "User lacks required privileges to perform requested database operation (Variation 99)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  },
+  {
+    "title": "WARNING: Privilege escalation attempt detected 99",
+    "description": "Potential security issue with user attempting to gain elevated privileges (Variation 99)",
+    "common_causes": "Security vulnerability, misconfigured permissions, malicious activity, privilege abuse",
+    "resolution": "Review security configuration, audit user activities, implement proper access controls, monitor privilege usage"
+  },
+  {
+    "title": "ERROR: Insufficient privileges for operation 100",
+    "description": "User lacks required privileges to perform requested database operation (Variation 100)",
+    "common_causes": "Missing role assignments, inadequate permissions, security policy restrictions, privilege revocation",
+    "resolution": "Grant required privileges, assign appropriate roles, review security policies, check privilege inheritance"
+  }
+]

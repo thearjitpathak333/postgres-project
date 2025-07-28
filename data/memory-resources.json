@@ -1,0 +1,1202 @@
+[
+  {
+    "title": "ERROR: out of memory",
+    "description": "PostgreSQL processes have exhausted available memory while executing queries, causing operations to fail and potentially making the system unresponsive.",
+    "common_causes": "work_mem set too high for concurrent queries, memory leaks in extensions or custom functions, insufficient system RAM, too many concurrent connections consuming memory.",
+    "resolution": "- Reduce work_mem setting: `SET work_mem = '64MB';` or adjust in postgresql.conf.\\n- Limit concurrent connections using max_connections.\\n- Implement connection pooling with PgBouncer or pgpool-II.\\n- Monitor memory usage: `SELECT * FROM pg_stat_activity;`.\\n- Increase system RAM or optimize query complexity."
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 1",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 1)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 1",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 1)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 2",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 2)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 2",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 2)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 3",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 3)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 3",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 3)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 4",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 4)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 4",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 4)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 5",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 5)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 5",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 5)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 6",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 6)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 6",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 6)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 7",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 7)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 7",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 7)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 8",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 8)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 8",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 8)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 9",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 9)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 9",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 9)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 10",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 10)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 10",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 10)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 11",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 11)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 11",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 11)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 12",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 12)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 12",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 12)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 13",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 13)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 13",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 13)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 14",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 14)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 14",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 14)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 15",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 15)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 15",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 15)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 16",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 16)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 16",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 16)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 17",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 17)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 17",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 17)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 18",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 18)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 18",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 18)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 19",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 19)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 19",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 19)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 20",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 20)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 20",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 20)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 21",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 21)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 21",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 21)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 22",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 22)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 22",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 22)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 23",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 23)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 23",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 23)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 24",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 24)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 24",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 24)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 25",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 25)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 25",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 25)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 26",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 26)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 26",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 26)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 27",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 27)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 27",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 27)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 28",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 28)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 28",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 28)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 29",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 29)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 29",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 29)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 30",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 30)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 30",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 30)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 31",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 31)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 31",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 31)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 32",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 32)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 32",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 32)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 33",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 33)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 33",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 33)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 34",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 34)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 34",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 34)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 35",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 35)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 35",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 35)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 36",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 36)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 36",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 36)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 37",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 37)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 37",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 37)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 38",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 38)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 38",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 38)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 39",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 39)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 39",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 39)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 40",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 40)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 40",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 40)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 41",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 41)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 41",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 41)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 42",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 42)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 42",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 42)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 43",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 43)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 43",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 43)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 44",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 44)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 44",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 44)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 45",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 45)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 45",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 45)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 46",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 46)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 46",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 46)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 47",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 47)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 47",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 47)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 48",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 48)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 48",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 48)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 49",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 49)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 49",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 49)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 50",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 50)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 50",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 50)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 51",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 51)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 51",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 51)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 52",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 52)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 52",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 52)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 53",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 53)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 53",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 53)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 54",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 54)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 54",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 54)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 55",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 55)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 55",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 55)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 56",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 56)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 56",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 56)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 57",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 57)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 57",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 57)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 58",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 58)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 58",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 58)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 59",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 59)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 59",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 59)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 60",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 60)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 60",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 60)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 61",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 61)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 61",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 61)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 62",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 62)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 62",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 62)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 63",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 63)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 63",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 63)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 64",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 64)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 64",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 64)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 65",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 65)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 65",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 65)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 66",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 66)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 66",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 66)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 67",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 67)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 67",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 67)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 68",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 68)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 68",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 68)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 69",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 69)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 69",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 69)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 70",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 70)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 70",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 70)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 71",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 71)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 71",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 71)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 72",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 72)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 72",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 72)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 73",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 73)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 73",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 73)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 74",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 74)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 74",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 74)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 75",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 75)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 75",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 75)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 76",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 76)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 76",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 76)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 77",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 77)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 77",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 77)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 78",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 78)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 78",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 78)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 79",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 79)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 79",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 79)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 80",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 80)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 80",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 80)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 81",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 81)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 81",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 81)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 82",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 82)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 82",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 82)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 83",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 83)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 83",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 83)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 84",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 84)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 84",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 84)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 85",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 85)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 85",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 85)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 86",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 86)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 86",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 86)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 87",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 87)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 87",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 87)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 88",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 88)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 88",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 88)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 89",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 89)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 89",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 89)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 90",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 90)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 90",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 90)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 91",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 91)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 91",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 91)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 92",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 92)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 92",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 92)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 93",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 93)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 93",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 93)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 94",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 94)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 94",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 94)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 95",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 95)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 95",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 95)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 96",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 96)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 96",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 96)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 97",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 97)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 97",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 97)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 98",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 98)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 98",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 98)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 99",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 99)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  },
+  {
+    "title": "ERROR: Shared memory allocation failure 99",
+    "description": "Failed to allocate required shared memory segment for database operations (Variation 99)",
+    "common_causes": "System memory limits, shared memory exhaustion, kernel parameter restrictions, competing processes",
+    "resolution": "Increase system memory limits, optimize shared memory usage, adjust kernel parameters, reduce competing processes"
+  },
+  {
+    "title": "WARNING: High memory usage detected in backend process 100",
+    "description": "Backend process consuming excessive memory potentially causing system instability (Variation 100)",
+    "common_causes": "Memory leaks, large result sets, inefficient memory allocation, resource exhaustion",
+    "resolution": "Investigate memory leaks, optimize result set size, improve memory allocation, monitor resource usage"
+  }
+]

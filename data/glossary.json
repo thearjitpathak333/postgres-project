@@ -1,0 +1,660 @@
+[
+    {
+        "title": "ACID",
+        "definition": "Set of properties that guarantee database transactions are processed reliably: Atomicity, Consistency, Isolation, Durability.",
+        "key_concepts": "Transaction integrity, data reliability, concurrent access control",
+        "performance_impact": "Ensures data integrity but may impact performance due to additional checks and logging",
+        "reference_link": "https://www.postgresql.org/docs/current/transaction-iso.html"
+    },
+    {
+        "title": "Aggregate Functions",
+        "definition": "Functions that perform calculations on multiple rows and return a single result, such as COUNT, SUM, AVG, MIN, MAX.",
+        "key_concepts": "GROUP BY clauses, window functions, statistical operations",
+        "performance_impact": "Can be resource-intensive on large datasets; proper indexing improves performance",
+        "reference_link": "https://www.postgresql.org/docs/current/functions-aggregate.html"
+    },
+    {
+        "title": "Analyze",
+        "definition": "Command that collects statistics about table contents for the query planner to make optimal execution plans.",
+        "key_concepts": "Table statistics, query optimization, histogram data",
+        "performance_impact": "Essential for optimal query performance; outdated statistics lead to poor execution plans",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-analyze.html"
+    },
+    {
+        "title": "Autovacuum",
+        "definition": "Background process that automatically performs VACUUM and ANALYZE operations to maintain database health.",
+        "key_concepts": "Automated maintenance, dead tuple cleanup, statistics updates",
+        "performance_impact": "Prevents table bloat and maintains performance; can be tuned to minimize impact during peak hours",
+        "reference_link": "https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM"
+    },
+    {
+        "title": "B-tree Index",
+        "definition": "The most common and default index type in PostgreSQL. Highly efficient for equality and range queries on ordered data.",
+        "key_concepts": "Balanced tree structure, logarithmic time complexity, sorted key values",
+        "performance_impact": "Optimal for equality and range queries; most versatile index type for general use cases",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-types.html#INDEX-TYPES-BTREE"
+    },
+    {
+        "title": "Backup",
+        "definition": "Process of creating copies of database data and structure to protect against data loss.",
+        "key_concepts": "pg_dump, pg_basebackup, continuous archiving, point-in-time recovery",
+        "performance_impact": "Backup operations can impact performance; scheduling during low-activity periods recommended",
+        "reference_link": "https://www.postgresql.org/docs/current/backup.html"
+    },
+    {
+        "title": "Bitmap Scan",
+        "definition": "Query execution method that uses bitmaps to efficiently combine multiple index scans.",
+        "key_concepts": "Index combination, bitmap heap scan, multiple condition queries",
+        "performance_impact": "Efficient for queries with multiple WHERE conditions using different indexes",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-query.html"
+    },
+    {
+        "title": "BRIN Index",
+        "definition": "Block Range Index that stores summary information about ranges of table blocks, ideal for large tables with natural ordering.",
+        "key_concepts": "Block-level summaries, minimal storage overhead, correlation-dependent",
+        "performance_impact": "Very space-efficient but requires data correlation; excellent for time-series data",
+        "reference_link": "https://www.postgresql.org/docs/current/brin.html"
+    },
+    {
+        "title": "Buffer Cache",
+        "definition": "Memory area where PostgreSQL caches frequently accessed data pages to reduce disk I/O.",
+        "key_concepts": "shared_buffers, page replacement, cache hit ratio",
+        "performance_impact": "Higher cache hit ratios significantly improve query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-resource.html"
+    },
+    {
+        "title": "Checkpoint",
+        "definition": "Process that flushes dirty buffers to disk and creates a recovery point in the WAL.",
+        "key_concepts": "WAL segments, recovery points, checkpoint_timeout",
+        "performance_impact": "Can cause I/O spikes; tuning checkpoint parameters balances recovery time and performance",
+        "reference_link": "https://www.postgresql.org/docs/current/wal-configuration.html"
+    },
+    {
+        "title": "Cluster",
+        "definition": "Database instance consisting of multiple databases managed by a single PostgreSQL server process.",
+        "key_concepts": "Database collection, shared catalogs, single postmaster process",
+        "performance_impact": "Resource sharing among databases; proper database design affects overall cluster performance",
+        "reference_link": "https://www.postgresql.org/docs/current/creating-cluster.html"
+    },
+    {
+        "title": "Collation",
+        "definition": "Set of rules that determine how string comparison and sorting operations are performed.",
+        "key_concepts": "Locale settings, string comparison, sorting rules",
+        "performance_impact": "Affects string operation performance; consistent collation important for indexes",
+        "reference_link": "https://www.postgresql.org/docs/current/collation.html"
+    },
+    {
+        "title": "Connection Limit",
+        "definition": "Maximum number of concurrent connections allowed to the PostgreSQL server.",
+        "key_concepts": "max_connections parameter, connection pooling, resource management",
+        "performance_impact": "Too many connections can degrade performance; connection pooling recommended",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-connection.html#GUC-MAX-CONNECTIONS"
+    },
+    {
+        "title": "Connection Pooling",
+        "definition": "Technique to manage and reuse database connections to reduce connection overhead.",
+        "key_concepts": "pgBouncer, connection limits, session vs transaction pooling",
+        "performance_impact": "Significantly improves performance under high connection loads",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-connection.html"
+    },
+    {
+        "title": "Constraint",
+        "definition": "Rules enforced on table columns to maintain data integrity, including PRIMARY KEY, FOREIGN KEY, CHECK, UNIQUE, NOT NULL.",
+        "key_concepts": "Data validation, referential integrity, constraint checking",
+        "performance_impact": "Ensures data quality but adds overhead during INSERT/UPDATE operations",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-constraints.html"
+    },
+    {
+        "title": "Cost-Based Optimizer",
+        "definition": "Query planner component that chooses execution plans based on estimated costs of different operations.",
+        "key_concepts": "Cost estimates, statistics, plan selection",
+        "performance_impact": "Critical for query performance; accurate statistics essential for optimal plans",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "CTE (Common Table Expression)",
+        "definition": "Temporary named result set that exists within the scope of a single SQL statement, defined using WITH clause.",
+        "key_concepts": "WITH clause, recursive queries, query readability",
+        "performance_impact": "Can improve query readability; materialization behavior affects performance",
+        "reference_link": "https://www.postgresql.org/docs/current/queries-with.html"
+    },
+    {
+        "title": "Cursor",
+        "definition": "Database object that allows row-by-row processing of query results instead of loading entire result set into memory.",
+        "key_concepts": "DECLARE, FETCH, memory management, large result sets",
+        "performance_impact": "Reduces memory usage for large result sets but may increase total processing time",
+        "reference_link": "https://www.postgresql.org/docs/current/plpgsql-cursors.html"
+    },
+    {
+        "title": "Database",
+        "definition": "Named collection of schemas, tables, and other database objects within a PostgreSQL cluster.",
+        "key_concepts": "Object container, isolation boundary, template databases",
+        "performance_impact": "Proper database design affects query performance and resource utilization",
+        "reference_link": "https://www.postgresql.org/docs/current/managing-databases.html"
+    },
+    {
+        "title": "Data Type",
+        "definition": "Classification that specifies what kind of value a column can hold and what operations can be performed.",
+        "key_concepts": "Built-in types, custom types, type casting",
+        "performance_impact": "Appropriate type selection affects storage efficiency and query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/datatype.html"
+    },
+    {
+        "title": "Deadlock",
+        "definition": "Situation where two or more transactions are waiting for each other to release locks, creating a circular dependency.",
+        "key_concepts": "Lock ordering, deadlock detection, transaction rollback",
+        "performance_impact": "Causes transaction failures; proper lock ordering prevents deadlocks",
+        "reference_link": "https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-DEADLOCKS"
+    },
+    {
+        "title": "EXPLAIN",
+        "definition": "Command that shows the execution plan chosen by the query planner for a given statement.",
+        "key_concepts": "Query plans, cost estimates, execution statistics",
+        "performance_impact": "Essential tool for query optimization and performance tuning",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-explain.html"
+    },
+    {
+        "title": "Expression Index",
+        "definition": "Index built on the result of an expression or function rather than simple column values.",
+        "key_concepts": "Function-based indexes, computed values, query optimization",
+        "performance_impact": "Enables efficient queries on computed values but adds maintenance overhead",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-expressional.html"
+    },
+    {
+        "title": "Extension",
+        "definition": "Packaged collection of SQL objects that can be installed to add functionality to PostgreSQL.",
+        "key_concepts": "CREATE EXTENSION, contrib modules, third-party extensions",
+        "performance_impact": "Can enhance functionality; some extensions may impact performance",
+        "reference_link": "https://www.postgresql.org/docs/current/extend-extensions.html"
+    },
+    {
+        "title": "Foreign Data Wrapper (FDW)",
+        "definition": "Extension that allows PostgreSQL to access data stored in external data sources as if they were local tables.",
+        "key_concepts": "External data access, federated queries, remote tables",
+        "performance_impact": "Enables data integration but network latency affects query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/fdwhandler.html"
+    },
+    {
+        "title": "Foreign Key",
+        "definition": "Constraint that ensures referential integrity by requiring values in one table to match values in another table.",
+        "key_concepts": "Referential integrity, CASCADE options, constraint checking",
+        "performance_impact": "Maintains data consistency but adds overhead to INSERT/UPDATE/DELETE operations",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK"
+    },
+    {
+        "title": "Full Text Search",
+        "definition": "PostgreSQL's built-in capability to search text documents using linguistic processing and ranking.",
+        "key_concepts": "tsvector, tsquery, GIN indexes, text search configurations",
+        "performance_impact": "Provides powerful search capabilities; GIN indexes essential for performance",
+        "reference_link": "https://www.postgresql.org/docs/current/textsearch.html"
+    },
+    {
+        "title": "Function",
+        "definition": "Reusable code block that accepts parameters and returns a value, written in SQL, PL/pgSQL, or other languages.",
+        "key_concepts": "Stored procedures, return types, language support",
+        "performance_impact": "Can improve performance through code reuse; complex functions may impact query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-createfunction.html"
+    },
+    {
+        "title": "GIN Index",
+        "definition": "Generalized Inverted Index optimized for indexing composite values like arrays, full-text search, and JSONB.",
+        "key_concepts": "Inverted index structure, composite data types, containment queries",
+        "performance_impact": "Excellent for array and JSONB queries but larger storage overhead than B-tree",
+        "reference_link": "https://www.postgresql.org/docs/current/gin.html"
+    },
+    {
+        "title": "GiST Index",
+        "definition": "Generalized Search Tree that supports various data types and operators, including geometric and full-text search.",
+        "key_concepts": "Extensible framework, geometric data, custom operators",
+        "performance_impact": "Flexible but generally slower than specialized index types for specific use cases",
+        "reference_link": "https://www.postgresql.org/docs/current/gist.html"
+    },
+    {
+        "title": "Hash Index",
+        "definition": "Index type optimized for equality comparisons using hash functions.",
+        "key_concepts": "Hash functions, equality operations only, no ordering",
+        "performance_impact": "Fast for equality queries but cannot be used for range queries or sorting",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-types.html#INDEXES-TYPES-HASH"
+    },
+    {
+        "title": "Hash Join",
+        "definition": "Join algorithm that builds a hash table from one relation and probes it with rows from the other.",
+        "key_concepts": "Hash table construction, memory usage, equality joins",
+        "performance_impact": "Efficient for large datasets when sufficient memory is available",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Hot Standby",
+        "definition": "Feature that allows read-only queries on a standby server while it's receiving WAL records from the primary.",
+        "key_concepts": "Streaming replication, read-only queries, load balancing",
+        "performance_impact": "Enables read scaling and load distribution across multiple servers",
+        "reference_link": "https://www.postgresql.org/docs/current/hot-standby.html"
+    },
+    {
+        "title": "Index",
+        "definition": "Special lookup structure that speeds up data retrieval by creating ordered references to table rows.",
+        "key_concepts": "B-tree, Hash, GIN, GiST, SP-GiST, BRIN index types",
+        "performance_impact": "Improves read performance but adds overhead to write operations",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes.html"
+    },
+    {
+        "title": "Index-Only Scan",
+        "definition": "Query execution method that retrieves all required data directly from the index without accessing the table.",
+        "key_concepts": "Covering indexes, visibility map, heap access avoidance",
+        "performance_impact": "Fastest scan method when all required columns are in the index",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-index-only-scans.html"
+    },
+    {
+        "title": "Index Scan",
+        "definition": "Query execution method that uses an index to locate specific rows efficiently.",
+        "key_concepts": "Index traversal, selective queries, cost-based optimization",
+        "performance_impact": "Much faster than sequential scans for selective queries",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Inheritance",
+        "definition": "Feature allowing tables to inherit columns and constraints from parent tables.",
+        "key_concepts": "Table hierarchies, constraint inheritance, partitioning foundation",
+        "performance_impact": "Can complicate query planning; largely superseded by declarative partitioning",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-inherit.html"
+    },
+    {
+        "title": "Join",
+        "definition": "Operation that combines rows from two or more tables based on related columns.",
+        "key_concepts": "INNER, LEFT, RIGHT, FULL OUTER joins, join algorithms",
+        "performance_impact": "Performance depends on join type, data size, and available indexes",
+        "reference_link": "https://www.postgresql.org/docs/current/queries-table-expressions.html#QUERIES-JOIN"
+    },
+    {
+        "title": "JSON/JSONB",
+        "definition": "Data types for storing JSON documents; JSONB is binary format with better performance.",
+        "key_concepts": "Document storage, GIN indexing, JSON operators and functions",
+        "performance_impact": "JSONB offers better query performance and supports indexing",
+        "reference_link": "https://www.postgresql.org/docs/current/datatype-json.html"
+    },
+    {
+        "title": "Lock",
+        "definition": "Mechanism to control concurrent access to database objects and prevent data corruption.",
+        "key_concepts": "Row-level, table-level, advisory locks, lock modes",
+        "performance_impact": "Essential for data integrity; excessive locking can reduce concurrency",
+        "reference_link": "https://www.postgresql.org/docs/current/explicit-locking.html"
+    },
+    {
+        "title": "Logical Replication",
+        "definition": "Method of replicating data changes based on replication identity, allowing selective replication.",
+        "key_concepts": "Publications, subscriptions, row-based replication",
+        "performance_impact": "More flexible than physical replication but with higher overhead",
+        "reference_link": "https://www.postgresql.org/docs/current/logical-replication.html"
+    },
+    {
+        "title": "Materialized View",
+        "definition": "View that stores query results physically, providing fast access to complex query results.",
+        "key_concepts": "REFRESH MATERIALIZED VIEW, query result caching, indexable",
+        "performance_impact": "Improves query performance for complex aggregations but requires refresh maintenance",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-creatematerializedview.html"
+    },
+    {
+        "title": "Merge Join",
+        "definition": "Join algorithm that works on pre-sorted inputs by merging them together.",
+        "key_concepts": "Sorted inputs, merge algorithm, equality and inequality joins",
+        "performance_impact": "Efficient when inputs are already sorted or can be sorted cheaply",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Multicolumn Index",
+        "definition": "Index that includes multiple columns, allowing efficient queries on combinations of those columns.",
+        "key_concepts": "Column order importance, partial matching, query optimization",
+        "performance_impact": "Enables efficient queries on multiple columns but larger storage overhead",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-multicolumn.html"
+    },
+    {
+        "title": "MVCC (Multi-Version Concurrency Control)",
+        "definition": "Core mechanism PostgreSQL uses to handle concurrency without traditional read locks.",
+        "key_concepts": "Transaction snapshots, tuple versioning, no read locks",
+        "performance_impact": "Enables high concurrency but requires VACUUM to clean up old row versions",
+        "reference_link": "https://www.postgresql.org/docs/current/mvcc-intro.html"
+    },
+    {
+        "title": "Nested Loop Join",
+        "definition": "Join algorithm that iterates through one table and searches the other table for matching rows.",
+        "key_concepts": "Inner and outer relations, index usage, small result sets",
+        "performance_impact": "Efficient for small datasets or when one side has few rows",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Normalization",
+        "definition": "Database design process that organizes data to reduce redundancy and improve data integrity.",
+        "key_concepts": "1NF, 2NF, 3NF, BCNF, functional dependencies",
+        "performance_impact": "Reduces storage and update anomalies but may require more joins",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl.html"
+    },
+    {
+        "title": "Null Value",
+        "definition": "Special marker indicating that a data value does not exist or is unknown.",
+        "key_concepts": "Three-valued logic, NULL handling, IS NULL/IS NOT NULL",
+        "performance_impact": "NULL handling affects query logic and index usage",
+        "reference_link": "https://www.postgresql.org/docs/current/functions-comparison.html"
+    },
+    {
+        "title": "Optimizer Hints",
+        "definition": "Directives that influence the query planner's choice of execution plan.",
+        "key_concepts": "Plan guidance, cost adjustments, execution control",
+        "performance_impact": "Can improve performance for specific queries but may become outdated",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Page",
+        "definition": "Fixed-size block (typically 8KB) that is the basic unit of storage in PostgreSQL.",
+        "key_concepts": "Storage unit, buffer management, I/O operations",
+        "performance_impact": "Understanding page structure helps optimize storage and I/O performance",
+        "reference_link": "https://www.postgresql.org/docs/current/storage-page-layout.html"
+    },
+    {
+        "title": "Parallel Query",
+        "definition": "Feature that allows PostgreSQL to use multiple CPU cores to execute a single query.",
+        "key_concepts": "Worker processes, parallel-safe functions, gather nodes",
+        "performance_impact": "Can significantly speed up large queries on multi-core systems",
+        "reference_link": "https://www.postgresql.org/docs/current/parallel-query.html"
+    },
+    {
+        "title": "Partial Index",
+        "definition": "Index built on a subset of table rows that match a specified condition.",
+        "key_concepts": "WHERE clause in index definition, selective indexing",
+        "performance_impact": "Reduces index size and maintenance overhead while maintaining performance for specific queries",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-partial.html"
+    },
+    {
+        "title": "Partition",
+        "definition": "Method of splitting large tables into smaller, more manageable pieces based on column values.",
+        "key_concepts": "Range, list, hash partitioning, partition pruning",
+        "performance_impact": "Improves query performance and maintenance operations on large tables",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-partitioning.html"
+    },
+    {
+        "title": "pg_basebackup",
+        "definition": "Utility for creating physical backups of PostgreSQL clusters while the server is running.",
+        "key_concepts": "Physical backup, base backup, streaming backup",
+        "performance_impact": "Faster than logical backups for large databases; creates exact cluster copy",
+        "reference_link": "https://www.postgresql.org/docs/current/app-pgbasebackup.html"
+    },
+    {
+        "title": "pg_dump",
+        "definition": "Utility for creating logical backups of PostgreSQL databases in SQL script format.",
+        "key_concepts": "Logical backup, SQL scripts, selective backup options",
+        "performance_impact": "Creates portable backups but can be slow for large databases",
+        "reference_link": "https://www.postgresql.org/docs/current/app-pgdump.html"
+    },
+    {
+        "title": "pg_stat_statements",
+        "definition": "Extension that tracks execution statistics of SQL statements executed by a server.",
+        "key_concepts": "Query performance monitoring, execution statistics, query identification",
+        "performance_impact": "Essential tool for identifying slow queries and performance bottlenecks",
+        "reference_link": "https://www.postgresql.org/docs/current/pgstatstatements.html"
+    },
+    {
+        "title": "PL/pgSQL",
+        "definition": "Procedural language for PostgreSQL that adds control structures to SQL.",
+        "key_concepts": "Stored procedures, control flow, exception handling",
+        "performance_impact": "Enables complex logic in database; performance depends on implementation complexity",
+        "reference_link": "https://www.postgresql.org/docs/current/plpgsql.html"
+    },
+    {
+        "title": "Point-in-Time Recovery (PITR)",
+        "definition": "Ability to restore database to any specific point in time using base backup and WAL archives.",
+        "key_concepts": "WAL archiving, base backups, recovery targets",
+        "performance_impact": "Provides precise recovery capabilities; archiving adds I/O overhead",
+        "reference_link": "https://www.postgresql.org/docs/current/continuous-archiving.html"
+    },
+    {
+        "title": "Prepared Statement",
+        "definition": "Pre-parsed and pre-planned SQL statement that can be executed multiple times with different parameters.",
+        "key_concepts": "Plan caching, parameter binding, execution efficiency",
+        "performance_impact": "Improves performance for repeatedly executed queries by avoiding re-parsing",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-prepare.html"
+    },
+    {
+        "title": "Primary Key",
+        "definition": "Column or combination of columns that uniquely identifies each row in a table.",
+        "key_concepts": "Unique constraint, NOT NULL, clustered storage",
+        "performance_impact": "Automatically creates unique index; essential for replication and referential integrity",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS"
+    },
+    {
+        "title": "psql",
+        "definition": "Interactive terminal-based front-end to PostgreSQL for executing queries and commands.",
+        "key_concepts": "Command-line interface, meta-commands, scripting capabilities",
+        "performance_impact": "Efficient for database administration and query execution",
+        "reference_link": "https://www.postgresql.org/docs/current/app-psql.html"
+    },
+    {
+        "title": "Query Cache",
+        "definition": "Mechanism for storing and reusing query execution plans to avoid repeated planning overhead.",
+        "key_concepts": "Plan caching, prepared statements, execution efficiency",
+        "performance_impact": "Reduces planning overhead for frequently executed queries",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-prepare.html"
+    },
+    {
+        "title": "Query Planner",
+        "definition": "Component that analyzes SQL queries and determines the most efficient execution strategy.",
+        "key_concepts": "Cost-based optimization, statistics, execution plans",
+        "performance_impact": "Critical for query performance; accurate statistics essential for optimal plans",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Recovery",
+        "definition": "Process of restoring database to a consistent state after a crash or failure.",
+        "key_concepts": "WAL replay, crash recovery, point-in-time recovery",
+        "performance_impact": "Recovery time depends on WAL volume and checkpoint frequency",
+        "reference_link": "https://www.postgresql.org/docs/current/wal-intro.html"
+    },
+    {
+        "title": "Replication",
+        "definition": "Process of copying and maintaining database objects in multiple database instances.",
+        "key_concepts": "Streaming, logical, synchronous, asynchronous replication",
+        "performance_impact": "Provides high availability and read scaling; synchronous replication impacts write performance",
+        "reference_link": "https://www.postgresql.org/docs/current/high-availability.html"
+    },
+    {
+        "title": "Role",
+        "definition": "Database entity that can own database objects and have database privileges; can represent users or groups.",
+        "key_concepts": "Users, groups, privileges, inheritance",
+        "performance_impact": "Proper role management ensures security without impacting performance",
+        "reference_link": "https://www.postgresql.org/docs/current/user-manag.html"
+    },
+    {
+        "title": "Row-Level Security (RLS)",
+        "definition": "Feature that restricts which rows users can access based on security policies.",
+        "key_concepts": "Security policies, row filtering, fine-grained access control",
+        "performance_impact": "Provides granular security but may impact query performance due to additional filtering",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-rowsecurity.html"
+    },
+    {
+        "title": "Schema",
+        "definition": "Named collection of database objects including tables, views, functions, and types.",
+        "key_concepts": "Namespaces, search_path, object organization",
+        "performance_impact": "Helps organize objects; search_path affects object resolution performance",
+        "reference_link": "https://www.postgresql.org/docs/current/ddl-schemas.html"
+    },
+    {
+        "title": "Sequence",
+        "definition": "Database object that generates unique numeric identifiers, commonly used for primary keys.",
+        "key_concepts": "Auto-increment, SERIAL types, nextval() function",
+        "performance_impact": "Efficient for generating unique IDs; can become bottleneck under high concurrency",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-createsequence.html"
+    },
+    {
+        "title": "Sequential Scan",
+        "definition": "Query execution method that reads every row in a table from beginning to end.",
+        "key_concepts": "Full table scan, no index usage, parallel sequential scan",
+        "performance_impact": "Slow for large tables but efficient when most rows are needed",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-optimizer.html"
+    },
+    {
+        "title": "Shared Memory",
+        "definition": "Memory area shared by all PostgreSQL processes for caching data and coordination.",
+        "key_concepts": "shared_buffers, shared_preload_libraries, IPC",
+        "performance_impact": "Proper sizing critical for performance; too small reduces cache effectiveness",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-resource.html"
+    },
+    {
+        "title": "SP-GiST Index",
+        "definition": "Space-Partitioned Generalized Search Tree for non-balanced data structures.",
+        "key_concepts": "Space partitioning, unbalanced trees, specialized data types",
+        "performance_impact": "Efficient for specific data types like IP addresses and geometric data",
+        "reference_link": "https://www.postgresql.org/docs/current/spgist.html"
+    },
+    {
+        "title": "Statistics",
+        "definition": "Information about data distribution in tables used by the query planner for optimization.",
+        "key_concepts": "Histograms, most common values, correlation, ANALYZE command",
+        "performance_impact": "Accurate statistics essential for optimal query plans; outdated statistics cause poor performance",
+        "reference_link": "https://www.postgresql.org/docs/current/planner-stats.html"
+    },
+    {
+        "title": "Stored Procedure",
+        "definition": "Precompiled collection of SQL statements and procedural logic stored in the database.",
+        "key_concepts": "PL/pgSQL, parameters, return values, transaction control",
+        "performance_impact": "Can improve performance through reduced network traffic and query plan caching",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-createprocedure.html"
+    },
+    {
+        "title": "Streaming Replication",
+        "definition": "Method of replicating changes by streaming WAL records from primary to standby servers.",
+        "key_concepts": "WAL streaming, hot standby, synchronous/asynchronous modes",
+        "performance_impact": "Provides real-time replication; synchronous mode impacts write performance",
+        "reference_link": "https://www.postgresql.org/docs/current/warm-standby.html#STREAMING-REPLICATION"
+    },
+    {
+        "title": "Subquery",
+        "definition": "Query nested inside another query, used to provide data for the outer query.",
+        "key_concepts": "Correlated subqueries, EXISTS, IN, scalar subqueries",
+        "performance_impact": "Performance varies widely; some can be optimized to joins, others may be slow",
+        "reference_link": "https://www.postgresql.org/docs/current/functions-subquery.html"
+    },
+    {
+        "title": "Table Bloat",
+        "definition": "Condition where tables consume more storage than necessary due to dead tuples and unused space.",
+        "key_concepts": "Dead tuples, VACUUM maintenance, storage efficiency",
+        "performance_impact": "Reduces query performance and wastes storage; regular VACUUM prevents bloat",
+        "reference_link": "https://www.postgresql.org/docs/current/routine-vacuuming.html"
+    },
+    {
+        "title": "Tablespace",
+        "definition": "Storage location where PostgreSQL stores data files, allowing control over physical storage.",
+        "key_concepts": "Storage management, I/O distribution, disk space allocation",
+        "performance_impact": "Enables I/O optimization by placing objects on different storage devices",
+        "reference_link": "https://www.postgresql.org/docs/current/manage-ag-tablespaces.html"
+    },
+    {
+        "title": "Temporary Table",
+        "definition": "Table that exists only for the duration of a database session or transaction.",
+        "key_concepts": "Session-local, automatic cleanup, temp_tablespaces",
+        "performance_impact": "Useful for intermediate results; stored in memory or temporary tablespace",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-createtable.html"
+    },
+    {
+        "title": "Toast",
+        "definition": "The Oversized-Attribute Storage Technique for storing large column values outside the main table.",
+        "key_concepts": "Large value storage, compression, external storage",
+        "performance_impact": "Enables storage of large values but may impact performance for wide rows",
+        "reference_link": "https://www.postgresql.org/docs/current/storage-toast.html"
+    },
+    {
+        "title": "Transaction",
+        "definition": "Sequence of database operations treated as a single unit that either completes entirely or not at all.",
+        "key_concepts": "ACID properties, BEGIN/COMMIT/ROLLBACK, isolation levels",
+        "performance_impact": "Ensures data consistency; long transactions can impact concurrency",
+        "reference_link": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+    },
+    {
+        "title": "Transaction Isolation",
+        "definition": "Mechanism that determines how transaction changes are visible to other concurrent transactions.",
+        "key_concepts": "Read Uncommitted, Read Committed, Repeatable Read, Serializable",
+        "performance_impact": "Higher isolation levels provide more consistency but may reduce concurrency",
+        "reference_link": "https://www.postgresql.org/docs/current/transaction-iso.html"
+    },
+    {
+        "title": "Trigger",
+        "definition": "Special function that automatically executes in response to specific database events.",
+        "key_concepts": "BEFORE/AFTER triggers, row/statement level, trigger functions",
+        "performance_impact": "Adds overhead to DML operations; complex triggers can significantly impact performance",
+        "reference_link": "https://www.postgresql.org/docs/current/triggers.html"
+    },
+    {
+        "title": "Tuple",
+        "definition": "PostgreSQL's internal term for a row in a table, including both visible and system columns.",
+        "key_concepts": "Row versions, system columns, MVCC implementation",
+        "performance_impact": "Understanding tuple structure helps optimize storage and query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/storage-page-layout.html"
+    },
+    {
+        "title": "Unique Index",
+        "definition": "Index that ensures no duplicate values exist in the indexed columns.",
+        "key_concepts": "Uniqueness constraint, duplicate prevention, primary key support",
+        "performance_impact": "Provides fast uniqueness checking but adds overhead to INSERT/UPDATE operations",
+        "reference_link": "https://www.postgresql.org/docs/current/indexes-unique.html"
+    },
+    {
+        "title": "User-Defined Function (UDF)",
+        "definition": "Custom function created by users to extend PostgreSQL's functionality.",
+        "key_concepts": "Custom logic, multiple languages, return types",
+        "performance_impact": "Performance depends on implementation; can be optimized or become bottlenecks",
+        "reference_link": "https://www.postgresql.org/docs/current/xfunc.html"
+    },
+    {
+        "title": "VACUUM",
+        "definition": "Critical maintenance process that reclaims storage occupied by dead tuples and updates statistics.",
+        "key_concepts": "Dead tuple cleanup, Free Space Map, statistics update, VACUUM FULL",
+        "performance_impact": "Essential to prevent table bloat and maintain optimal query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-vacuum.html"
+    },
+    {
+        "title": "View",
+        "definition": "Virtual table based on the result of a SELECT statement that provides a simplified interface to complex queries.",
+        "key_concepts": "Query abstraction, security layer, updatable views",
+        "performance_impact": "No storage overhead but query performance depends on underlying complexity",
+        "reference_link": "https://www.postgresql.org/docs/current/sql-createview.html"
+    },
+    {
+        "title": "Visibility Map",
+        "definition": "Bitmap that tracks which pages contain only tuples visible to all transactions.",
+        "key_concepts": "VACUUM optimization, index-only scans, page visibility",
+        "performance_impact": "Enables index-only scans and optimizes VACUUM operations",
+        "reference_link": "https://www.postgresql.org/docs/current/storage-vm.html"
+    },
+    {
+        "title": "WAL (Write-Ahead Log)",
+        "definition": "Mechanism that ensures data durability and crash safety by logging changes before applying them.",
+        "key_concepts": "Crash recovery, checkpoints, streaming replication foundation",
+        "performance_impact": "Guarantees ACID compliance; basis for replication and point-in-time recovery",
+        "reference_link": "https://www.postgresql.org/docs/current/wal.html"
+    },
+    {
+        "title": "Window Function",
+        "definition": "Function that performs calculations across a set of rows related to the current row without grouping.",
+        "key_concepts": "OVER clause, partitioning, ordering, frame specification",
+        "performance_impact": "Powerful for analytics but can be resource-intensive on large datasets",
+        "reference_link": "https://www.postgresql.org/docs/current/tutorial-window.html"
+    },
+    {
+        "title": "Work Memory",
+        "definition": "Amount of memory allocated for internal sort operations and hash tables before switching to disk.",
+        "key_concepts": "work_mem parameter, sort operations, hash joins",
+        "performance_impact": "Proper sizing prevents disk-based operations and improves query performance",
+        "reference_link": "https://www.postgresql.org/docs/current/runtime-config-resource.html#GUC-WORK-MEM"
+    },
+    {
+        "title": "Write-Ahead Logging",
+        "definition": "Logging method where changes are written to a log before being applied to the database.",
+        "key_concepts": "Durability guarantee, crash recovery, replication foundation",
+        "performance_impact": "Ensures data safety but adds I/O overhead; essential for ACID compliance",
+        "reference_link": "https://www.postgresql.org/docs/current/wal-intro.html"
+    },
+    {
+        "title": "XLOG",
+        "definition": "Alternative name for WAL (Write-Ahead Log) files, containing transaction log records.",
+        "key_concepts": "Transaction logging, recovery, replication",
+        "performance_impact": "Critical for database reliability; proper configuration affects I/O performance",
+        "reference_link": "https://www.postgresql.org/docs/current/wal-internals.html"
+    }
+]

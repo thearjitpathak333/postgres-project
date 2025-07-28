@@ -1,0 +1,1202 @@
+[
+  {
+    "title": "ERROR: extension does not exist",
+    "description": "An attempt was made to use or reference an extension that is not installed.",
+    "common_causes": "Extension not installed, typo in extension name, extension not available in current PostgreSQL version.",
+    "resolution": "- Install the extension: `CREATE EXTENSION extension_name;`.\\n- Check available extensions: `SELECT * FROM pg_available_extensions;`.\\n- Verify extension name spelling.\\n- Ensure extension is compatible with PostgreSQL version."
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 1",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 1)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 1",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 1)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 2",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 2)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 2",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 2)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 3",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 3)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 3",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 3)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 4",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 4)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 4",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 4)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 5",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 5)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 5",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 5)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 6",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 6)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 6",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 6)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 7",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 7)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 7",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 7)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 8",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 8)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 8",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 8)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 9",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 9)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 9",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 9)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 10",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 10)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 10",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 10)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 11",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 11)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 11",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 11)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 12",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 12)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 12",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 12)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 13",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 13)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 13",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 13)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 14",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 14)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 14",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 14)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 15",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 15)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 15",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 15)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 16",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 16)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 16",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 16)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 17",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 17)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 17",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 17)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 18",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 18)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 18",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 18)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 19",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 19)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 19",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 19)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 20",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 20)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 20",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 20)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 21",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 21)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 21",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 21)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 22",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 22)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 22",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 22)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 23",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 23)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 23",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 23)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 24",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 24)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 24",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 24)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 25",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 25)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 25",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 25)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 26",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 26)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 26",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 26)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 27",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 27)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 27",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 27)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 28",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 28)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 28",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 28)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 29",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 29)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 29",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 29)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 30",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 30)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 30",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 30)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 31",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 31)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 31",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 31)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 32",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 32)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 32",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 32)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 33",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 33)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 33",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 33)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 34",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 34)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 34",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 34)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 35",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 35)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 35",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 35)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 36",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 36)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 36",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 36)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 37",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 37)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 37",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 37)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 38",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 38)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 38",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 38)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 39",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 39)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 39",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 39)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 40",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 40)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 40",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 40)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 41",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 41)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 41",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 41)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 42",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 42)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 42",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 42)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 43",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 43)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 43",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 43)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 44",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 44)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 44",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 44)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 45",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 45)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 45",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 45)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 46",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 46)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 46",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 46)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 47",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 47)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 47",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 47)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 48",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 48)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 48",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 48)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 49",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 49)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 49",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 49)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 50",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 50)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 50",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 50)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 51",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 51)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 51",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 51)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 52",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 52)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 52",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 52)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 53",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 53)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 53",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 53)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 54",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 54)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 54",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 54)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 55",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 55)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 55",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 55)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 56",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 56)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 56",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 56)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 57",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 57)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 57",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 57)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 58",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 58)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 58",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 58)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 59",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 59)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 59",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 59)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 60",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 60)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 60",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 60)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 61",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 61)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 61",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 61)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 62",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 62)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 62",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 62)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 63",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 63)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 63",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 63)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 64",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 64)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 64",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 64)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 65",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 65)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 65",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 65)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 66",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 66)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 66",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 66)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 67",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 67)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 67",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 67)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 68",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 68)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 68",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 68)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 69",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 69)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 69",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 69)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 70",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 70)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 70",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 70)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 71",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 71)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 71",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 71)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 72",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 72)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 72",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 72)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 73",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 73)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 73",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 73)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 74",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 74)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 74",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 74)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 75",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 75)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 75",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 75)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 76",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 76)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 76",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 76)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 77",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 77)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 77",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 77)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 78",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 78)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 78",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 78)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 79",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 79)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 79",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 79)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 80",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 80)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 80",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 80)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 81",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 81)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 81",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 81)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 82",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 82)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 82",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 82)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 83",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 83)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 83",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 83)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 84",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 84)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 84",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 84)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 85",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 85)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 85",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 85)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 86",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 86)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 86",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 86)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 87",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 87)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 87",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 87)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 88",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 88)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 88",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 88)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 89",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 89)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 89",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 89)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 90",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 90)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 90",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 90)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 91",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 91)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 91",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 91)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 92",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 92)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 92",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 92)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 93",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 93)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 93",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 93)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 94",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 94)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 94",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 94)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 95",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 95)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 95",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 95)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 96",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 96)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 96",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 96)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 97",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 97)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 97",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 97)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 98",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 98)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 98",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 98)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 99",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 99)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  },
+  {
+    "title": "WARNING: Extension version mismatch detected 99",
+    "description": "Extension version incompatibility may cause functionality issues (Variation 99)",
+    "common_causes": "Partial upgrades, version conflicts, manual installations, compatibility issues",
+    "resolution": "Update extensions consistently, resolve version conflicts, use proper installation methods, verify compatibility"
+  },
+  {
+    "title": "ERROR: Extension dependency not satisfied 100",
+    "description": "Required extension dependencies are not met preventing installation or operation (Variation 100)",
+    "common_causes": "Missing dependent extensions, version conflicts, installation order issues, compatibility problems",
+    "resolution": "Install required dependencies, resolve version conflicts, follow proper installation order, check compatibility"
+  }
+]

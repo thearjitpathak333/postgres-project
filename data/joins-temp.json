@@ -1,0 +1,30 @@
+  {
+    "title": "WARNING: JOIN condition function marked as volatile",
+    "description": "Function used in JOIN condition is marked as volatile, preventing optimization",
+    "common_causes": "Incorrect function volatility classification, optimization barriers",
+    "resolution": "Review function volatility, mark as STABLE or IMMUTABLE if appropriate"
+  },
+  {
+    "title": "ERROR: Cross JOIN result set memory allocation failed",
+    "description": "Memory allocation failed for cross JOIN result set",
+    "common_causes": "Cartesian product too large, insufficient memory, system resource limits",
+    "resolution": "Add proper join conditions, increase memory limits, restructure query"
+  },
+  {
+    "title": "NOTICE: Lateral JOIN correlation inefficient",
+    "description": "Lateral JOIN correlation is inefficient for current data patterns",
+    "common_causes": "Poor correlation selectivity, missing indexes on correlated columns",
+    "resolution": "Add indexes on correlated columns, optimize lateral expressions"
+  },
+  {
+    "title": "ERROR: Anti-join NOT IN with NULL values",
+    "description": "Anti-join using NOT IN failed due to NULL values in the list",
+    "common_causes": "NULL values in NOT IN subquery, incorrect null handling logic",
+    "resolution": "Use NOT EXISTS instead of NOT IN, handle NULLs explicitly with IS NOT NULL"
+  },
+  {
+    "title": "WARNING: Semi-join EXISTS subquery not optimized",
+    "description": "EXISTS subquery in semi-join is not being optimized effectively",
+    "common_causes": "Complex subquery structure, missing indexes, poor selectivity",
+    "resolution": "Simplify subquery, add appropriate indexes, consider IN clause alternative"
+  }
