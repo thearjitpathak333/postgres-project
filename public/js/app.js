@@ -49,7 +49,8 @@ async function loadCategories() {
             'postgresql-installation-guide': 'installation.json',
             'system-catalog-tables': 'catalog.json',
             'architecture': 'postgresql-architecture.json',
-            'acid-properties': 'acid-properties.json'
+            'acid-properties': 'acid-properties.json',
+            'mvcc': 'mvcc.json'
         };
         
         for (const [key, filename] of Object.entries(dataFiles)) {
@@ -143,7 +144,7 @@ function setupSidebar() {
         'index-errors',
         'join-errors'
     ];
-    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'indexes', 'joins'];
+    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
     
     // Add non-error categories first
     nonErrorCategories.forEach(key => {
@@ -216,7 +217,7 @@ function setupSidebar() {
 }
 
 function getTopCategoryKey() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins', 'mvcc'];
     let maxErrors = 0;
     let topCategoryKey = null;
     
@@ -241,6 +242,7 @@ function getIconForCategory(category) {
         'system-catalog-tables': 'table',
         'architecture': 'sitemap',
         'acid-properties': 'shield-alt',
+        'mvcc': 'layer-group',
         'connection-errors': 'plug',
         'query-performance': 'chart-line',
         'locks-deadlocks': 'lock',
@@ -352,7 +354,7 @@ function loadDashboard() {
 }
 
 function calculateMetrics() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
     const totalCategories = Object.keys(categories).filter(key => key !== 'dashboard' && !excludeFromErrors.includes(key)).length;
     let totalErrors = 0;
     let categoryMostErrors = 'N/A';
@@ -388,7 +390,7 @@ function createChart(chartType = 'doughnut') {
     const ctx = document.getElementById('categoryChart');
     if (!ctx) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
     const data = Object.keys(categoryData)
         .filter(key => !excludeFromErrors.includes(key))
         .map(key => ({
@@ -541,7 +543,7 @@ function loadCommonIssues() {
     const commonIssuesList = document.getElementById('common-issues-list');
     if (!commonIssuesList) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
     const categoryStats = [];
     
     Object.keys(categoryData).forEach(key => {
@@ -636,7 +638,7 @@ function loadCategoryContent(categoryKey) {
 }
 
 function formatItemContent(item, categoryKey) {
-    if (categoryKey === 'indexes' || categoryKey === 'joins') {
+    if (categoryKey === 'indexes' || categoryKey === 'joins' || categoryKey === 'mvcc') {
         if (item.overview) {
             return `
                 <div class="space-y-6">
@@ -695,7 +697,7 @@ function formatItemContent(item, categoryKey) {
                     
                     <div class="border-l-4 border-green-500 pl-4">
                         <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Reference</h4>
-                        <a href="${item.reference_link}" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline">
+                        <a href="${item.reference_link}" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">
                             PostgreSQL Documentation
                         </a>
                     </div>
@@ -787,7 +789,7 @@ function formatItemContent(item, categoryKey) {
                     
                     <div class="border-l-4 border-indigo-500 pl-4">
                         <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Reference</h4>
-                        <a href="${item.reference_link}" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline">
+                        <a href="${item.reference_link}" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">
                             PostgreSQL Documentation
                         </a>
                     </div>
@@ -978,7 +980,7 @@ function formatItemContent(item, categoryKey) {
                 
                 <div class="border-l-4 border-green-500 pl-4">
                     <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Reference</h4>
-                    <a href="${item.reference_link}" target="_blank" class="text-blue-400 hover:text-blue-300 hover:underline">
+                    <a href="${item.reference_link}" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">
                         PostgreSQL Documentation
                     </a>
                 </div>
@@ -1485,6 +1487,18 @@ function setupThemeToggle() {
             lightIcon.classList.remove('hidden');
             darkIcon.classList.add('hidden');
             localStorage.setItem('theme', 'light');
+        }
+        
+        // Refresh current content to apply theme changes
+        if (currentCategory === 'dashboard') {
+            loadDashboard();
+        } else {
+            loadCategoryContent(currentCategory);
+        }
+        
+        // Recreate chart with new theme colors
+        if (currentChart) {
+            createChart(currentChartType);
         }
     });
 }

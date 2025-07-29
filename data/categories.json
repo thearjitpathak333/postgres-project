@@ -28,6 +28,11 @@
         "intro": "ACID (Atomicity, Consistency, Isolation, Durability) properties ensure database transactions are processed reliably. This section explores how PostgreSQL implements ACID compliance and their practical applications in business scenarios.",
         "dataFile": "acid-properties.json"
     },
+    "mvcc": {
+        "title": "MVCC",
+        "intro": "Multi-Version Concurrency Control (MVCC) is PostgreSQL's approach to handling concurrent transactions without locking readers. This section covers what MVCC is, how it works, its benefits for high-concurrency applications, and specific business use cases where MVCC provides significant advantages.",
+        "dataFile": "mvcc.json"
+    },
     "connection-errors": {
         "title": "Connection & Authentication",
         "intro": "This section addresses common issues related to connecting to PostgreSQL and authentication failures.",
