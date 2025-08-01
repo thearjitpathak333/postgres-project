@@ -1,0 +1,376 @@
+// Auto-generated from catalog.json
+window.catalog = [
+  {
+    "title": "pg_class",
+    "table_name": "pg_class",
+    "purpose": "The main catalog for relations. It stores metadata about tables, indexes, sequences, views, materialized views, composite types, and TOAST tables.",
+    "important_columns": [
+      "oid (object identifier, a unique key)",
+      "relname (name of the relation)",
+      "relnamespace (OID of the namespace/schema)",
+      "relkind (type of relation: r=table, i=index, S=sequence, v=view, m=materialized view, c=composite type, t=TOAST table, f=foreign table, p=partitioned table, I=partitioned index)",
+      "reltuples (estimated number of live rows)",
+      "relpages (estimated number of disk pages)"
+    ],
+    "sample_select_query": "SELECT c.relname, c.relkind, n.nspname AS schema_name, c.reltuples FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = 'public';",
+    "use_in_monitoring_debugging": "Fundamental for understanding database schema, identifying large objects, and getting estimates of row counts and disk usage. The starting point for most schema introspection."
+  },
+  {
+    "title": "pg_attribute",
+    "table_name": "pg_attribute",
+    "purpose": "Stores metadata about the columns (attributes) of all relations defined in pg_class.",
+    "important_columns": [
+      "attrelid (OID of the relation this column belongs to)",
+      "attname (name of the column)",
+      "atttypid (OID of the column's data type)",
+      "attnum (column number)",
+      "attnotnull (true if column has a NOT NULL constraint)",
+      "attisdropped (true if column has been dropped)"
+    ],
+    "sample_select_query": "SELECT a.attname, pg_catalog.format_type(a.atttypid, a.atttypmod) AS type, a.attnotnull FROM pg_attribute a WHERE a.attrelid = 'your_table_name'::regclass AND a.attnum > 0 AND NOT a.attisdropped ORDER BY a.attnum;",
+    "use_in_monitoring_debugging": "Essential for schema introspection. Used to retrieve detailed information about table structures, including column names, data types, and nullability."
+  },
+  {
+    "title": "pg_namespace",
+    "table_name": "pg_namespace",
+    "purpose": "Stores information about schemas, which act as containers for other database objects.",
+    "important_columns": [
+      "oid (object identifier of the schema)",
+      "nspname (name of the schema)",
+      "nspowner (OID of the owner of the schema)"
+    ],
+    "sample_select_query": "SELECT nspname, pg_catalog.pg_get_userbyid(nspowner) AS owner FROM pg_namespace WHERE nspname NOT LIKE 'pg_%' AND nspname <> 'information_schema';",
+    "use_in_monitoring_debugging": "Used to list all schemas in a database, find their owners, and as a join key for almost all other catalog queries to resolve object locations."
+  },
+  {
+    "title": "pg_proc",
+    "table_name": "pg_proc",
+    "purpose": "Stores metadata about functions, procedures, and aggregate functions.",
+    "important_columns": [
+      "proname (name of the function)",
+      "pronamespace (OID of the namespace containing the function)",
+      "proowner (OID of the function's owner)",
+      "prolang (OID of the implementation language)",
+      "prorettype (OID of the return data type)",
+      "proargtypes (array of OIDs of the argument data types)"
+    ],
+    "sample_select_query": "SELECT p.proname, pg_catalog.pg_get_function_result(p.oid) as result_type, pg_catalog.pg_get_function_arguments(p.oid) as arguments FROM pg_proc p JOIN pg_namespace n ON n.oid = p.pronamespace WHERE n.nspname = 'public';",
+    "use_in_monitoring_debugging": "Used to list and inspect all functions, their arguments, and return types. Critical for understanding database logic and debugging function-related issues."
+  },
+  {
+    "title": "pg_type",
+    "table_name": "pg_type",
+    "purpose": "Stores information about all data types, including base types, composite types, enums, and domains.",
+    "important_columns": [
+      "typname (name of the data type)",
+      "typnamespace (OID of the namespace for the type)",
+      "typtype (type category: b=base, c=composite, d=domain, e=enum, etc.)",
+      "typrelid (OID of the relation for a composite type)"
+    ],
+    "sample_select_query": "SELECT typname, typtype FROM pg_type WHERE typnamespace = (SELECT oid FROM pg_namespace WHERE nspname = 'public') AND typtype = 'e';",
+    "use_in_monitoring_debugging": "Essential for understanding custom data types, enums, and domains defined in the database. Used to resolve type OIDs from other catalogs."
+  },
+  {
+    "title": "pg_constraint",
+    "table_name": "pg_constraint",
+    "purpose": "Stores all constraints on tables, such as check, primary key, unique, foreign key, and exclusion constraints.",
+    "important_columns": [
+      "conname (name of the constraint)",
+      "connamespace (OID of the namespace)",
+      "contype (type of constraint: c=check, f=foreign key, p=primary key, u=unique)",
+      "conrelid (OID of the table the constraint is on)",
+      "confrelid (for foreign keys, the OID of the referenced table)"
+    ],
+    "sample_select_query": "SELECT conname, contype, conrelid::regclass AS on_table, pg_catalog.pg_get_constraintdef(oid) AS definition FROM pg_constraint WHERE conrelid = 'your_table_name'::regclass;",
+    "use_in_monitoring_debugging": "The primary tool for inspecting table constraints, understanding referential integrity, and debugging constraint violation errors."
+  },
+  {
+    "title": "pg_index",
+    "table_name": "pg_index",
+    "purpose": "Contains the core, low-level metadata about indexes, linking them to their tables and defining their properties.",
+    "important_columns": [
+      "indexrelid (OID of the index relation itself)",
+      "indrelid (OID of the table the index is on)",
+      "indisunique (true if it's a unique index)",
+      "indisprimary (true if it's a primary key index)",
+      "indisvalid (true if the index is valid for use)",
+      "indkey (array of column numbers of the indexed columns)"
+    ],
+    "sample_select_query": "SELECT i.indexrelid::regclass AS index_name, i.indrelid::regclass AS table_name, i.indisunique, i.indisvalid FROM pg_index i WHERE i.indrelid = 'your_table_name'::regclass;",
+    "use_in_monitoring_debugging": "Provides detailed information about index structure, uniqueness, and validity. Critical for diagnosing issues with invalid or unusable indexes."
+  },
+  {
+    "title": "pg_stat_activity",
+    "table_name": "pg_stat_activity",
+    "purpose": "Provides a real-time snapshot of all active sessions and backend processes connected to the server.",
+    "important_columns": [
+      "pid (process ID of the backend)",
+      "datname (database connected to)",
+      "usename (user connected)",
+      "state (current status: active, idle, idle in transaction, etc.)",
+      "wait_event_type (the type of event the backend is waiting for, e.g., Lock, IO)",
+      "query (the text of the current query)"
+    ],
+    "sample_select_query": "SELECT pid, usename, state, wait_event_type, age(now(), query_start) AS duration, query FROM pg_stat_activity WHERE state <> 'idle' ORDER BY duration DESC;",
+    "use_in_monitoring_debugging": "The primary tool for real-time monitoring. Crucial for identifying long-running queries, diagnosing locking issues, and understanding current database workload."
+  },
+  {
+    "title": "pg_locks",
+    "table_name": "pg_locks",
+    "purpose": "Provides real-time information about all locks held by or waiting for acquisition by database processes.",
+    "important_columns": [
+      "locktype (type of object being locked)",
+      "relation (OID of the relation being locked)",
+      "pid (process ID of the session holding or waiting for the lock)",
+      "mode (the specific lock mode)",
+      "granted (true if the lock is held, false if the process is waiting)"
+    ],
+    "sample_select_query": "SELECT a.pid, a.usename, l.relation::regclass, l.mode, l.granted, a.query FROM pg_locks l JOIN pg_stat_activity a USING (pid) WHERE NOT l.granted;",
+    "use_in_monitoring_debugging": "Essential for diagnosing concurrency problems, deadlocks, and blocking sessions. It helps identify which processes are blocking others and on what objects."
+  },
+  {
+    "title": "pg_settings",
+    "table_name": "pg_settings",
+    "purpose": "Provides a view into all run-time configuration parameters of the PostgreSQL server.",
+    "important_columns": [
+      "name (parameter name)",
+      "setting (current value)",
+      "unit (unit of the value, e.g., ms, kB)",
+      "category (logical group)",
+      "context (when a change takes effect, e.g., postmaster, superuser)"
+    ],
+    "sample_select_query": "SELECT name, setting, unit, short_desc FROM pg_settings WHERE name IN ('work_mem', 'shared_buffers', 'maintenance_work_mem', 'max_connections');",
+    "use_in_monitoring_debugging": "Essential for reviewing and tuning the database server's behavior and performance. Allows administrators to verify all current settings."
+  },
+  {
+    "title": "pg_stat_all_tables",
+    "table_name": "pg_stat_all_tables",
+    "purpose": "A statistics view showing usage information for each table (including system tables) in the database.",
+    "important_columns": [
+      "relname (name of the table)",
+      "schemaname (name of the schema)",
+      "seq_scan (number of sequential scans)",
+      "idx_scan (number of index scans)",
+      "n_tup_ins (number of rows inserted)",
+      "n_dead_tup (estimated number of dead rows)"
+    ],
+    "sample_select_query": "SELECT schemaname, relname, seq_scan, idx_scan, n_live_tup, n_dead_tup FROM pg_stat_all_tables WHERE schemaname = 'public' ORDER BY n_dead_tup DESC NULLS LAST;",
+    "use_in_monitoring_debugging": "Provides key insights into table access patterns. Helps identify tables needing index optimization (high seq_scan) or vacuuming (high n_dead_tup)."
+  },
+  {
+    "title": "pg_stat_all_indexes",
+    "table_name": "pg_stat_all_indexes",
+    "purpose": "A statistics view showing usage for each index (including system tables) in the database.",
+    "important_columns": [
+      "relname (name of the table)",
+      "indexrelname (name of the index)",
+      "schemaname (name of the schema)",
+      "idx_scan (number of times the index has been scanned)",
+      "idx_tup_fetch (number of live table rows fetched by index scans)"
+    ],
+    "sample_select_query": "SELECT schemaname, relname, indexrelname, idx_scan FROM pg_stat_all_indexes WHERE schemaname = 'public' AND idx_scan < 100 ORDER BY idx_scan;",
+    "use_in_monitoring_debugging": "Critical for performance tuning by identifying unused or rarely used indexes that could be dropped to save space and reduce write overhead."
+  },
+  {
+    "title": "pg_database",
+    "table_name": "pg_database",
+    "purpose": "Stores metadata about all available databases within the PostgreSQL cluster. This is a cluster-wide catalog.",
+    "important_columns": [
+      "datname (database name)",
+      "datdba (OID of the database owner)",
+      "datconnlimit (max concurrent connections)",
+      "datfrozenxid (transaction ID horizon before vacuum is required)"
+    ],
+    "sample_select_query": "SELECT d.datname, pg_catalog.pg_get_userbyid(d.datdba) AS owner, pg_catalog.pg_database_size(d.datname) AS size, age(d.datfrozenxid) AS xid_age FROM pg_database d;",
+    "use_in_monitoring_debugging": "Provides a high-level overview of all databases, their sizes, owners, and transaction ID age, which is critical for monitoring wraparound risk."
+  },
+  {
+    "title": "pg_authid",
+    "table_name": "pg_authid",
+    "purpose": "The master catalog of authorization identifiers (roles). The pg_roles and pg_user views are based on this.",
+    "important_columns": [
+      "rolname (role name)",
+      "rolsuper (true if role is a superuser)",
+      "rolcanlogin (true if role can log in)",
+      "rolconnlimit (connection limit for this role)",
+      "rolpassword (encrypted password)"
+    ],
+    "sample_select_query": "SELECT rolname, rolsuper, rolcanlogin, rolconnlimit FROM pg_authid ORDER BY rolname;",
+    "use_in_monitoring_debugging": "The fundamental table for managing users and roles. While pg_roles is often used, querying pg_authid directly is useful for a complete, unfiltered view of all roles."
+  },
+  {
+    "title": "pg_tablespace",
+    "table_name": "pg_tablespace",
+    "purpose": "Stores information about all available tablespaces, which represent locations in the file system.",
+    "important_columns": [
+      "spcname (tablespace name)",
+      "spcowner (OID of the owner)",
+      "spcoptions (tablespace-specific options)"
+    ],
+    "sample_select_query": "SELECT spcname, pg_catalog.pg_get_userbyid(spcowner) AS owner, pg_catalog.pg_tablespace_location(oid) AS location FROM pg_tablespace;",
+    "use_in_monitoring_debugging": "Used to manage and monitor storage locations for database objects, helping with I/O optimization and storage capacity planning."
+  },
+  {
+    "title": "pg_extension",
+    "table_name": "pg_extension",
+    "purpose": "Stores information about all the extensions installed in the current database.",
+    "important_columns": [
+      "extname (name of the extension)",
+      "extowner (OID of the extension's owner)",
+      "extversion (version of the installed extension)"
+    ],
+    "sample_select_query": "SELECT extname, extversion FROM pg_extension;",
+    "use_in_monitoring_debugging": "Used to list all installed extensions and their versions. Important for system inventory, dependency management, and planning for upgrades."
+  },
+  {
+    "title": "pg_trigger",
+    "table_name": "pg_trigger",
+    "purpose": "Stores information about triggers defined on tables.",
+    "important_columns": [
+      "tgname (trigger name)",
+      "tgrelid (OID of the table the trigger is on)",
+      "tgfoid (OID of the function to be called)",
+      "tgtype (bit mask identifying trigger conditions)",
+      "tgenabled (trigger enabled status)"
+    ],
+    "sample_select_query": "SELECT tgname, tgrelid::regclass AS table_name, tgenabled FROM pg_trigger WHERE NOT tgisinternal;",
+    "use_in_monitoring_debugging": "Used to list and inspect triggers on tables, and to debug trigger-related issues or unexpected behavior during data modification."
+  },
+  {
+    "title": "pg_depend",
+    "table_name": "pg_depend",
+    "purpose": "Records the dependency relationships between database objects.",
+    "important_columns": [
+      "objid (OID of the dependent object)",
+      "refobjid (OID of the referenced object)",
+      "deptype (dependency type: n=normal, a=auto, i=internal, etc.)"
+    ],
+    "sample_select_query": "SELECT dependent_obj.relname AS dependent, referenced_obj.relname AS depends_on FROM pg_depend JOIN pg_class AS dependent_obj ON dependent_obj.oid = pg_depend.objid JOIN pg_class AS referenced_obj ON referenced_obj.oid = pg_depend.refobjid WHERE dependent_obj.relname = 'your_view_name';",
+    "use_in_monitoring_debugging": "An advanced debugging tool used to understand why an object cannot be dropped (e.g., a table that a view depends on) by tracing its dependency tree."
+  },
+  {
+    "title": "pg_rewrite",
+    "table_name": "pg_rewrite",
+    "purpose": "Stores the query rewrite rules that implement views.",
+    "important_columns": [
+      "rulename (name of the rewrite rule)",
+      "ev_class (OID of the relation the rule is for)",
+      "ev_type (type of event the rule is for)",
+      "is_instead (true if it's an INSTEAD rule)"
+    ],
+    "sample_select_query": "SELECT r.rulename, c.relname AS on_table FROM pg_rewrite r JOIN pg_class c ON c.oid = r.ev_class WHERE c.relkind = 'v';",
+    "use_in_monitoring_debugging": "Primarily for internal use, but can be inspected to understand the underlying query of a view, especially when the simpler `pg_views` is insufficient."
+  },
+  {
+    "title": "pg_stat_database",
+    "table_name": "pg_stat_database",
+    "purpose": "A statistics view containing one row for each database in the cluster, showing database-wide metrics.",
+    "important_columns": [
+      "datname (database name)",
+      "xact_commit (number of transactions committed)",
+      "xact_rollback (number of transactions rolled back)",
+      "blks_read (number of disk blocks read)",
+      "blks_hit (number of buffer hits)",
+      "deadlocks (number of deadlocks detected)"
+    ],
+    "sample_select_query": "SELECT datname, xact_commit, xact_rollback, deadlocks, temp_files, round(100.0 * blks_hit / nullif(blks_hit + blks_read, 0), 2) AS cache_hit_ratio FROM pg_stat_database;",
+    "use_in_monitoring_debugging": "Provides a high-level performance overview of each database, ideal for calculating cache hit ratios and tracking transaction throughput and deadlocks."
+  },
+  {
+    "title": "pg_stat_bgwriter",
+    "table_name": "pg_stat_bgwriter",
+    "purpose": "A cluster-wide statistics view showing metrics related to the background writer process.",
+    "important_columns": [
+      "checkpoints_timed (number of scheduled checkpoints)",
+      "checkpoints_req (number of requested checkpoints)",
+      "buffers_checkpoint (buffers written during checkpoints)",
+      "buffers_clean (buffers written by the background writer)",
+      "buffers_backend (buffers written directly by backends)"
+    ],
+    "sample_select_query": "SELECT checkpoints_timed, checkpoints_req, buffers_checkpoint, buffers_clean, buffers_backend, round(100.0 * buffers_checkpoint / nullif(buffers_checkpoint + buffers_clean + buffers_backend, 0), 2) AS pct_checkpoint_writes FROM pg_stat_bgwriter;",
+    "use_in_monitoring_debugging": "Key for tuning checkpoint and I/O performance. A high value for `buffers_backend` may indicate that the background writer needs to be more aggressive."
+  },
+  {
+    "title": "pg_stat_replication",
+    "table_name": "pg_stat_replication",
+    "purpose": "Provides one row for each streaming replication connection to this server, showing replication status and lag.",
+    "important_columns": [
+      "usename (user name of the replication user)",
+      "application_name (name of the replica)",
+      "client_addr (IP address of the replica)",
+      "state (current replication state)",
+      "sent_lsn (last log sequence number sent)",
+      "replay_lsn (last log sequence number replayed on replica)",
+      "write_lag, flush_lag, replay_lag (lag intervals)"
+    ],
+    "sample_select_query": "SELECT application_name, client_addr, state, pg_wal_lsn_diff(sent_lsn, replay_lsn) AS replay_lag_bytes, replay_lag FROM pg_stat_replication;",
+    "use_in_monitoring_debugging": "The primary tool for monitoring the health and performance of streaming replication, allowing you to track replica status and measure replication lag."
+  },
+  {
+    "title": "pg_stat_progress_vacuum",
+    "table_name": "pg_stat_progress_vacuum",
+    "purpose": "Tracks the progress of running VACUUM operations.",
+    "important_columns": [
+      "pid (process ID of the vacuum worker)",
+      "datname (database name)",
+      "relid (OID of the table being vacuumed)",
+      "phase (current phase, e.g., 'scanning heap')",
+      "heap_blks_scanned, heap_blks_total (progress counters)"
+    ],
+    "sample_select_query": "SELECT pid, datname, relid::regclass, phase, round(100.0 * heap_blks_scanned / heap_blks_total, 2) AS progress_pct FROM pg_stat_progress_vacuum;",
+    "use_in_monitoring_debugging": "Essential for monitoring long-running VACUUM jobs on large tables to estimate completion time and check for stalled processes."
+  },
+  {
+    "title": "pg_roles",
+    "table_name": "pg_roles",
+    "purpose": "A user-friendly view that displays information about all database roles (users and groups).",
+    "important_columns": [
+      "rolname (role name)",
+      "rolsuper (true if role is a superuser)",
+      "rolcanlogin (true if role can log in)",
+      "rolcreaterole (true if role can create more roles)",
+      "rolcreatedb (true if role can create databases)"
+    ],
+    "sample_select_query": "SELECT rolname, rolsuper, rolcanlogin, rolconnlimit FROM pg_roles ORDER BY rolname;",
+    "use_in_monitoring_debugging": "The standard way to audit users, groups, and their high-level permissions. Essential for security management and user administration."
+  },
+  {
+    "title": "pg_tables",
+    "table_name": "pg_tables",
+    "purpose": "A user-friendly view that provides access to information about each table in the database.",
+    "important_columns": [
+      "schemaname (name of schema containing table)",
+      "tablename (name of table)",
+      "tableowner (name of table's owner)",
+      "tablespace (name of tablespace containing table)"
+    ],
+    "sample_select_query": "SELECT schemaname, tablename, tableowner FROM pg_tables WHERE schemaname NOT IN ('pg_catalog', 'information_schema');",
+    "use_in_monitoring_debugging": "Provides a simple and clean way to list all user tables in the database without having to filter pg_class manually."
+  },
+  {
+    "title": "pg_views",
+    "table_name": "pg_views",
+    "purpose": "A user-friendly view that provides the definition of each view in the database.",
+    "important_columns": [
+      "schemaname (name of schema containing view)",
+      "viewname (name of view)",
+      "viewowner (name of view's owner)",
+      "definition (the view's defining SELECT query)"
+    ],
+    "sample_select_query": "SELECT schemaname, viewname, viewowner FROM pg_views WHERE schemaname = 'public';",
+    "use_in_monitoring_debugging": "The easiest way to inspect the source code of a view to understand its logic or debug its output."
+  },
+  {
+    "title": "pg_indexes",
+    "table_name": "pg_indexes",
+    "purpose": "A user-friendly view that provides access to useful information about each index in the database.",
+    "important_columns": [
+      "schemaname (name of the schema)",
+      "tablename (name of the table)",
+      "indexname (name of the index)",
+      "indexdef (the CREATE INDEX command for the index)"
+    ],
+    "sample_select_query": "SELECT tablename, indexname, indexdef FROM pg_indexes WHERE schemaname = 'public' ORDER BY tablename, indexname;",
+    "use_in_monitoring_debugging": "A convenient way to list all indexes, see their definitions, and check which columns are indexed on a given table."
+  }
+];

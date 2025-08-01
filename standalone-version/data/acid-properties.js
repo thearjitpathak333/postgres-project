@@ -1,0 +1,111 @@
+// Auto-generated from acid-properties.json
+window.acid_properties = [
+  {
+    "title": "ACID Properties Overview",
+    "overview": "ACID (Atomicity, Consistency, Isolation, Durability) properties are fundamental principles that ensure database transactions are processed reliably. PostgreSQL fully supports ACID compliance, making it suitable for mission-critical applications requiring data integrity and consistency.",
+    "key_features": "PostgreSQL implements ACID through Multi-Version Concurrency Control (MVCC), Write-Ahead Logging (WAL), transaction isolation levels, and constraint enforcement. These mechanisms work together to guarantee that database operations maintain data integrity even under concurrent access and system failures.",
+    "use_cases": "ACID compliance is essential for financial systems, e-commerce platforms, healthcare applications, inventory management, and any system where data consistency and reliability are critical business requirements."
+  },
+  {
+    "title": "Atomicity",
+    "definition": "Atomicity ensures that database transactions are treated as a single, indivisible unit of work. Either all operations within a transaction succeed and are committed, or all operations fail and the database remains unchanged.",
+    "key_concepts": "PostgreSQL implements atomicity through transaction blocks (BEGIN/COMMIT/ROLLBACK), savepoints for partial rollbacks, and automatic rollback on errors. When a transaction fails at any point, all changes made within that transaction are automatically undone.",
+    "performance_impact": "Atomicity requires maintaining transaction logs and rollback capabilities, which adds overhead to write operations. However, this overhead is minimal compared to the data integrity benefits provided.",
+    "business_use_cases": "Banking transfers (debit one account, credit another), order processing (update inventory, create order record, charge payment), user registration (create user, send email, log activity), and any multi-step business process requiring all-or-nothing execution.",
+    "example_queries": [
+      {
+        "description": "Bank transfer transaction demonstrating atomicity",
+        "query": "BEGIN;\nUPDATE accounts SET balance = balance - 1000 WHERE account_id = 'A001';\nUPDATE accounts SET balance = balance + 1000 WHERE account_id = 'A002';\nCOMMIT;"
+      },
+      {
+        "description": "Order processing with rollback on insufficient inventory",
+        "query": "BEGIN;\nUPDATE products SET stock = stock - 5 WHERE product_id = 'P001';\nINSERT INTO orders (customer_id, product_id, quantity) VALUES (123, 'P001', 5);\n-- If stock goes negative, this will rollback the entire transaction\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+  },
+  {
+    "title": "Consistency",
+    "definition": "Consistency ensures that database transactions bring the database from one valid state to another, maintaining all defined rules, constraints, and relationships. The database must satisfy all integrity constraints before and after each transaction.",
+    "key_concepts": "PostgreSQL enforces consistency through primary key constraints, foreign key constraints, check constraints, unique constraints, triggers, and custom validation rules. Transactions that would violate these constraints are automatically rolled back.",
+    "performance_impact": "Consistency checks add validation overhead to DML operations, especially for complex constraints and triggers. Foreign key checks and constraint validation can impact INSERT/UPDATE/DELETE performance but ensure data integrity.",
+    "business_use_cases": "Inventory management (stock levels cannot go negative), employee hierarchy (manager must exist before assigning subordinates), financial regulations (account balances must meet minimum requirements), and data quality enforcement across business processes.",
+    "example_queries": [
+      {
+        "description": "Creating constraints to ensure consistency",
+        "query": "ALTER TABLE orders ADD CONSTRAINT fk_customer \n  FOREIGN KEY (customer_id) REFERENCES customers(id);\nALTER TABLE products ADD CONSTRAINT chk_positive_price \n  CHECK (price > 0);\nALTER TABLE accounts ADD CONSTRAINT chk_min_balance \n  CHECK (balance >= -1000);"
+      },
+      {
+        "description": "Transaction that maintains referential integrity",
+        "query": "BEGIN;\n-- This will fail if customer doesn't exist\nINSERT INTO orders (customer_id, order_date, total) \n  VALUES (999, CURRENT_DATE, 150.00);\n-- This will fail if it violates check constraints\nUPDATE products SET price = -10 WHERE product_id = 'P001';\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/ddl-constraints.html"
+  },
+  {
+    "title": "Isolation",
+    "definition": "Isolation ensures that concurrent transactions do not interfere with each other. Each transaction should execute as if it were the only transaction running on the database, preventing issues like dirty reads, phantom reads, and non-repeatable reads.",
+    "key_concepts": "PostgreSQL implements isolation through MVCC (Multi-Version Concurrency Control) and four isolation levels: READ UNCOMMITTED, READ COMMITTED (default), REPEATABLE READ, and SERIALIZABLE. Each level provides different trade-offs between consistency and performance.",
+    "performance_impact": "Higher isolation levels provide stronger consistency guarantees but may reduce concurrency and increase the likelihood of serialization failures. SERIALIZABLE isolation can cause transaction retries, while READ COMMITTED offers better performance with some consistency trade-offs.",
+    "business_use_cases": "Financial reporting (consistent snapshots of account balances), inventory systems (preventing overselling during concurrent orders), booking systems (preventing double-booking of resources), and audit trails requiring consistent data views.",
+    "example_queries": [
+      {
+        "description": "Setting transaction isolation level",
+        "query": "BEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;\nSELECT SUM(balance) FROM accounts WHERE account_type = 'savings';\n-- Other transactions cannot modify these balances during this transaction\nSELECT COUNT(*) FROM accounts WHERE balance > 10000;\nCOMMIT;"
+      },
+      {
+        "description": "Serializable transaction for critical business logic",
+        "query": "BEGIN TRANSACTION ISOLATION LEVEL SERIALIZABLE;\n-- Check available seats\nSELECT available_seats FROM flights WHERE flight_id = 'FL001';\n-- Book seat if available\nUPDATE flights SET available_seats = available_seats - 1 \n  WHERE flight_id = 'FL001' AND available_seats > 0;\nINSERT INTO bookings (flight_id, passenger_id) VALUES ('FL001', 12345);\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/transaction-iso.html"
+  },
+  {
+    "title": "Durability",
+    "definition": "Durability guarantees that once a transaction is committed, its changes are permanently stored and will survive system failures, power outages, or crashes. Committed data must persist even if the system fails immediately after the commit.",
+    "key_concepts": "PostgreSQL ensures durability through Write-Ahead Logging (WAL), where changes are written to persistent storage before being committed. The WAL files are flushed to disk before transaction commit, and checkpoints periodically write dirty pages to data files.",
+    "performance_impact": "Durability requires synchronous disk writes for WAL, which can impact transaction commit performance. The synchronous_commit setting can be tuned to balance durability guarantees with performance requirements, though this affects crash recovery guarantees.",
+    "business_use_cases": "Financial transactions (payments must not be lost), legal document storage (contracts and agreements), audit logs (compliance and regulatory requirements), and any system where data loss would have serious business or legal consequences.",
+    "example_queries": [
+      {
+        "description": "Configuring WAL settings for durability",
+        "query": "-- Check current WAL settings\nSHOW wal_level;\nSHOW synchronous_commit;\nSHOW fsync;\n-- These settings ensure maximum durability\nSET synchronous_commit = on;\nSET fsync = on;"
+      },
+      {
+        "description": "Critical transaction requiring guaranteed durability",
+        "query": "-- Ensure this transaction is fully durable\nSET LOCAL synchronous_commit = on;\nBEGIN;\nINSERT INTO financial_transactions (account_id, amount, transaction_type, timestamp) \n  VALUES ('ACC001', 50000.00, 'DEPOSIT', NOW());\nUPDATE accounts SET balance = balance + 50000.00 WHERE account_id = 'ACC001';\n-- This commit will not return until data is safely on disk\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/wal-intro.html"
+  },
+  {
+    "title": "ACID in Practice: E-commerce Order Processing",
+    "overview": "A comprehensive example demonstrating how all ACID properties work together in a real-world e-commerce scenario, showing the business value of ACID compliance in maintaining data integrity during complex multi-table operations.",
+    "key_features": "This example combines atomicity (all-or-nothing order processing), consistency (maintaining inventory and financial constraints), isolation (preventing race conditions during concurrent orders), and durability (ensuring completed orders survive system failures).",
+    "use_cases": "E-commerce platforms, inventory management systems, financial applications, booking systems, and any application requiring reliable multi-step business transactions with strong data integrity guarantees.",
+    "example_queries": [
+      {
+        "description": "Complete order processing transaction with ACID properties",
+        "query": "-- Set appropriate isolation level for business requirements\nBEGIN TRANSACTION ISOLATION LEVEL REPEATABLE READ;\n\n-- Atomicity: All operations succeed or all fail\n-- Check product availability (Consistency: enforce business rules)\nSELECT stock_quantity FROM products \n  WHERE product_id = 'LAPTOP001' AND stock_quantity >= 2;\n\n-- Update inventory (Consistency: stock cannot go negative)\nUPDATE products \n  SET stock_quantity = stock_quantity - 2 \n  WHERE product_id = 'LAPTOP001' AND stock_quantity >= 2;\n\n-- Create order record\nINSERT INTO orders (customer_id, order_date, total_amount, status) \n  VALUES (12345, NOW(), 2999.98, 'CONFIRMED');\n\n-- Add order items\nINSERT INTO order_items (order_id, product_id, quantity, unit_price) \n  VALUES (currval('orders_order_id_seq'), 'LAPTOP001', 2, 1499.99);\n\n-- Update customer account (Consistency: maintain account balance rules)\nUPDATE customer_accounts \n  SET balance = balance - 2999.98 \n  WHERE customer_id = 12345 AND balance >= 2999.98;\n\n-- Log transaction for audit trail\nINSERT INTO transaction_log (customer_id, transaction_type, amount, timestamp) \n  VALUES (12345, 'PURCHASE', 2999.98, NOW());\n\n-- Durability: Changes are permanent once committed\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+  },
+  {
+    "title": "ACID Configuration and Monitoring",
+    "overview": "Understanding how to configure PostgreSQL settings to optimize ACID compliance for different business requirements, and monitoring tools to ensure ACID properties are maintained effectively in production environments.",
+    "key_features": "Configuration parameters affecting ACID behavior include synchronous_commit, wal_level, checkpoint settings, and isolation level defaults. Monitoring involves tracking transaction conflicts, WAL generation, checkpoint frequency, and constraint violations.",
+    "use_cases": "Database administration, performance tuning, compliance auditing, disaster recovery planning, and ensuring optimal ACID behavior for specific business requirements and regulatory compliance.",
+    "example_queries": [
+      {
+        "description": "Monitoring ACID-related database metrics",
+        "query": "-- Check transaction isolation and conflict statistics\nSELECT datname, xact_commit, xact_rollback, \n       conflicts, deadlocks \nFROM pg_stat_database;\n\n-- Monitor WAL activity for durability\nSELECT * FROM pg_stat_wal;\n\n-- Check constraint violations\nSELECT schemaname, tablename, n_tup_ins, n_tup_upd, n_tup_del \nFROM pg_stat_user_tables \nORDER BY n_tup_ins + n_tup_upd + n_tup_del DESC;"
+      },
+      {
+        "description": "ACID configuration for high-availability systems",
+        "query": "-- Configure for maximum durability and consistency\nSET synchronous_commit = on;\nSET wal_level = replica;\nSET max_wal_size = '2GB';\nSET checkpoint_completion_target = 0.9;\n\n-- Set default isolation level for application\nSET default_transaction_isolation = 'repeatable read';\n\n-- Enable constraint checking\nSET check_function_bodies = on;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/runtime-config-wal.html"
+  }
+];

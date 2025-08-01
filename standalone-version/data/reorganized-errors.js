@@ -1,0 +1,1763 @@
+// Auto-generated from reorganized-errors.json
+window.reorganized_errors = {
+  "1_connection_authentication": [
+    {
+      "title": "FATAL: password authentication failed for user",
+      "description": "The server rejected the connection because the password provided by the client for the specified user was incorrect.",
+      "common_causes": "Incorrect password, wrong user, pg_hba.conf configured for a different authentication method, or a mismatch in password_encryption settings.",
+      "resolution": "Verify the username and password are correct. Check the pg_hba.conf file to ensure the authentication method is what you expect. If necessary, reset the user's password using ALTER USER username WITH PASSWORD 'new_password';"
+    },
+    {
+      "title": "FATAL: role does not exist",
+      "description": "The client tried to connect with a username (role) that is not defined in the PostgreSQL database cluster.",
+      "common_causes": "Typo in the username, connecting to the wrong database cluster, or the user has not been created yet.",
+      "resolution": "Check for typos in the username. Verify you are connecting to the correct server and database. If the user is missing, create it using CREATE ROLE username WITH LOGIN; or CREATE USER username;"
+    },
+    {
+      "title": "FATAL: role is not permitted to log in",
+      "description": "The specified role exists but does not have the LOGIN privilege.",
+      "common_causes": "The role was created as a group role or with the NOLOGIN attribute specified.",
+      "resolution": "Grant the login privilege to the role using the command ALTER ROLE username LOGIN;"
+    },
+    {
+      "title": "FATAL: database does not exist",
+      "description": "The client requested a connection to a database name that does not exist on the server.",
+      "common_causes": "Typo in the database name, connecting to the wrong database server, or the database has not been created yet.",
+      "resolution": "Ensure the database name is spelled correctly. Verify you are connecting to the correct server instance. If the database is missing, create it using CREATE DATABASE dbname;"
+    },
+    {
+      "title": "psql: could not connect to server: Connection refused",
+      "description": "A client-side error indicating that the connection attempt to the server's IP address and port was actively rejected.",
+      "common_causes": "The PostgreSQL server process is not running. The server is configured to listen on a different IP address or port. A firewall is actively rejecting the connection.",
+      "resolution": "Check if the PostgreSQL service is running. Verify the listen_addresses and port settings in postgresql.conf match the client's connection parameters. Check for firewall rules."
+    },
+    {
+      "title": "psql: could not connect to server: Connection timed out",
+      "description": "A client-side error indicating that the client sent a connection request but did not receive any response within the timeout period.",
+      "common_causes": "A firewall is silently dropping packets instead of rejecting them. Severe network latency or packet loss. The server is heavily overloaded.",
+      "resolution": "Check for firewalls that may be dropping packets. Use tools like ping or traceroute to diagnose network connectivity issues. Investigate server load."
+    },
+    {
+      "title": "FATAL: no pg_hba.conf entry for host",
+      "description": "The server's host-based authentication file does not contain a record that allows a connection from the client's IP address.",
+      "common_causes": "Missing or incorrect entry in pg_hba.conf. The client's IP address is not covered by any host or hostssl record.",
+      "resolution": "Add or modify an entry in the pg_hba.conf file to explicitly allow the connection. After editing pg_hba.conf, reload the PostgreSQL configuration."
+    },
+    {
+      "title": "FATAL: Peer authentication failed for user",
+      "description": "Occurs on local connections when using peer authentication. The client's OS username does not match the requested PostgreSQL username.",
+      "common_causes": "Attempting to connect as a PostgreSQL user that is different from the current logged-in OS user.",
+      "resolution": "Connect with a PostgreSQL username that matches your OS username. Alternatively, use sudo -u username psql or change the authentication method in pg_hba.conf."
+    },
+    {
+      "title": "FATAL: remaining connection slots are reserved for superusers",
+      "description": "The server has reached its connection limit, and the remaining slots are reserved for superusers only.",
+      "common_causes": "max_connections limit has been reached. An application has a connection leak, consuming all available slots.",
+      "resolution": "A superuser must log in and terminate idle connections. Investigate application connection leaks, use a connection pooler, or increase max_connections."
+    },
+    {
+      "title": "FATAL: too many connections for role",
+      "description": "The user has exceeded the maximum number of concurrent connections allowed for that specific role.",
+      "common_causes": "The role has a specific connection limit set, and that limit has been reached. A misbehaving application is not managing connections properly.",
+      "resolution": "Close some existing connections for that role. Increase the role's connection limit or investigate client applications to ensure proper connection management."
+    },
+    {
+      "title": "FATAL: connection requires a valid client certificate",
+      "description": "The server is configured to require client certificates for authentication, but the client did not provide a valid one.",
+      "common_causes": "A hostssl line in pg_hba.conf is configured with clientcert verification, but the client connection lacks a valid certificate and key.",
+      "resolution": "Configure the client to provide a valid SSL client certificate and key. Ensure proper CA trust chain configuration."
+    },
+    {
+      "title": "FATAL: could not accept SSL connection",
+      "description": "A generic server-side error indicating a failure during the SSL/TLS handshake.",
+      "common_causes": "SSL protocol version mismatch between client and server. Cipher suite mismatch. Corrupted certificate or key files.",
+      "resolution": "Check the detailed error message. Ensure client and server SSL protocol versions and cipher suites are compatible. Verify SSL file integrity."
+    },
+    {
+      "title": "FATAL: certificate has expired",
+      "description": "The SSL certificate presented by the client or server is outside its validity period.",
+      "common_causes": "The server's certificate or the client's certificate has expired.",
+      "resolution": "Renew the expired SSL certificate and deploy the new one. Ensure system clocks are accurate."
+    },
+    {
+      "title": "FATAL: private key file has group or world access",
+      "description": "PostgreSQL refuses to start because the private key file has insecure file permissions.",
+      "common_causes": "The private key file's permissions are too open, which could expose it to other users on the system.",
+      "resolution": "Change the permissions on the private key file to be readable only by the owner. Use chmod 600 and ensure proper ownership."
+    },
+    {
+      "title": "FATAL: GSSAPI authentication failed for user",
+      "description": "The server is configured for GSSAPI (Kerberos) authentication, and the authentication process failed.",
+      "common_causes": "The user does not have a valid Kerberos ticket. The server's keytab file is missing or incorrect. Clock skew issues.",
+      "resolution": "Ensure the user has a valid Kerberos ticket. Verify the keytab file path and permissions. Check for clock synchronization issues."
+    },
+    {
+      "title": "psql: server closed the connection unexpectedly",
+      "description": "The client was connected to the server, but the connection was terminated abruptly without a clean shutdown protocol.",
+      "common_causes": "The PostgreSQL server process crashed. A network device terminated the connection. A DBA manually terminated the backend process.",
+      "resolution": "Check PostgreSQL server logs for crash reports. Investigate network hardware and firewall timeout settings. Ask the DBA about session termination."
+    },
+    {
+      "title": "FATAL: could not create shared memory segment",
+      "description": "A server startup error where PostgreSQL cannot allocate the required amount of shared memory from the operating system.",
+      "common_causes": "The OS kernel's shared memory limits are set lower than PostgreSQL's memory settings require. Insufficient system RAM.",
+      "resolution": "Increase the kernel's shared memory limits in the OS configuration. Alternatively, reduce memory-related parameters in postgresql.conf."
+    },
+    {
+      "title": "LOG: could not bind IPv4 address",
+      "description": "A server startup message indicating PostgreSQL could not start listening on the configured IP address and port.",
+      "common_causes": "Another process is already listening on the same port. The user running PostgreSQL lacks permission to bind to the specified port.",
+      "resolution": "Identify and stop the other process using the port. Ensure you are not trying to bind to a privileged port without sufficient permissions."
+    },
+    {
+      "title": "psql: could not translate host name to address",
+      "description": "A client-side error where the client machine's OS could not resolve the provided hostname into an IP address.",
+      "common_causes": "Typo in the hostname. DNS server is down or misconfigured. The hostname does not have a corresponding DNS record.",
+      "resolution": "Correct any typos in the hostname. Use tools like ping or nslookup to test DNS resolution. Verify the client's network and DNS settings."
+    },
+    {
+      "title": "FATAL: authentication timeout expired",
+      "description": "The client took too long to complete the authentication process.",
+      "common_causes": "Network latency issues, slow client response, authentication_timeout set too low.",
+      "resolution": "Increase authentication_timeout in postgresql.conf. Check network connectivity and latency between client and server."
+    },
+    {
+      "title": "FATAL: LDAP authentication failed",
+      "description": "Authentication against an LDAP server failed for the specified user.",
+      "common_causes": "LDAP server unreachable, incorrect LDAP configuration, user not found in LDAP directory.",
+      "resolution": "Verify LDAP server connectivity. Check LDAP configuration in pg_hba.conf. Ensure user exists in LDAP directory."
+    },
+    {
+      "title": "ERROR: SASL authentication failed",
+      "description": "SASL (Simple Authentication and Security Layer) authentication process failed.",
+      "common_causes": "Incorrect SASL mechanism, authentication server issues, credential problems.",
+      "resolution": "Verify SASL configuration. Check authentication server status. Ensure correct credentials and mechanism."
+    },
+    {
+      "title": "FATAL: connection limit exceeded for non-superusers",
+      "description": "All available connection slots for regular users have been consumed.",
+      "common_causes": "High connection usage, connection pooling not implemented, superuser_reserved_connections too high.",
+      "resolution": "Implement connection pooling. Adjust superuser_reserved_connections. Monitor and optimize connection usage."
+    },
+    {
+      "title": "ERROR: SSL connection has been closed unexpectedly",
+      "description": "An established SSL connection was terminated without proper closure.",
+      "common_causes": "Network interruption, SSL certificate issues, firewall interference, server restart.",
+      "resolution": "Check network stability. Verify SSL certificate validity. Review firewall settings. Monitor server status."
+    },
+    {
+      "title": "FATAL: ident authentication failed",
+      "description": "Ident authentication could not verify the user's identity through the ident service.",
+      "common_causes": "Ident service not running, network issues, user mapping problems, ident server configuration.",
+      "resolution": "Ensure ident service is running. Check network connectivity. Verify user mappings. Configure ident server properly."
+    },
+    {
+      "title": "ERROR: connection reset by peer",
+      "description": "The remote end of the connection forcibly closed the connection.",
+      "common_causes": "Client application crash, network device reset, firewall intervention, server overload.",
+      "resolution": "Check client application stability. Monitor network devices. Review firewall logs. Assess server load."
+    },
+    {
+      "title": "FATAL: PAM authentication failed",
+      "description": "Pluggable Authentication Module (PAM) authentication failed for the user.",
+      "common_causes": "PAM configuration issues, system user account problems, PAM module failures.",
+      "resolution": "Check PAM configuration files. Verify system user accounts. Review PAM module logs. Test PAM authentication."
+    },
+    {
+      "title": "ERROR: server does not support SSL",
+      "description": "The client requested SSL but the server doesn't have SSL support enabled.",
+      "common_causes": "SSL not compiled into PostgreSQL, ssl parameter disabled, missing SSL certificates.",
+      "resolution": "Enable SSL in postgresql.conf. Install SSL certificates. Recompile PostgreSQL with SSL support if needed."
+    },
+    {
+      "title": "FATAL: trust authentication failed",
+      "description": "Even trust authentication failed, indicating a fundamental connection issue.",
+      "common_causes": "Server configuration errors, connection limit reached, database shutdown in progress.",
+      "resolution": "Check server configuration. Verify connection limits. Ensure database is fully started. Review server logs."
+    }
+  ],
+  "2_locking_concurrency": [
+    {
+      "title": "ERROR: deadlock detected",
+      "description": "Two or more transactions are waiting for each other to release locks, creating a circular dependency that cannot be resolved.",
+      "common_causes": "Multiple transactions accessing the same tables in different orders. Long-running transactions holding locks. Insufficient indexing causing lock escalation.",
+      "resolution": "Design transactions to access tables in a consistent order. Keep transactions short. Add appropriate indexes. Implement retry logic for deadlock victims."
+    },
+    {
+      "title": "ERROR: could not serialize access due to concurrent update",
+      "description": "This error occurs when using the SERIALIZABLE transaction isolation level and a concurrent transaction modified data that this transaction read.",
+      "common_causes": "Two SERIALIZABLE transactions attempt to read the same data and then write to it, creating a serialization conflict.",
+      "resolution": "Implement retry logic for serialization failures. Design transactions to be short and modify data as late as possible. Consider using REPEATABLE READ if appropriate."
+    },
+    {
+      "title": "Problem: Query is stuck in 'idle in transaction' state",
+      "description": "A client application started a transaction but failed to COMMIT or ROLLBACK, leaving the session open and holding locks indefinitely.",
+      "common_causes": "Application bugs where code paths exit without closing transactions. Network issues disconnecting clients. Manual queries forgotten in GUI tools.",
+      "resolution": "Identify stuck sessions in pg_stat_activity. Terminate backends using pg_terminate_backend(). Set idle_in_transaction_session_timeout to auto-terminate."
+    },
+    {
+      "title": "Problem: ALTER TABLE statement is blocked",
+      "description": "An ALTER TABLE command hangs indefinitely because it cannot acquire the necessary AccessExclusiveLock on the table.",
+      "common_causes": "Long-running read queries on the table blocking the ALTER operation. Other DDL operations in progress.",
+      "resolution": "Schedule schema migrations during maintenance windows. Terminate blocking sessions. Set low lock_timeout for ALTER operations."
+    },
+    {
+      "title": "ERROR: lock not available",
+      "description": "A statement cannot acquire a lock and was instructed not to wait using the NOWAIT clause.",
+      "common_causes": "Query uses NOWAIT clause and the desired lock is currently held by another transaction.",
+      "resolution": "This is often intended behavior. Implement application logic to handle this error with retry mechanisms or alternative actions."
+    },
+    {
+      "title": "ERROR: could not create index concurrently",
+      "description": "The CREATE INDEX CONCURRENTLY command failed due to concurrent modifications or other constraints.",
+      "common_causes": "Transactions modifying the table during concurrent index creation. Uniqueness violations found. Command run inside a transaction block.",
+      "resolution": "Drop the invalid index left behind. Retry during lower write activity periods. Ensure command is not wrapped in a transaction block."
+    },
+    {
+      "title": "Problem: Application hangs due to unreleased advisory lock",
+      "description": "An application process is stuck waiting for an advisory lock that was never properly released.",
+      "common_causes": "Another process acquired an advisory lock and crashed without releasing it. Bug in application logic preventing lock release.",
+      "resolution": "Query pg_locks for advisory locks. Terminate orphaned sessions. Consider using transaction-level advisory locks for automatic cleanup."
+    },
+    {
+      "title": "Problem: TRUNCATE command is blocked",
+      "description": "A TRUNCATE command hangs because it cannot acquire the required AccessExclusiveLock on the target table.",
+      "common_causes": "Any active transaction that has accessed the table will block TRUNCATE, including read-only transactions.",
+      "resolution": "Identify and terminate blocking sessions. Schedule TRUNCATE during no-activity periods. Use session-level lock_timeout."
+    },
+    {
+      "title": "Problem: Row-level lock contention on 'hot' rows",
+      "description": "Multiple transactions frequently trying to UPDATE or DELETE the same rows, causing poor performance as they queue up.",
+      "common_causes": "Poorly designed job queues. Updating central counters. Repeatedly updating user session records.",
+      "resolution": "Use SELECT ... FOR UPDATE SKIP LOCKED for job queues. Partition data to reduce contention. Redesign schema to avoid hot row updates."
+    },
+    {
+      "title": "ERROR: prepared transaction with identifier already exists",
+      "description": "An attempt was made to PREPARE TRANSACTION with a name already in use by another prepared transaction.",
+      "common_causes": "A client application failed to resolve a previous prepared transaction. Bug in application logic reusing transaction identifiers.",
+      "resolution": "Query pg_prepared_xacts to inspect prepared transactions. Manually resolve using COMMIT PREPARED or ROLLBACK PREPARED."
+    },
+    {
+      "title": "Problem: High contention on sequence objects",
+      "description": "Multiple sessions concurrently requesting values from the same sequence are experiencing performance degradation.",
+      "common_causes": "Very high insert rates on tables with SERIAL primary keys. Sequence cache value set too low.",
+      "resolution": "Increase the cache size for the sequence using ALTER SEQUENCE seq_name CACHE 1000. Consider using UUIDs for high-concurrency scenarios."
+    },
+    {
+      "title": "ERROR: tuple concurrently updated",
+      "description": "A row was modified by another transaction while the current transaction was trying to update it.",
+      "common_causes": "High concurrency on the same rows. Long-running transactions. Insufficient locking strategy.",
+      "resolution": "Implement proper locking with SELECT ... FOR UPDATE. Use appropriate isolation levels. Add retry logic in application code."
+    },
+    {
+      "title": "ERROR: could not obtain lock on row",
+      "description": "A transaction cannot acquire a row-level lock within the specified timeout period.",
+      "common_causes": "Another transaction is holding a conflicting lock on the same row. Lock timeout set too low for the workload.",
+      "resolution": "Increase lock_timeout setting. Optimize transactions to reduce lock hold time. Use NOWAIT or SKIP LOCKED where appropriate."
+    },
+    {
+      "title": "WARNING: there is already a transaction in progress",
+      "description": "An attempt was made to start a new transaction when one is already active in the current session.",
+      "common_causes": "Application code issuing BEGIN when a transaction is already started. Nested transaction attempts without savepoints.",
+      "resolution": "Check transaction state before issuing BEGIN. Use savepoints for nested transaction-like behavior. Implement proper transaction management."
+    },
+    {
+      "title": "ERROR: canceling statement due to lock timeout",
+      "description": "A statement was canceled because it could not acquire the required locks within the configured timeout period.",
+      "common_causes": "lock_timeout set too low for the operation. High lock contention in the system. Long-running blocking transactions.",
+      "resolution": "Increase lock_timeout for specific operations. Identify and resolve blocking transactions. Optimize queries to reduce lock requirements."
+    },
+    {
+      "title": "Problem: Exclusive lock preventing read operations",
+      "description": "An exclusive lock on a table is preventing even SELECT operations from proceeding.",
+      "common_causes": "DDL operations like ALTER TABLE, DROP TABLE, or VACUUM FULL holding AccessExclusiveLock.",
+      "resolution": "Wait for the exclusive operation to complete. Consider killing the blocking operation if it's stuck. Schedule DDL during maintenance windows."
+    },
+    {
+      "title": "ERROR: relation is being accessed by other users",
+      "description": "An attempt to drop or significantly modify a relation failed because other sessions are currently using it.",
+      "common_causes": "Active queries or transactions accessing the table. Open cursors or prepared statements referencing the relation.",
+      "resolution": "Wait for other sessions to complete. Identify active sessions using pg_stat_activity. Terminate blocking sessions if necessary."
+    },
+    {
+      "title": "Problem: Lock queue building up behind blocked operation",
+      "description": "A blocked operation is causing a queue of subsequent operations waiting for the same resource.",
+      "common_causes": "A long-running operation holding locks while other operations wait. Cascading lock dependencies.",
+      "resolution": "Identify the root blocking operation. Consider terminating the blocking session. Implement lock timeouts to prevent queue buildup."
+    },
+    {
+      "title": "ERROR: could not serialize access due to read/write dependencies",
+      "description": "In SERIALIZABLE isolation level, a transaction cannot complete due to read/write dependencies with concurrent transactions.",
+      "common_causes": "Complex interaction patterns between SERIALIZABLE transactions. Read-modify-write cycles across multiple transactions.",
+      "resolution": "Implement retry logic for serialization failures. Simplify transaction logic. Consider using lower isolation levels if appropriate."
+    },
+    {
+      "title": "Problem: Advisory lock never released",
+      "description": "An advisory lock was acquired but never explicitly released, blocking other processes indefinitely.",
+      "common_causes": "Application crash after acquiring advisory lock. Programming error not releasing locks in all code paths.",
+      "resolution": "Use pg_advisory_unlock() to release specific locks. Restart the session holding the lock. Implement proper exception handling for lock cleanup."
+    },
+    {
+      "title": "ERROR: could not obtain exclusive lock on row",
+      "description": "A transaction cannot acquire an exclusive lock on a specific row due to conflicts.",
+      "common_causes": "Another transaction holding conflicting row lock, high contention on specific rows.",
+      "resolution": "Use SELECT ... FOR UPDATE NOWAIT to avoid blocking. Implement retry logic. Optimize transaction patterns."
+    },
+    {
+      "title": "WARNING: lock wait timeout exceeded",
+      "description": "A lock acquisition attempt exceeded the configured timeout period.",
+      "common_causes": "Long-running blocking transactions, lock_timeout set too low, high lock contention.",
+      "resolution": "Increase lock_timeout setting. Identify and resolve blocking transactions. Optimize locking strategy."
+    },
+    {
+      "title": "ERROR: could not serialize access due to read/write dependencies among transactions",
+      "description": "Complex serialization conflict in SERIALIZABLE isolation level involving multiple transactions.",
+      "common_causes": "Complex transaction interdependencies, high concurrency with serializable isolation.",
+      "resolution": "Implement comprehensive retry logic. Simplify transaction patterns. Consider lower isolation levels."
+    },
+    {
+      "title": "Problem: Table-level lock escalation",
+      "description": "Row-level locks have escalated to table-level locks, blocking other operations.",
+      "common_causes": "Too many row locks acquired, lock memory exhaustion, bulk operations.",
+      "resolution": "Break large operations into smaller batches. Increase shared memory. Use explicit table locking when appropriate."
+    },
+    {
+      "title": "ERROR: could not acquire sample rows lock",
+      "description": "ANALYZE command cannot acquire locks needed for statistical sampling.",
+      "common_causes": "Long-running transactions holding locks, concurrent DDL operations.",
+      "resolution": "Run ANALYZE during low-activity periods. Terminate blocking transactions. Use manual statistics if needed."
+    },
+    {
+      "title": "Problem: Phantom deadlock detection",
+      "description": "Deadlock detector incorrectly identifies deadlocks due to complex lock dependencies.",
+      "common_causes": "Complex multi-table transactions, lock timeout interactions, system load.",
+      "resolution": "Adjust deadlock_timeout setting. Simplify transaction logic. Monitor false positive rates."
+    },
+    {
+      "title": "ERROR: shared lock upgrade to exclusive failed",
+      "description": "An attempt to upgrade a shared lock to exclusive lock failed due to conflicts.",
+      "common_causes": "Multiple transactions holding shared locks, lock upgrade deadlock potential.",
+      "resolution": "Acquire exclusive locks early in transaction. Use explicit locking strategy. Implement retry logic."
+    },
+    {
+      "title": "Problem: Lock memory exhaustion",
+      "description": "The system has run out of memory to track individual locks.",
+      "common_causes": "Too many fine-grained locks, insufficient lock memory allocation, bulk operations.",
+      "resolution": "Increase max_locks_per_transaction. Use table-level locking for bulk operations. Monitor lock usage."
+    },
+    {
+      "title": "ERROR: cannot acquire lock due to recovery conflict",
+      "description": "A lock cannot be acquired on a standby server due to recovery conflicts.",
+      "common_causes": "Hot standby conflicts with recovery process, long-running queries on standby.",
+      "resolution": "Increase max_standby_streaming_delay. Cancel conflicting queries. Optimize standby query patterns."
+    }
+  ],
+  "3_replication_high_availability": [
+    {
+      "title": "ERROR: requested WAL segment has already been removed",
+      "description": "A standby server cannot access required WAL files because they have been removed from the primary server.",
+      "common_causes": "wal_keep_segments set too low, replication slot not configured, standby server offline too long.",
+      "resolution": "Configure replication slots. Increase wal_keep_segments. Set max_slot_wal_keep_size. Take fresh base backup for standby."
+    },
+    {
+      "title": "FATAL: could not connect to the primary server",
+      "description": "A standby server cannot establish connection to the primary server for streaming replication.",
+      "common_causes": "Network connectivity issues, primary server down, incorrect connection parameters, authentication failure.",
+      "resolution": "Verify network connectivity. Check primary server status. Validate connection parameters in recovery.conf. Ensure replication user permissions."
+    },
+    {
+      "title": "ERROR: replication slot does not exist",
+      "description": "A replication connection references a slot that has been dropped or never existed.",
+      "common_causes": "Replication slot was dropped, typo in slot name, slot created on wrong server.",
+      "resolution": "Create the replication slot using pg_create_physical_replication_slot(). Verify slot name spelling. Check existing slots."
+    },
+    {
+      "title": "WARNING: standby server is lagging behind primary",
+      "description": "The standby server is significantly behind the primary in applying WAL records.",
+      "common_causes": "High write load on primary, slow disk I/O on standby, network bandwidth limitations, long-running queries on standby.",
+      "resolution": "Monitor replication lag. Increase timeout settings. Optimize standby hardware. Consider synchronous replication. Kill long-running standby queries."
+    },
+    {
+      "title": "ERROR: cannot execute query on a read-only standby",
+      "description": "An attempt was made to execute a write operation on a standby server in hot standby mode.",
+      "common_causes": "Application connecting to standby instead of primary, incorrect connection routing, failover not completed.",
+      "resolution": "Redirect write operations to primary. Update application connection strings. Implement proper connection pooling with read/write splitting."
+    },
+    {
+      "title": "FATAL: timeline mismatch between backup and WAL files",
+      "description": "During recovery, the backup and WAL files are from different timelines, preventing consistent recovery.",
+      "common_causes": "Using backup from before a failover with WAL files from after, incorrect backup restoration procedure.",
+      "resolution": "Ensure backup and WAL files are from the same timeline. Use pg_controldata to check timeline information. Take fresh backup after failover."
+    },
+    {
+      "title": "ERROR: streaming replication connection lost",
+      "description": "The connection between primary and standby servers was interrupted during streaming replication.",
+      "common_causes": "Network instability, firewall timeouts, primary server restart, standby server issues.",
+      "resolution": "Check network stability. Verify firewall settings. Monitor server logs for connection issues. Adjust replication timeout parameters."
+    },
+    {
+      "title": "ERROR: could not receive data from WAL stream",
+      "description": "The standby server encountered an error while receiving WAL data from the primary.",
+      "common_causes": "Network issues, WAL corruption, primary server problems, authentication issues.",
+      "resolution": "Check network connectivity. Verify WAL integrity. Examine primary server logs. Ensure replication user has proper permissions."
+    },
+    {
+      "title": "WARNING: replication slot is consuming too much disk space",
+      "description": "A replication slot is retaining WAL files and consuming excessive disk space.",
+      "common_causes": "Standby server disconnected for extended period, inactive replication slot, max_slot_wal_keep_size not set.",
+      "resolution": "Reconnect or remove inactive slots. Set max_slot_wal_keep_size. Monitor slot usage with pg_replication_slots."
+    },
+    {
+      "title": "ERROR: hot standby is not available on this server",
+      "description": "An attempt was made to connect to a standby server that doesn't have hot standby enabled.",
+      "common_causes": "hot_standby parameter set to off, server in recovery mode without hot standby, configuration error.",
+      "resolution": "Enable hot_standby in postgresql.conf. Restart the standby server. Verify recovery configuration."
+    },
+    {
+      "title": "FATAL: the database system is starting up",
+      "description": "A connection attempt was made to a server that is still in the startup or recovery process.",
+      "common_causes": "Server recently started and still recovering, long recovery process, crash recovery in progress.",
+      "resolution": "Wait for recovery to complete. Monitor server logs for recovery progress. Check for underlying issues causing slow recovery."
+    },
+    {
+      "title": "ERROR: synchronous replication is not configured",
+      "description": "An operation expected synchronous replication but it's not properly configured.",
+      "common_causes": "synchronous_standby_names not set, standby servers not configured for sync replication.",
+      "resolution": "Configure synchronous_standby_names in postgresql.conf. Ensure standby servers are properly set up for synchronous replication."
+    },
+    {
+      "title": "WARNING: no standby servers available for synchronous replication",
+      "description": "Synchronous replication is configured but no standby servers are currently available.",
+      "common_causes": "All standby servers disconnected, network issues, standby server failures.",
+      "resolution": "Check standby server status. Verify network connectivity. Consider temporarily switching to asynchronous replication."
+    },
+    {
+      "title": "ERROR: could not create replication slot",
+      "description": "An attempt to create a replication slot failed.",
+      "common_causes": "Slot name already exists, insufficient permissions, max_replication_slots limit reached.",
+      "resolution": "Choose a unique slot name. Ensure user has replication privileges. Increase max_replication_slots if needed."
+    },
+    {
+      "title": "FATAL: must be superuser or replication role to start replication",
+      "description": "A user without proper privileges attempted to start replication.",
+      "common_causes": "User lacks REPLICATION privilege, not a superuser, incorrect role configuration.",
+      "resolution": "Grant REPLICATION privilege to the user. Use a superuser account. Verify role configuration in pg_hba.conf."
+    },
+    {
+      "title": "ERROR: WAL file corruption detected",
+      "description": "Corruption was detected in a Write-Ahead Log file during replication or recovery.",
+      "common_causes": "Hardware failure, disk corruption, network transmission errors, software bugs.",
+      "resolution": "Check hardware health. Verify disk integrity. Take fresh base backup. Consider using checksums for early corruption detection."
+    },
+    {
+      "title": "WARNING: replication delay exceeds threshold",
+      "description": "The replication delay between primary and standby has exceeded acceptable limits.",
+      "common_causes": "High write load, network bandwidth limitations, standby server performance issues.",
+      "resolution": "Monitor replication lag metrics. Optimize standby server performance. Increase network bandwidth. Consider multiple standby servers."
+    },
+    {
+      "title": "ERROR: logical replication worker crashed",
+      "description": "A logical replication worker process terminated unexpectedly.",
+      "common_causes": "Software bugs, memory issues, data conflicts, schema mismatches.",
+      "resolution": "Check server logs for crash details. Verify schema compatibility. Monitor memory usage. Restart logical replication if needed."
+    },
+    {
+      "title": "FATAL: could not start WAL streaming",
+      "description": "The standby server failed to initiate WAL streaming from the primary.",
+      "common_causes": "Authentication issues, network problems, primary server configuration, WAL sender limits.",
+      "resolution": "Verify authentication credentials. Check network connectivity. Increase max_wal_senders on primary. Review primary server configuration."
+    },
+    {
+      "title": "ERROR: publication does not exist",
+      "description": "A logical replication subscription references a publication that doesn't exist.",
+      "common_causes": "Publication was dropped, typo in publication name, publication created on wrong database.",
+      "resolution": "Create the missing publication. Verify publication name spelling. Check publication exists on correct database."
+    },
+    {
+      "title": "ERROR: slot synchronization failed",
+      "description": "Replication slot synchronization between primary and standby failed.",
+      "common_causes": "Network issues, slot configuration mismatch, insufficient permissions.",
+      "resolution": "Check network connectivity. Verify slot configurations match. Ensure proper replication permissions."
+    },
+    {
+      "title": "WARNING: replication connection lost during failover",
+      "description": "Replication connection was interrupted during a failover process.",
+      "common_causes": "Network instability during failover, timing issues, configuration problems.",
+      "resolution": "Monitor failover process. Check network stability. Verify failover configuration and timing."
+    },
+    {
+      "title": "ERROR: logical replication table synchronization failed",
+      "description": "Initial table synchronization for logical replication encountered errors.",
+      "common_causes": "Schema differences, data conflicts, insufficient resources, network issues.",
+      "resolution": "Ensure schema compatibility. Resolve data conflicts. Check system resources. Verify network stability."
+    },
+    {
+      "title": "FATAL: cascading standby configuration error",
+      "description": "A cascading standby server has configuration issues preventing proper replication.",
+      "common_causes": "Incorrect primary_conninfo, missing replication permissions, network configuration.",
+      "resolution": "Verify primary_conninfo settings. Check replication user permissions. Test network connectivity."
+    },
+    {
+      "title": "ERROR: replication origin does not exist",
+      "description": "A logical replication process references a non-existent replication origin.",
+      "common_causes": "Origin was dropped, incorrect origin name, setup incomplete.",
+      "resolution": "Create missing replication origin. Verify origin names. Complete replication setup process."
+    },
+    {
+      "title": "WARNING: standby promotion in progress",
+      "description": "A standby server is being promoted to primary, affecting replication.",
+      "common_causes": "Manual promotion, automatic failover, primary server failure.",
+      "resolution": "Monitor promotion process. Update application connection strings. Verify new primary status."
+    },
+    {
+      "title": "ERROR: replication slot active on another server",
+      "description": "Attempting to use a replication slot that's currently active on a different server.",
+      "common_causes": "Slot name conflicts, improper failover handling, configuration errors.",
+      "resolution": "Use unique slot names. Properly handle slots during failover. Check slot status across servers."
+    },
+    {
+      "title": "FATAL: physical replication slot corruption",
+      "description": "A physical replication slot has become corrupted and unusable.",
+      "common_causes": "Disk corruption, improper shutdown, file system issues.",
+      "resolution": "Drop and recreate the replication slot. Check disk integrity. Take fresh base backup if needed."
+    },
+    {
+      "title": "ERROR: logical decoding context creation failed",
+      "description": "Failed to create a logical decoding context for logical replication.",
+      "common_causes": "Insufficient WAL retention, slot configuration issues, resource constraints.",
+      "resolution": "Ensure adequate WAL retention. Check slot configuration. Monitor system resources."
+    }
+  ],
+  "4_backup_recovery": [
+    {
+      "title": "ERROR: permission denied for database",
+      "description": "The pg_dump utility cannot create a backup due to insufficient privileges on the target database.",
+      "common_causes": "User lacks CONNECT privilege on database, missing SELECT privileges on tables, pg_hba.conf restricting backup user access.",
+      "resolution": "Grant database connection and table access privileges. Check pg_hba.conf for backup user authentication rules. Use superuser account for full backups."
+    },
+    {
+      "title": "WARNING: archive command failed with exit code 1",
+      "description": "The configured archive_command is failing to properly archive WAL files, potentially causing data loss.",
+      "common_causes": "Incorrect archive_command syntax, insufficient disk space in archive destination, network connectivity issues, file permission problems.",
+      "resolution": "Test archive command manually. Verify archive destination has sufficient space. Check network connectivity. Ensure proper directory permissions."
+    },
+    {
+      "title": "FATAL: could not open file: No such file or directory",
+      "description": "During point-in-time recovery, PostgreSQL cannot locate required WAL files.",
+      "common_causes": "Missing WAL files in archive location, incorrect restore_command configuration, WAL files corrupted or deleted.",
+      "resolution": "Verify all required WAL files are in archive. Check restore_command in recovery.conf. Test restore command manually."
+    },
+    {
+      "title": "ERROR: backup label not found",
+      "description": "A base backup operation or recovery process failed because the backup_label file is missing.",
+      "common_causes": "Backup process was interrupted before completion, backup_label file accidentally deleted, file system corruption.",
+      "resolution": "Restart the backup process from the beginning. Verify backup integrity before attempting recovery. Check file system for corruption."
+    },
+    {
+      "title": "ERROR: could not read block in file: read only 0 of 8192 bytes",
+      "description": "During backup or recovery operations, PostgreSQL encountered a corrupted data block.",
+      "common_causes": "Hardware failure causing disk corruption, file system errors, incomplete writes during system crash.",
+      "resolution": "Run file system check. Check hardware health. Use pg_dump with --no-sync for potentially corrupted databases. Restore from known good backup."
+    },
+    {
+      "title": "ERROR: pg_basebackup: could not connect to server",
+      "description": "The pg_basebackup utility cannot establish a connection to the source server.",
+      "common_causes": "Server not running, network connectivity issues, authentication problems, incorrect connection parameters.",
+      "resolution": "Verify server is running and accessible. Check connection parameters. Ensure replication user has proper privileges."
+    },
+    {
+      "title": "ERROR: pg_dump: query failed",
+      "description": "A query executed by pg_dump failed during the backup process.",
+      "common_causes": "Insufficient privileges, object dependencies, concurrent DDL operations, corrupted system catalogs.",
+      "resolution": "Check user privileges. Avoid concurrent DDL during backup. Use --no-owner or --no-privileges options if needed."
+    },
+    {
+      "title": "WARNING: pg_dump version mismatch",
+      "description": "The pg_dump version doesn't match the target PostgreSQL server version.",
+      "common_causes": "Using older pg_dump with newer server, multiple PostgreSQL versions installed.",
+      "resolution": "Use pg_dump version that matches or is newer than the target server. Update pg_dump to latest version."
+    },
+    {
+      "title": "ERROR: could not write to output file",
+      "description": "pg_dump or pg_restore cannot write to the specified output location.",
+      "common_causes": "Insufficient disk space, permission issues, invalid output path, disk full.",
+      "resolution": "Check available disk space. Verify write permissions on output directory. Ensure output path is valid and accessible."
+    },
+    {
+      "title": "ERROR: invalid backup format",
+      "description": "pg_restore encountered a backup file in an unrecognized or corrupted format.",
+      "common_causes": "Corrupted backup file, wrong backup format specified, incomplete backup file.",
+      "resolution": "Verify backup file integrity. Use correct format option (-F). Re-create backup if corrupted."
+    },
+    {
+      "title": "FATAL: recovery ended before configured recovery target",
+      "description": "Point-in-time recovery stopped before reaching the specified recovery target.",
+      "common_causes": "Insufficient WAL files, recovery target beyond available WAL, timeline issues.",
+      "resolution": "Verify all required WAL files are available. Check recovery target settings. Ensure timeline consistency."
+    },
+    {
+      "title": "ERROR: could not create directory for backup",
+      "description": "pg_basebackup cannot create the target directory for the backup.",
+      "common_causes": "Insufficient permissions, parent directory doesn't exist, disk space issues.",
+      "resolution": "Create parent directories manually. Check file system permissions. Ensure sufficient disk space."
+    },
+    {
+      "title": "WARNING: backup contains inconsistent data",
+      "description": "A backup was taken while the database was in an inconsistent state.",
+      "common_causes": "Backup taken during active transactions, concurrent DDL operations, system crash during backup.",
+      "resolution": "Take backup during low activity periods. Use pg_start_backup() and pg_stop_backup() for consistent backups."
+    },
+    {
+      "title": "ERROR: restore command failed",
+      "description": "The restore_command specified in recovery configuration failed to retrieve a WAL file.",
+      "common_causes": "Incorrect restore_command syntax, missing WAL files, network issues, permission problems.",
+      "resolution": "Test restore_command manually. Verify WAL files exist in archive. Check network connectivity and permissions."
+    },
+    {
+      "title": "FATAL: could not locate a valid checkpoint record",
+      "description": "During recovery, PostgreSQL cannot find a valid checkpoint to start recovery from.",
+      "common_causes": "Corrupted WAL files, missing checkpoint records, severe database corruption.",
+      "resolution": "Use pg_resetwal cautiously to create new checkpoint. Restore from earlier backup. Check for hardware issues."
+    },
+    {
+      "title": "ERROR: backup interrupted by signal",
+      "description": "A backup operation was terminated by a system signal before completion.",
+      "common_causes": "Manual termination, system shutdown, out of memory, timeout.",
+      "resolution": "Restart backup operation. Check system resources. Ensure sufficient time for backup completion."
+    },
+    {
+      "title": "WARNING: archive directory is full",
+      "description": "The WAL archive directory has reached capacity and cannot store additional files.",
+      "common_causes": "Insufficient disk space allocation, high WAL generation rate, archive cleanup not configured.",
+      "resolution": "Increase archive directory space. Configure archive cleanup. Monitor WAL generation rate."
+    },
+    {
+      "title": "ERROR: could not open backup manifest",
+      "description": "pg_verifybackup cannot access the backup manifest file for verification.",
+      "common_causes": "Missing manifest file, corrupted manifest, permission issues.",
+      "resolution": "Ensure backup includes manifest file. Check file permissions. Re-create backup if manifest is corrupted."
+    },
+    {
+      "title": "FATAL: backup from standby server requires WAL streaming",
+      "description": "Attempting to take a backup from a standby server without enabling WAL streaming.",
+      "common_causes": "WAL streaming not enabled for standby backup, incorrect backup configuration.",
+      "resolution": "Enable WAL streaming with -X stream option. Ensure standby server has proper replication setup."
+    },
+    {
+      "title": "ERROR: recovery target not reached",
+      "description": "Point-in-time recovery could not reach the specified recovery target.",
+      "common_causes": "Recovery target beyond available WAL, incorrect target specification, timeline issues.",
+      "resolution": "Verify recovery target is within available WAL range. Check target specification syntax. Ensure timeline consistency."
+    },
+    {
+      "title": "ERROR: pg_basebackup: transfer rate limit exceeded",
+      "description": "The backup transfer rate exceeded configured limits during pg_basebackup.",
+      "common_causes": "Network bandwidth limitations, rate limiting configuration, large database size.",
+      "resolution": "Adjust rate limiting settings. Increase network bandwidth. Schedule backups during off-peak hours."
+    },
+    {
+      "title": "WARNING: backup contains unlogged tables",
+      "description": "The backup includes unlogged tables which will be empty after restore.",
+      "common_causes": "Unlogged tables present in database, backup taken with unlogged table data.",
+      "resolution": "Document unlogged table behavior. Consider converting to logged tables. Plan for data recreation after restore."
+    },
+    {
+      "title": "ERROR: pg_dump: too many command-line arguments",
+      "description": "The pg_dump command was invoked with too many arguments.",
+      "common_causes": "Incorrect command syntax, script generation errors, parameter parsing issues.",
+      "resolution": "Review pg_dump command syntax. Check script generation logic. Verify parameter formatting."
+    },
+    {
+      "title": "FATAL: archive recovery requires restore_command",
+      "description": "Archive recovery was initiated but no restore_command is configured.",
+      "common_causes": "Missing restore_command in recovery configuration, incomplete recovery setup.",
+      "resolution": "Configure restore_command in recovery.conf. Verify archive location accessibility. Test restore command manually."
+    },
+    {
+      "title": "ERROR: backup verification failed",
+      "description": "pg_verifybackup detected inconsistencies or corruption in the backup.",
+      "common_causes": "Backup corruption, incomplete backup, file system issues during backup.",
+      "resolution": "Retake backup from clean state. Check storage integrity. Verify backup process completion."
+    },
+    {
+      "title": "WARNING: backup taken during online checkpoint",
+      "description": "A backup was taken while a checkpoint was in progress, potentially affecting consistency.",
+      "common_causes": "Backup timing coincided with checkpoint, high write activity during backup.",
+      "resolution": "Schedule backups to avoid checkpoint periods. Monitor checkpoint timing. Use pg_start_backup() for coordination."
+    },
+    {
+      "title": "ERROR: could not parse backup timeline",
+      "description": "The backup timeline information is corrupted or unreadable.",
+      "common_causes": "Timeline file corruption, backup process interruption, file system issues.",
+      "resolution": "Check timeline file integrity. Retake backup if timeline is corrupted. Verify file system health."
+    },
+    {
+      "title": "FATAL: backup label file is corrupted",
+      "description": "The backup_label file contains invalid or corrupted information.",
+      "common_causes": "File corruption during backup, incomplete backup process, storage issues.",
+      "resolution": "Retake backup from beginning. Check storage system integrity. Verify backup process completion."
+    },
+    {
+      "title": "ERROR: incremental backup base not found",
+      "description": "An incremental backup cannot locate its required base backup.",
+      "common_causes": "Base backup deleted or moved, incorrect backup chain, path configuration issues.",
+      "resolution": "Ensure base backup availability. Verify backup chain integrity. Check backup storage paths."
+    }
+  ],
+  "5_performance_optimization": [
+    {
+      "title": "WARNING: checkpoints are occurring too frequently",
+      "description": "PostgreSQL is performing checkpoint operations more often than optimal, indicating potential configuration issues.",
+      "common_causes": "max_wal_size set too small, high write activity exceeding WAL capacity, checkpoint_completion_target too aggressive.",
+      "resolution": "Increase max_wal_size in postgresql.conf. Adjust checkpoint_completion_target to 0.8 or 0.9. Monitor checkpoint statistics."
+    },
+    {
+      "title": "ERROR: out of memory",
+      "description": "PostgreSQL processes have exhausted available memory while executing queries.",
+      "common_causes": "work_mem set too high for concurrent queries, memory leaks in extensions, insufficient system RAM.",
+      "resolution": "Reduce work_mem setting. Limit concurrent connections. Implement connection pooling. Monitor memory usage."
+    },
+    {
+      "title": "ERROR: temporary file size exceeds temp_file_limit",
+      "description": "A query attempted to create temporary files larger than the configured limit.",
+      "common_causes": "Complex queries requiring large sorts, work_mem set too low, temp_file_limit set too restrictively.",
+      "resolution": "Increase work_mem to reduce temporary file usage. Raise temp_file_limit if appropriate. Optimize queries to reduce memory requirements."
+    },
+    {
+      "title": "WARNING: could not write block of temporary file: No space left on device",
+      "description": "PostgreSQL cannot write temporary data during query execution due to insufficient disk space.",
+      "common_causes": "Insufficient disk space in temporary directory, large queries creating oversized temporary files.",
+      "resolution": "Free up disk space immediately. Move temporary directory to larger partition. Increase work_mem to reduce temporary file creation."
+    },
+    {
+      "title": "ERROR: could not resize shared memory segment",
+      "description": "PostgreSQL attempted to expand shared memory usage but failed due to insufficient available memory.",
+      "common_causes": "Dynamic shared memory allocation failure, system memory pressure, shared memory limits reached.",
+      "resolution": "Monitor system memory usage. Reduce memory usage of other processes. Adjust PostgreSQL memory parameters."
+    },
+    {
+      "title": "WARNING: effective_cache_size is set too low",
+      "description": "The effective_cache_size parameter is configured lower than optimal, leading to poor query planning.",
+      "common_causes": "Default value not adjusted for system, conservative estimate, not accounting for available system memory.",
+      "resolution": "Set effective_cache_size to 50-75% of total system memory. Monitor system memory usage. Adjust based on other applications."
+    },
+    {
+      "title": "ERROR: work_mem setting too high for concurrent queries",
+      "description": "The work_mem parameter is set too high, causing memory exhaustion when multiple queries run simultaneously.",
+      "common_causes": "work_mem set without considering concurrent connections, not accounting for multiple sorts per query.",
+      "resolution": "Calculate safe work_mem: (Total RAM * 0.25) / max_connections. Monitor memory usage during peak loads."
+    },
+    {
+      "title": "WARNING: autovacuum is disabled",
+      "description": "Automatic vacuum is turned off, which can lead to table bloat and performance degradation.",
+      "common_causes": "autovacuum parameter set to off, manual vacuum strategy preferred, temporary debugging.",
+      "resolution": "Enable autovacuum in postgresql.conf. Configure autovacuum parameters appropriately. Monitor table bloat."
+    },
+    {
+      "title": "ERROR: shared_buffers exceeds system memory",
+      "description": "The shared_buffers parameter is configured to use more memory than available on the system.",
+      "common_causes": "Overestimating available memory, not accounting for OS and other processes.",
+      "resolution": "Set shared_buffers to 25% of total system memory as starting point. Account for OS and other application memory usage."
+    },
+    {
+      "title": "WARNING: vacuum is taking too long",
+      "description": "A VACUUM operation is running for an extended period, potentially impacting performance.",
+      "common_causes": "Large tables with significant bloat, insufficient maintenance_work_mem, concurrent activity.",
+      "resolution": "Increase maintenance_work_mem. Schedule vacuum during low-activity periods. Consider VACUUM FULL for severely bloated tables."
+    },
+    {
+      "title": "ERROR: could not extend file: No space left on device",
+      "description": "PostgreSQL cannot write data because the disk partition has run out of available space.",
+      "common_causes": "Insufficient disk space allocation, rapid data growth, large temporary files, WAL files accumulating.",
+      "resolution": "Free up disk space immediately. Move or compress old log files. Increase disk space or add additional storage."
+    },
+    {
+      "title": "WARNING: statistics target is too low",
+      "description": "The default_statistics_target is set too low, leading to poor query planning decisions.",
+      "common_causes": "Default statistics target not adjusted for complex queries, insufficient histogram buckets.",
+      "resolution": "Increase default_statistics_target to 100 or higher. Run ANALYZE after changes. Monitor query plan quality."
+    },
+    {
+      "title": "ERROR: hash table size exceeds work_mem",
+      "description": "A hash join operation requires more memory than allocated by work_mem.",
+      "common_causes": "work_mem set too low for hash operations, large join operations, insufficient memory allocation.",
+      "resolution": "Increase work_mem for the session. Optimize join conditions. Consider using nested loop or merge joins."
+    },
+    {
+      "title": "WARNING: background writer is falling behind",
+      "description": "The background writer process cannot keep up with the rate of dirty buffer generation.",
+      "common_causes": "High write activity, bgwriter_delay set too high, insufficient I/O capacity.",
+      "resolution": "Decrease bgwriter_delay. Increase bgwriter_lru_maxpages. Optimize storage subsystem performance."
+    },
+    {
+      "title": "ERROR: sort operation exceeded work_mem",
+      "description": "A sorting operation required more memory than allocated, forcing disk-based sorting.",
+      "common_causes": "work_mem too small for sort operations, large result sets, complex ORDER BY clauses.",
+      "resolution": "Increase work_mem for sorting operations. Optimize queries to reduce sort requirements. Add appropriate indexes."
+    },
+    {
+      "title": "WARNING: connection limit reached",
+      "description": "The database has reached its maximum connection limit, potentially impacting performance.",
+      "common_causes": "max_connections set too low, connection leaks in applications, lack of connection pooling.",
+      "resolution": "Implement connection pooling. Increase max_connections if hardware allows. Fix connection leaks in applications."
+    },
+    {
+      "title": "ERROR: could not write to hash-join temporary file",
+      "description": "A hash join operation cannot write temporary data due to disk space or I/O issues.",
+      "common_causes": "Insufficient disk space, I/O errors, temporary directory issues.",
+      "resolution": "Check disk space in temporary directory. Verify disk health. Increase work_mem to avoid disk-based operations."
+    },
+    {
+      "title": "WARNING: table bloat detected",
+      "description": "Tables have significant bloat, indicating inefficient space usage and potential performance issues.",
+      "common_causes": "Insufficient vacuuming, high update/delete activity, autovacuum not keeping up.",
+      "resolution": "Run VACUUM or VACUUM FULL on bloated tables. Adjust autovacuum settings. Monitor table statistics."
+    },
+    {
+      "title": "ERROR: could not allocate memory for query execution",
+      "description": "PostgreSQL cannot allocate sufficient memory to execute a query.",
+      "common_causes": "System memory exhaustion, memory fragmentation, competing processes.",
+      "resolution": "Reduce concurrent query load. Increase system memory. Optimize query complexity. Use connection pooling."
+    },
+    {
+      "title": "WARNING: checkpoint sync time is too high",
+      "description": "The time taken to sync checkpoint data to disk is excessive, indicating I/O bottlenecks.",
+      "common_causes": "Slow storage subsystem, high I/O load, insufficient checkpoint spreading.",
+      "resolution": "Optimize storage performance. Increase checkpoint_completion_target. Monitor I/O utilization."
+    },
+    {
+      "title": "ERROR: could not extend relation due to disk full",
+      "description": "A table or index cannot be extended because the disk partition is full.",
+      "common_causes": "Insufficient disk space, rapid data growth, large temporary files, log accumulation.",
+      "resolution": "Free up disk space immediately. Add more storage. Monitor disk usage. Implement space management policies."
+    },
+    {
+      "title": "WARNING: buffer cache hit ratio too low",
+      "description": "The buffer cache hit ratio indicates poor memory utilization for caching.",
+      "common_causes": "shared_buffers too small, working set larger than cache, random access patterns.",
+      "resolution": "Increase shared_buffers. Analyze query access patterns. Consider SSD storage for random I/O."
+    },
+    {
+      "title": "ERROR: maintenance_work_mem exceeded during index creation",
+      "description": "Index creation requires more memory than allocated by maintenance_work_mem.",
+      "common_causes": "Large tables, complex indexes, maintenance_work_mem set too low.",
+      "resolution": "Increase maintenance_work_mem for index operations. Create indexes during low-activity periods."
+    },
+    {
+      "title": "WARNING: WAL generation rate too high",
+      "description": "The rate of WAL file generation is excessive, indicating high write activity.",
+      "common_causes": "Bulk data operations, frequent updates, insufficient batching, large transactions.",
+      "resolution": "Optimize write operations. Use batching for bulk operations. Monitor transaction patterns."
+    },
+    {
+      "title": "ERROR: could not allocate SID for new connection",
+      "description": "The system cannot allocate a session identifier for a new connection.",
+      "common_causes": "Resource exhaustion, system limits reached, memory allocation failures.",
+      "resolution": "Check system resource limits. Monitor memory usage. Restart PostgreSQL if needed."
+    },
+    {
+      "title": "WARNING: log file size growing too rapidly",
+      "description": "PostgreSQL log files are growing at an unsustainable rate.",
+      "common_causes": "Excessive logging levels, frequent errors, verbose query logging.",
+      "resolution": "Adjust logging levels. Implement log rotation. Fix underlying issues causing excessive logging."
+    },
+    {
+      "title": "ERROR: parallel query worker allocation failed",
+      "description": "PostgreSQL cannot allocate sufficient worker processes for parallel query execution.",
+      "common_causes": "max_parallel_workers limit reached, insufficient system resources, configuration issues.",
+      "resolution": "Increase max_parallel_workers. Monitor system resources. Adjust parallel query settings."
+    },
+    {
+      "title": "WARNING: autovacuum worker timeout",
+      "description": "An autovacuum worker process exceeded its allocated time limit.",
+      "common_causes": "Large tables with significant bloat, insufficient maintenance_work_mem, high activity.",
+      "resolution": "Increase autovacuum_work_mem. Schedule manual vacuum for large tables. Monitor table bloat."
+    },
+    {
+      "title": "ERROR: could not write to WAL file",
+      "description": "PostgreSQL cannot write to the Write-Ahead Log file due to I/O issues.",
+      "common_causes": "Disk full, I/O errors, storage device failure, permission issues.",
+      "resolution": "Check disk space and health. Verify file permissions. Test storage device performance."
+    }
+  ],
+  "6_query_indexing": [
+    {
+      "title": "ERROR: relation does not exist",
+      "description": "A query references a table, view, or other database object that cannot be found.",
+      "common_causes": "Table name typo, object exists in different schema, search_path not including object's schema, object was dropped.",
+      "resolution": "Verify table name and spelling. Check current schema and search_path. Use fully qualified names. Verify object exists."
+    },
+    {
+      "title": "ERROR: column does not exist",
+      "description": "A query references a column that doesn't exist in the specified table.",
+      "common_causes": "Column name typo, column dropped or renamed, wrong table referenced, case sensitivity issues.",
+      "resolution": "Verify column name spelling. Check table structure with \\d table_name. Use correct table aliases."
+    },
+    {
+      "title": "ERROR: function does not exist",
+      "description": "A query calls a function that is not defined or not accessible.",
+      "common_causes": "Function name typo, function not created, wrong schema, incorrect parameter types.",
+      "resolution": "Verify function name and signature. Check function exists in accessible schema. Ensure parameter types match."
+    },
+    {
+      "title": "ERROR: syntax error at or near",
+      "description": "The SQL query contains invalid syntax that PostgreSQL cannot parse.",
+      "common_causes": "Typos in SQL keywords, missing commas or parentheses, incorrect operator usage, reserved word conflicts.",
+      "resolution": "Review query syntax carefully. Check for missing punctuation. Verify SQL keyword spelling. Quote reserved words."
+    },
+    {
+      "title": "ERROR: operator does not exist",
+      "description": "A query uses an operator that is not defined for the given data types.",
+      "common_causes": "Type mismatch in comparisons, custom operator not created, incorrect operator syntax.",
+      "resolution": "Cast operands to compatible types. Verify operator exists for data types. Check operator syntax."
+    },
+    {
+      "title": "ERROR: invalid input syntax for type",
+      "description": "A value cannot be converted to the specified data type.",
+      "common_causes": "Invalid date/time format, non-numeric string for numeric type, boolean value format issues.",
+      "resolution": "Verify input format matches expected type. Use proper casting functions. Check data validation."
+    },
+    {
+      "title": "ERROR: division by zero",
+      "description": "A mathematical operation attempted to divide by zero.",
+      "common_causes": "Literal zero in denominator, column containing zero values, calculation resulting in zero.",
+      "resolution": "Add CASE statement to check for zero. Use NULLIF function. Validate input data."
+    },
+    {
+      "title": "ERROR: subquery must return only one column",
+      "description": "A subquery in a context that expects a single value returns multiple columns.",
+      "common_causes": "SELECT * in scalar subquery, multiple columns in IN clause subquery.",
+      "resolution": "Modify subquery to return single column. Use EXISTS instead of IN where appropriate."
+    },
+    {
+      "title": "ERROR: more than one row returned by a subquery",
+      "description": "A subquery expected to return at most one row returned multiple rows.",
+      "common_causes": "Missing WHERE clause in subquery, non-unique join conditions, incorrect aggregation.",
+      "resolution": "Add appropriate WHERE clause. Use LIMIT 1 if first row is acceptable. Fix join conditions."
+    },
+    {
+      "title": "ERROR: aggregate function calls cannot be nested",
+      "description": "An attempt was made to nest aggregate functions, which is not allowed.",
+      "common_causes": "Using SUM(COUNT(*)) directly, nested aggregate expressions.",
+      "resolution": "Use subqueries or CTEs to separate aggregation levels. Restructure query logic."
+    },
+    {
+      "title": "ERROR: column must appear in GROUP BY clause",
+      "description": "A non-aggregated column in SELECT is not included in the GROUP BY clause.",
+      "common_causes": "Missing column in GROUP BY, incorrect aggregation logic, SQL standard compliance.",
+      "resolution": "Add missing columns to GROUP BY. Use appropriate aggregate functions. Review grouping logic."
+    },
+    {
+      "title": "ERROR: window function call requires an OVER clause",
+      "description": "A window function was used without the required OVER clause.",
+      "common_causes": "Forgetting OVER clause, confusing window functions with aggregate functions.",
+      "resolution": "Add OVER clause to window function. Specify appropriate window specification."
+    },
+    {
+      "title": "ERROR: could not determine data type of parameter",
+      "description": "PostgreSQL cannot infer the data type of a parameter placeholder.",
+      "common_causes": "Ambiguous parameter usage, insufficient context for type inference.",
+      "resolution": "Add explicit type casting. Provide more context in query. Use typed parameters."
+    },
+    {
+      "title": "ERROR: index row size exceeds maximum",
+      "description": "An attempt to create an index failed because the index entry would be too large.",
+      "common_causes": "Very long text values, composite indexes with many columns, large data types.",
+      "resolution": "Use partial indexes with WHERE clause. Consider functional indexes. Reduce indexed column size."
+    },
+    {
+      "title": "ERROR: could not create unique index",
+      "description": "A unique index creation failed due to duplicate values in the indexed columns.",
+      "common_causes": "Existing duplicate data, concurrent inserts during index creation.",
+      "resolution": "Remove duplicate data before creating index. Use CREATE UNIQUE INDEX CONCURRENTLY during low activity."
+    },
+    {
+      "title": "WARNING: sequential scan on large table",
+      "description": "A query is performing a sequential scan on a large table, indicating potential performance issues.",
+      "common_causes": "Missing indexes, inefficient WHERE clauses, outdated table statistics.",
+      "resolution": "Create appropriate indexes. Optimize WHERE conditions. Run ANALYZE to update statistics."
+    },
+    {
+      "title": "ERROR: invalid regular expression",
+      "description": "A regular expression pattern used in a query is malformed or invalid.",
+      "common_causes": "Incorrect regex syntax, unescaped special characters, invalid character classes.",
+      "resolution": "Verify regex pattern syntax. Escape special characters properly. Test regex pattern separately."
+    },
+    {
+      "title": "ERROR: recursive query must have a UNION",
+      "description": "A recursive CTE (Common Table Expression) is missing the required UNION structure.",
+      "common_causes": "Incorrect recursive CTE syntax, missing UNION between base and recursive parts.",
+      "resolution": "Add UNION or UNION ALL between base case and recursive part. Follow recursive CTE syntax rules."
+    },
+    {
+      "title": "ERROR: infinite recursion detected in recursive query",
+      "description": "A recursive CTE has no termination condition, leading to infinite recursion.",
+      "common_causes": "Missing or incorrect termination condition, circular references in data.",
+      "resolution": "Add proper termination condition. Check for circular references. Use depth limiting."
+    },
+    {
+      "title": "ERROR: canceling statement due to statement timeout",
+      "description": "A query was automatically terminated because it exceeded the configured statement_timeout limit.",
+      "common_causes": "statement_timeout set too low, inefficient query execution plans, missing indexes.",
+      "resolution": "Increase statement_timeout. Optimize the query using EXPLAIN ANALYZE. Add missing indexes."
+    },
+    {
+      "title": "ERROR: cross-database references are not implemented",
+      "description": "A query attempted to reference objects across different databases.",
+      "common_causes": "Multi-database queries, incorrect database connections, schema confusion.",
+      "resolution": "Use separate connections for each database. Restructure queries to work within single database."
+    },
+    {
+      "title": "ERROR: prepared statement does not exist",
+      "description": "An attempt was made to execute a prepared statement that wasn't created or was deallocated.",
+      "common_causes": "Statement not prepared, statement deallocated, session reset, connection issues.",
+      "resolution": "Ensure statement is prepared before execution. Check for session resets. Implement proper statement lifecycle management."
+    },
+    {
+      "title": "ERROR: cursor does not exist",
+      "description": "An operation attempted to use a cursor that hasn't been declared or has been closed.",
+      "common_causes": "Cursor not declared, cursor already closed, transaction ended, typo in cursor name.",
+      "resolution": "Declare cursor before use. Check cursor lifecycle. Ensure cursor remains open during operations."
+    },
+    {
+      "title": "ERROR: invalid transaction termination",
+      "description": "An attempt was made to commit or rollback when no transaction is active.",
+      "common_causes": "No active transaction, autocommit mode enabled, transaction already ended.",
+      "resolution": "Check transaction state before commit/rollback. Use proper transaction management. Verify autocommit settings."
+    },
+    {
+      "title": "ERROR: cannot drop index used by constraint",
+      "description": "An attempt was made to drop an index that is required by a constraint.",
+      "common_causes": "Index supports primary key or unique constraint, foreign key dependency.",
+      "resolution": "Drop the constraint first, then the index. Use ALTER TABLE to modify constraints."
+    },
+    {
+      "title": "ERROR: permission denied to create temporary tables",
+      "description": "A user lacks privileges to create temporary tables in the current database.",
+      "common_causes": "Insufficient privileges, database-level restrictions, tablespace permissions.",
+      "resolution": "Grant TEMPORARY privilege on database. Check tablespace permissions. Verify user roles."
+    },
+    {
+      "title": "ERROR: invalid input syntax for uuid",
+      "description": "A string value cannot be converted to UUID format.",
+      "common_causes": "Invalid UUID format, incorrect string length, non-hexadecimal characters.",
+      "resolution": "Verify UUID format (8-4-4-4-12 hexadecimal). Use proper UUID generation functions. Validate input data."
+    },
+    {
+      "title": "ERROR: cannot change return type of existing function",
+      "description": "An attempt was made to alter a function's return type, which is not allowed.",
+      "common_causes": "Using ALTER FUNCTION to change return type, function signature conflicts.",
+      "resolution": "Drop and recreate function with new return type. Create new function with different name."
+    },
+    {
+      "title": "ERROR: materialized view has not been populated",
+      "description": "A query attempted to access a materialized view that hasn't been refreshed with data.",
+      "common_causes": "Materialized view created without initial data, refresh not performed.",
+      "resolution": "Execute REFRESH MATERIALIZED VIEW to populate data. Schedule regular refresh operations."
+    }
+  ],
+  "7_security_access_control": [
+    {
+      "title": "ERROR: permission denied for table",
+      "description": "A user attempted to access a table without the necessary privileges.",
+      "common_causes": "User lacks SELECT, INSERT, UPDATE, or DELETE privileges on the table, table ownership issues, schema access restrictions.",
+      "resolution": "Grant appropriate table privileges. Check current privileges. Grant schema usage. Consider using roles for easier privilege management."
+    },
+    {
+      "title": "ERROR: must be owner of table to alter",
+      "description": "A user tried to alter a table they don't own without sufficient privileges.",
+      "common_causes": "User is not table owner, lacks ALTER privileges, insufficient role membership.",
+      "resolution": "Transfer table ownership. Grant ALTER privileges to user or role. Add user to appropriate role with ALTER permissions."
+    },
+    {
+      "title": "ERROR: role cannot be dropped because some objects depend on it",
+      "description": "Attempting to drop a role that owns database objects or has granted privileges.",
+      "common_causes": "Role owns tables, functions, or other objects, role has granted privileges to other users.",
+      "resolution": "Transfer object ownership using REASSIGN OWNED BY. Drop owned objects with DROP OWNED BY. Revoke granted privileges."
+    },
+    {
+      "title": "ERROR: permission denied for database",
+      "description": "A user attempted to connect to or perform operations on a database without proper privileges.",
+      "common_causes": "User lacks CONNECT privilege on database, database ownership restrictions, pg_hba.conf restrictions.",
+      "resolution": "Grant database connection privileges. Check database privileges. Verify pg_hba.conf allows connection."
+    },
+    {
+      "title": "ERROR: permission denied for schema",
+      "description": "A user tried to access objects in a schema without proper schema privileges.",
+      "common_causes": "User lacks USAGE privilege on schema, schema ownership issues, search_path not including schema.",
+      "resolution": "Grant schema usage privileges. Add schema to search_path. Grant CREATE privilege if needed."
+    },
+    {
+      "title": "ERROR: permission denied for function",
+      "description": "A user attempted to execute a function without the necessary EXECUTE privilege.",
+      "common_causes": "User lacks EXECUTE privilege on function, function ownership restrictions, schema access issues.",
+      "resolution": "Grant function execution privileges. Grant execute on all functions in schema. Ensure schema USAGE privilege."
+    },
+    {
+      "title": "ERROR: must be superuser to create extension",
+      "description": "A non-superuser attempted to create a PostgreSQL extension.",
+      "common_causes": "Extension requires superuser privileges, user lacks necessary permissions, security restrictions.",
+      "resolution": "Use superuser account to create extension. Grant user superuser privileges temporarily if appropriate."
+    },
+    {
+      "title": "WARNING: role has no password",
+      "description": "A role was created without a password, which may pose security risks.",
+      "common_causes": "Role created without PASSWORD clause, password explicitly set to NULL, authentication method doesn't require password.",
+      "resolution": "Set password for role. Use strong password policies. Consider certificate-based authentication."
+    },
+    {
+      "title": "ERROR: permission denied for sequence",
+      "description": "A user attempted to access a sequence without proper privileges.",
+      "common_causes": "User lacks USAGE or UPDATE privileges on sequence, sequence ownership issues.",
+      "resolution": "Grant USAGE privilege on sequence. Grant UPDATE privilege for nextval() operations. Check sequence ownership."
+    },
+    {
+      "title": "ERROR: must be superuser to set parameter",
+      "description": "A non-superuser attempted to modify a configuration parameter that requires superuser privileges.",
+      "common_causes": "Trying to modify security-sensitive parameters, system-level configuration changes.",
+      "resolution": "Use superuser account for parameter changes. Check if parameter can be set at user level. Review parameter documentation."
+    },
+    {
+      "title": "ERROR: permission denied for view",
+      "description": "A user attempted to access a view without the necessary privileges.",
+      "common_causes": "User lacks SELECT privilege on view, underlying table access restrictions, view ownership issues.",
+      "resolution": "Grant SELECT privilege on view. Ensure access to underlying tables. Check view ownership and permissions."
+    },
+    {
+      "title": "ERROR: cannot create temporary table in read-only transaction",
+      "description": "An attempt was made to create a temporary table within a read-only transaction.",
+      "common_causes": "Transaction set to read-only mode, default_transaction_read_only enabled.",
+      "resolution": "Use read-write transaction for temporary table creation. Check transaction isolation settings."
+    },
+    {
+      "title": "ERROR: permission denied for tablespace",
+      "description": "A user attempted to create objects in a tablespace without proper privileges.",
+      "common_causes": "User lacks CREATE privilege on tablespace, tablespace ownership restrictions.",
+      "resolution": "Grant CREATE privilege on tablespace. Check tablespace ownership. Use default tablespace if appropriate."
+    },
+    {
+      "title": "ERROR: must be member of role to alter it",
+      "description": "A user attempted to alter a role without being a member of that role or having sufficient privileges.",
+      "common_causes": "User is not a member of the target role, lacks CREATEROLE privilege.",
+      "resolution": "Grant CREATEROLE privilege to user. Add user as member of target role. Use superuser account."
+    },
+    {
+      "title": "ERROR: permission denied for foreign table",
+      "description": "A user attempted to access a foreign table without proper privileges.",
+      "common_causes": "User lacks SELECT privilege on foreign table, foreign server access restrictions.",
+      "resolution": "Grant SELECT privilege on foreign table. Check foreign server permissions. Verify user mapping."
+    },
+    {
+      "title": "ERROR: permission denied for type",
+      "description": "A user attempted to use a custom data type without proper privileges.",
+      "common_causes": "User lacks USAGE privilege on custom type, type ownership restrictions.",
+      "resolution": "Grant USAGE privilege on type. Check type ownership. Ensure schema access for type."
+    },
+    {
+      "title": "ERROR: cannot execute in read-only transaction",
+      "description": "An attempt was made to execute a write operation in a read-only transaction.",
+      "common_causes": "Transaction explicitly set to read-only, default_transaction_read_only enabled.",
+      "resolution": "Use read-write transaction for write operations. Check transaction settings. Modify default_transaction_read_only if needed."
+    },
+    {
+      "title": "ERROR: permission denied for domain",
+      "description": "A user attempted to use a domain type without proper privileges.",
+      "common_causes": "User lacks USAGE privilege on domain, domain ownership restrictions.",
+      "resolution": "Grant USAGE privilege on domain. Check domain ownership. Ensure schema access."
+    },
+    {
+      "title": "ERROR: must be superuser to create procedural language",
+      "description": "A non-superuser attempted to create a procedural language.",
+      "common_causes": "Creating untrusted procedural languages requires superuser privileges.",
+      "resolution": "Use superuser account to create language. Consider using trusted languages. Check if language already exists."
+    },
+    {
+      "title": "ERROR: permission denied for aggregate function",
+      "description": "A user attempted to use an aggregate function without proper privileges.",
+      "common_causes": "User lacks EXECUTE privilege on aggregate function, function ownership restrictions.",
+      "resolution": "Grant EXECUTE privilege on aggregate function. Check function ownership. Ensure schema access."
+    },
+    {
+      "title": "ERROR: permission denied for operator class",
+      "description": "A user attempted to use an operator class without proper privileges.",
+      "common_causes": "User lacks privileges on custom operator class, ownership restrictions.",
+      "resolution": "Grant appropriate privileges on operator class. Check ownership. Ensure schema access."
+    },
+    {
+      "title": "ERROR: must be superuser to create cast",
+      "description": "A non-superuser attempted to create a type cast.",
+      "common_causes": "Creating casts requires superuser privileges for security reasons.",
+      "resolution": "Use superuser account to create casts. Consider if cast is really necessary. Use explicit casting in queries."
+    },
+    {
+      "title": "ERROR: permission denied for conversion",
+      "description": "A user attempted to use a character set conversion without proper privileges.",
+      "common_causes": "User lacks privileges on conversion, conversion ownership restrictions.",
+      "resolution": "Grant privileges on conversion. Check conversion ownership. Verify character set requirements."
+    },
+    {
+      "title": "ERROR: must be owner of operator to alter",
+      "description": "A user attempted to alter an operator they don't own.",
+      "common_causes": "User is not operator owner, lacks ALTER privileges.",
+      "resolution": "Transfer operator ownership. Use operator owner account. Grant appropriate privileges."
+    },
+    {
+      "title": "ERROR: permission denied for text search configuration",
+      "description": "A user attempted to use a text search configuration without proper privileges.",
+      "common_causes": "User lacks privileges on text search objects, configuration ownership issues.",
+      "resolution": "Grant privileges on text search configuration. Check ownership. Ensure schema access."
+    },
+    {
+      "title": "ERROR: cannot create objects in system schema",
+      "description": "An attempt was made to create user objects in a system schema.",
+      "common_causes": "Trying to create objects in pg_catalog or information_schema.",
+      "resolution": "Create objects in user schemas. Use appropriate schema for object type. Avoid system schemas."
+    },
+    {
+      "title": "ERROR: permission denied for statistics object",
+      "description": "A user attempted to access or modify extended statistics without proper privileges.",
+      "common_causes": "User lacks privileges on statistics object, ownership restrictions.",
+      "resolution": "Grant privileges on statistics object. Check object ownership. Ensure schema access."
+    },
+    {
+      "title": "ERROR: must be superuser to alter system catalogs",
+      "description": "A non-superuser attempted to modify system catalog tables.",
+      "common_causes": "Direct modification of system tables, administrative operations.",
+      "resolution": "Use appropriate SQL commands instead of direct catalog modification. Use superuser account if necessary."
+    },
+    {
+      "title": "ERROR: permission denied for event trigger",
+      "description": "A user attempted to create or modify an event trigger without sufficient privileges.",
+      "common_causes": "Event triggers require superuser privileges, security restrictions.",
+      "resolution": "Use superuser account for event trigger operations. Review security requirements."
+    }
+  ],
+  "8_data_integrity_consistency": [
+    {
+      "title": "ERROR: duplicate key value violates unique constraint",
+      "description": "An attempt to insert or update a row would create a duplicate value in a column or set of columns that must be unique.",
+      "common_causes": "Inserting duplicate primary key values, violating unique constraints, concurrent inserts of same data.",
+      "resolution": "Check for existing data before insert. Use ON CONFLICT clause for upsert operations. Ensure unique key generation."
+    },
+    {
+      "title": "ERROR: null value in column violates not-null constraint",
+      "description": "An attempt was made to insert or update a NULL value in a column that has a NOT NULL constraint.",
+      "common_causes": "Missing required data in INSERT, UPDATE setting column to NULL, application logic errors.",
+      "resolution": "Provide non-null values for required columns. Check application data validation. Use DEFAULT values where appropriate."
+    },
+    {
+      "title": "ERROR: insert or update on table violates foreign key constraint",
+      "description": "An operation would create a foreign key reference to a non-existent row in the referenced table.",
+      "common_causes": "Referencing non-existent parent record, incorrect foreign key values, data loading order issues.",
+      "resolution": "Ensure referenced records exist before creating foreign key references. Load parent tables before child tables."
+    },
+    {
+      "title": "ERROR: update or delete on table violates foreign key constraint",
+      "description": "An attempt to update or delete a row would leave orphaned foreign key references.",
+      "common_causes": "Deleting parent records with existing child records, updating primary key values referenced by foreign keys.",
+      "resolution": "Delete child records first, or use CASCADE options. Update foreign key references when changing primary keys."
+    },
+    {
+      "title": "ERROR: check constraint is violated",
+      "description": "An insert or update operation violates a CHECK constraint defined on the table.",
+      "common_causes": "Data values outside allowed ranges, invalid combinations of column values, application validation bypassed.",
+      "resolution": "Ensure data meets constraint conditions. Review and fix application validation logic. Modify constraint if business rules changed."
+    },
+    {
+      "title": "ERROR: invalid page header in block",
+      "description": "PostgreSQL detected corruption in a data page header, indicating potential disk or memory corruption.",
+      "common_causes": "Hardware failure, disk corruption, memory errors, improper shutdown, file system issues.",
+      "resolution": "Run file system check. Check hardware health. Restore from backup if corruption is extensive. Consider zero_damaged_pages as temporary measure."
+    },
+    {
+      "title": "ERROR: could not read block in file",
+      "description": "PostgreSQL cannot read a specific block from a data file, usually due to I/O errors or corruption.",
+      "common_causes": "Disk hardware failure, file system corruption, network storage issues, insufficient permissions.",
+      "resolution": "Check disk health and file system integrity. Verify file permissions. Test storage subsystem. Restore from backup."
+    },
+    {
+      "title": "ERROR: index is corrupted",
+      "description": "An index has become corrupted and needs to be rebuilt.",
+      "common_causes": "Hardware failure, software bugs, improper shutdown, concurrent index operations.",
+      "resolution": "Drop and recreate the index. Use REINDEX command. Check for underlying table corruption. Monitor system for hardware issues."
+    },
+    {
+      "title": "ERROR: tuple concurrently updated",
+      "description": "A row was modified by another transaction while the current transaction was trying to update it.",
+      "common_causes": "High concurrency, long-running transactions, insufficient locking, application logic issues.",
+      "resolution": "Implement proper locking with SELECT ... FOR UPDATE. Use appropriate isolation levels. Add retry logic in application."
+    },
+    {
+      "title": "WARNING: database contains inconsistent data",
+      "description": "PostgreSQL detected data inconsistencies that may indicate corruption or constraint violations.",
+      "common_causes": "Interrupted transactions, hardware failures, software bugs, manual data manipulation.",
+      "resolution": "Run consistency checks. Use pg_dump to identify problematic data. Restore from known good backup. Fix constraint violations manually."
+    },
+    {
+      "title": "ERROR: value too long for type character varying",
+      "description": "An attempt was made to insert a string longer than the maximum length defined for a VARCHAR column.",
+      "common_causes": "Input data exceeds column length limit, application not validating input length.",
+      "resolution": "Truncate input data to fit column length. Increase column length if appropriate. Add application-level validation."
+    },
+    {
+      "title": "ERROR: numeric field overflow",
+      "description": "A numeric value is too large to fit in the specified numeric data type.",
+      "common_causes": "Calculation results exceeding data type limits, input values too large for column precision/scale.",
+      "resolution": "Use larger numeric data types. Adjust precision and scale. Validate input ranges. Handle overflow in application logic."
+    },
+    {
+      "title": "ERROR: date/time field value out of range",
+      "description": "A date or time value is outside the valid range for PostgreSQL date/time types.",
+      "common_causes": "Invalid date values, year values outside supported range, incorrect date format.",
+      "resolution": "Validate date/time input ranges. Use appropriate date/time types. Handle invalid dates in application logic."
+    },
+    {
+      "title": "ERROR: exclusion constraint violated",
+      "description": "An insert or update operation violates an exclusion constraint.",
+      "common_causes": "Overlapping ranges or conflicting values that violate exclusion rules.",
+      "resolution": "Ensure data doesn't violate exclusion conditions. Review exclusion constraint logic. Modify data to comply with constraints."
+    },
+    {
+      "title": "ERROR: serialization failure",
+      "description": "A transaction failed due to serialization conflicts in SERIALIZABLE isolation level.",
+      "common_causes": "Concurrent transactions with conflicting read/write patterns, high contention scenarios.",
+      "resolution": "Implement retry logic for serialization failures. Use lower isolation levels if appropriate. Optimize transaction patterns."
+    },
+    {
+      "title": "ERROR: invalid input syntax for integer",
+      "description": "A string value cannot be converted to an integer data type.",
+      "common_causes": "Non-numeric characters in integer fields, empty strings, invalid number formats.",
+      "resolution": "Validate input data format. Use appropriate casting functions. Handle conversion errors in application."
+    },
+    {
+      "title": "ERROR: array value must start with '{' or dimension information",
+      "description": "An invalid array literal was provided that doesn't follow PostgreSQL array syntax.",
+      "common_causes": "Incorrect array literal format, missing braces, invalid array syntax.",
+      "resolution": "Use correct array literal syntax with braces. Validate array input format. Use array construction functions."
+    },
+    {
+      "title": "ERROR: invalid byte sequence for encoding",
+      "description": "Input data contains byte sequences that are invalid for the database encoding.",
+      "common_causes": "Character encoding mismatches, corrupted text data, invalid UTF-8 sequences.",
+      "resolution": "Ensure input data matches database encoding. Convert data to correct encoding. Validate text input."
+    },
+    {
+      "title": "ERROR: constraint must be added to child tables too",
+      "description": "An attempt to add a constraint to a parent table in an inheritance hierarchy requires adding it to child tables as well.",
+      "common_causes": "Adding constraints to parent tables without considering inheritance, constraint inheritance rules.",
+      "resolution": "Add constraints to all child tables. Use ALTER TABLE ... ADD CONSTRAINT with inheritance considerations."
+    },
+    {
+      "title": "ERROR: new row violates row-level security policy",
+      "description": "An insert or update operation violates a row-level security policy defined on the table.",
+      "common_causes": "Data doesn't meet RLS policy conditions, user lacks appropriate permissions for RLS bypass.",
+      "resolution": "Ensure data meets RLS policy requirements. Review RLS policy definitions. Check user permissions for RLS."
+    },
+    {
+      "title": "ERROR: conflicting or redundant options",
+      "description": "A SQL statement contains conflicting or redundant options that cannot be processed together.",
+      "common_causes": "Multiple conflicting clauses, redundant specifications, syntax errors.",
+      "resolution": "Review SQL statement for conflicting options. Remove redundant clauses. Check syntax documentation."
+    },
+    {
+      "title": "ERROR: cannot alter inherited column",
+      "description": "An attempt was made to alter a column that is inherited from a parent table.",
+      "common_causes": "Column inheritance constraints, table hierarchy restrictions.",
+      "resolution": "Alter column in parent table. Use ONLY clause to modify specific table. Review inheritance design."
+    },
+    {
+      "title": "ERROR: cannot truncate table with foreign key references",
+      "description": "A TRUNCATE operation failed because the table has foreign key references.",
+      "common_causes": "Foreign key constraints prevent truncation, referential integrity protection.",
+      "resolution": "Use TRUNCATE CASCADE to include referenced tables. Delete data instead of truncate. Temporarily drop constraints."
+    },
+    {
+      "title": "ERROR: invalid storage type for column",
+      "description": "An attempt was made to set an invalid storage type for a column.",
+      "common_causes": "Incompatible storage type for data type, invalid storage specification.",
+      "resolution": "Use appropriate storage type for column data type. Check storage type compatibility. Review column definition."
+    },
+    {
+      "title": "ERROR: cannot alter type of column used in trigger",
+      "description": "A column's data type cannot be changed because it's referenced by a trigger.",
+      "common_causes": "Trigger dependencies on column, type compatibility issues.",
+      "resolution": "Drop triggers before altering column type. Recreate triggers after type change. Update trigger logic if needed."
+    },
+    {
+      "title": "ERROR: cannot change inheritance of partitioned table",
+      "description": "An attempt was made to modify inheritance relationships of a partitioned table.",
+      "common_causes": "Partitioning constraints, inheritance restrictions.",
+      "resolution": "Review partitioning design. Use appropriate partitioning commands. Consider table restructuring."
+    },
+    {
+      "title": "ERROR: partition constraint is violated by some row",
+      "description": "Data in a partition violates the partition constraint after a constraint change.",
+      "common_causes": "Partition constraint modification, data migration issues, constraint conflicts.",
+      "resolution": "Move violating rows to appropriate partition. Fix partition constraints. Validate data before constraint changes."
+    },
+    {
+      "title": "ERROR: cannot use column reference in DEFAULT expression",
+      "description": "A DEFAULT expression attempted to reference another column, which is not allowed.",
+      "common_causes": "Invalid DEFAULT expression syntax, column reference in default.",
+      "resolution": "Use constant values or functions in DEFAULT expressions. Remove column references. Use triggers for complex defaults."
+    },
+    {
+      "title": "ERROR: generated column cannot be part of partition key",
+      "description": "An attempt was made to use a generated column as part of a partition key.",
+      "common_causes": "Partitioning restrictions on generated columns, design limitations.",
+      "resolution": "Use regular columns for partition keys. Modify partitioning strategy. Consider alternative partitioning approaches."
+    }
+  ],
+  "9_upgrade_migration": [
+    {
+      "title": "ERROR: database was created by a different version of PostgreSQL",
+      "description": "Attempting to start PostgreSQL with data files created by a different major version.",
+      "common_causes": "Major version upgrade without proper migration, wrong PostgreSQL version started, data directory mismatch.",
+      "resolution": "Use pg_upgrade for major version upgrades. Ensure correct PostgreSQL version. Restore from backup if needed."
+    },
+    {
+      "title": "ERROR: pg_upgrade failed with incompatible data types",
+      "description": "The pg_upgrade utility encountered data types that are incompatible between PostgreSQL versions.",
+      "common_causes": "Deprecated data types, changed type representations, custom types not supported in new version.",
+      "resolution": "Convert incompatible data types before upgrade. Drop unused types. Update custom type definitions."
+    },
+    {
+      "title": "ERROR: extension version mismatch after upgrade",
+      "description": "Extensions have version mismatches after a PostgreSQL upgrade.",
+      "common_causes": "Extension versions not compatible with new PostgreSQL version, extensions not updated.",
+      "resolution": "Update extensions using ALTER EXTENSION ... UPDATE. Reinstall extensions if necessary. Check extension compatibility."
+    },
+    {
+      "title": "ERROR: function signature changed in new version",
+      "description": "A function signature has changed between PostgreSQL versions, causing compatibility issues.",
+      "common_causes": "Built-in function signatures modified, parameter types changed, function behavior altered.",
+      "resolution": "Update function calls to match new signatures. Review PostgreSQL release notes. Modify application code."
+    },
+    {
+      "title": "WARNING: deprecated configuration parameter",
+      "description": "A configuration parameter used in postgresql.conf is deprecated in the new version.",
+      "common_causes": "Configuration parameters removed or renamed in new version.",
+      "resolution": "Update configuration to use new parameter names. Remove deprecated parameters. Review configuration documentation."
+    },
+    {
+      "title": "ERROR: pg_dump version mismatch",
+      "description": "The pg_dump version is incompatible with the target PostgreSQL server version.",
+      "common_causes": "Using older pg_dump with newer server, version compatibility issues.",
+      "resolution": "Use pg_dump version that matches or is newer than the server version. Update PostgreSQL client tools."
+    },
+    {
+      "title": "ERROR: cannot upgrade with active connections",
+      "description": "pg_upgrade cannot proceed because there are active connections to the database.",
+      "common_causes": "Applications still connected during upgrade, background processes running.",
+      "resolution": "Terminate all connections to the database. Stop all applications. Ensure no background jobs are running."
+    },
+    {
+      "title": "ERROR: old and new binary directories are the same",
+      "description": "pg_upgrade was run with the same directory specified for old and new PostgreSQL binaries.",
+      "common_causes": "Incorrect pg_upgrade command parameters, same installation directory used.",
+      "resolution": "Specify different directories for old and new PostgreSQL installations. Install new version in separate directory."
+    },
+    {
+      "title": "ERROR: could not create hard link between old and new data directories",
+      "description": "pg_upgrade cannot create hard links between old and new data directories.",
+      "common_causes": "Data directories on different file systems, insufficient permissions, file system limitations.",
+      "resolution": "Ensure data directories are on same file system for link mode. Use copy mode if link mode fails. Check permissions."
+    },
+    {
+      "title": "WARNING: statistics are not transferred by pg_upgrade",
+      "description": "Table statistics are not preserved during pg_upgrade and need to be regenerated.",
+      "common_causes": "Normal pg_upgrade behavior, statistics format changes between versions.",
+      "resolution": "Run ANALYZE on all tables after upgrade. Use the analyze_new_cluster.sh script provided by pg_upgrade."
+    },
+    {
+      "title": "ERROR: new cluster database is not empty",
+      "description": "The target database cluster for pg_upgrade contains existing databases.",
+      "common_causes": "Target cluster not properly initialized, existing data in new cluster.",
+      "resolution": "Initialize a fresh database cluster for upgrade target. Remove existing databases from new cluster."
+    },
+    {
+      "title": "ERROR: mismatch of relation OID in database",
+      "description": "Object identifiers don't match between old and new clusters during upgrade.",
+      "common_causes": "Corruption during upgrade process, interrupted upgrade, system catalog issues.",
+      "resolution": "Restart upgrade process from clean state. Check for system catalog corruption. Restore from backup if needed."
+    },
+    {
+      "title": "ERROR: could not load library after upgrade",
+      "description": "A shared library cannot be loaded after PostgreSQL upgrade.",
+      "common_causes": "Extension libraries not compatible with new version, missing library files, path issues.",
+      "resolution": "Update extension libraries to compatible versions. Reinstall extensions. Check library paths."
+    },
+    {
+      "title": "WARNING: large objects are not transferred by pg_upgrade",
+      "description": "Large objects (LOBs) are not automatically transferred during pg_upgrade.",
+      "common_causes": "Normal pg_upgrade limitation for large objects.",
+      "resolution": "Use pg_dump and pg_restore with --blobs option to transfer large objects separately."
+    },
+    {
+      "title": "ERROR: encoding mismatch between old and new clusters",
+      "description": "The database encoding differs between old and new PostgreSQL clusters.",
+      "common_causes": "Different encoding settings, locale changes, initialization differences.",
+      "resolution": "Ensure both clusters use same encoding. Reinitialize new cluster with correct encoding. Convert data if necessary."
+    },
+    {
+      "title": "ERROR: locale mismatch between old and new clusters",
+      "description": "The locale settings differ between old and new PostgreSQL clusters.",
+      "common_causes": "Different locale initialization, system locale changes.",
+      "resolution": "Initialize new cluster with same locale as old cluster. Check system locale settings. Use pg_dump/restore if needed."
+    },
+    {
+      "title": "ERROR: tablespace path does not exist in new cluster",
+      "description": "A tablespace path from the old cluster doesn't exist in the new cluster environment.",
+      "common_causes": "Tablespace directories not created, path changes, permission issues.",
+      "resolution": "Create missing tablespace directories. Update tablespace paths. Ensure proper permissions."
+    },
+    {
+      "title": "WARNING: user-defined objects in system catalogs",
+      "description": "Custom objects were found in system catalogs, which may cause upgrade issues.",
+      "common_causes": "Objects created directly in system schemas, improper object placement.",
+      "resolution": "Move user-defined objects to appropriate schemas. Remove objects from system catalogs. Review object placement."
+    },
+    {
+      "title": "ERROR: could not connect to old/new cluster",
+      "description": "pg_upgrade cannot connect to the old or new PostgreSQL cluster.",
+      "common_causes": "Clusters not running, connection parameter issues, authentication problems.",
+      "resolution": "Ensure both clusters are running. Check connection parameters. Verify authentication settings."
+    },
+    {
+      "title": "ERROR: subscription exists with non-existent publication",
+      "description": "A logical replication subscription references a publication that doesn't exist after upgrade.",
+      "common_causes": "Publications not properly migrated, logical replication setup issues.",
+      "resolution": "Recreate missing publications. Update subscription definitions. Review logical replication configuration."
+    },
+    {
+      "title": "ERROR: cannot upgrade with replication slots",
+      "description": "pg_upgrade cannot proceed because active replication slots exist.",
+      "common_causes": "Active replication slots prevent upgrade, slot cleanup not performed.",
+      "resolution": "Drop all replication slots before upgrade. Document slot configurations for recreation. Plan replication restart."
+    },
+    {
+      "title": "WARNING: hash indexes are not WAL-logged in old version",
+      "description": "Hash indexes from older PostgreSQL versions are not crash-safe.",
+      "common_causes": "Upgrading from version where hash indexes weren't WAL-logged.",
+      "resolution": "Rebuild hash indexes after upgrade. Consider using B-tree indexes instead. Plan index recreation."
+    },
+    {
+      "title": "ERROR: cannot upgrade with prepared transactions",
+      "description": "pg_upgrade cannot proceed because prepared transactions exist.",
+      "common_causes": "Uncommitted prepared transactions, two-phase commit in progress.",
+      "resolution": "Commit or rollback all prepared transactions. Check pg_prepared_xacts. Coordinate with transaction managers."
+    },
+    {
+      "title": "ERROR: cluster versions are not compatible",
+      "description": "The old and new PostgreSQL versions are not compatible for direct upgrade.",
+      "common_causes": "Version compatibility issues, unsupported upgrade path.",
+      "resolution": "Use supported upgrade path. Consider intermediate version upgrades. Use dump/restore for incompatible versions."
+    },
+    {
+      "title": "WARNING: contrib modules need updating",
+      "description": "Contributed modules require updates for the new PostgreSQL version.",
+      "common_causes": "Extension version compatibility, module API changes.",
+      "resolution": "Update contrib modules after upgrade. Check module compatibility. Reinstall modules if necessary."
+    },
+    {
+      "title": "ERROR: cannot upgrade with different WAL block sizes",
+      "description": "The old and new clusters have different WAL block sizes.",
+      "common_causes": "Different compilation options, custom build configurations.",
+      "resolution": "Rebuild PostgreSQL with matching WAL block sizes. Use dump/restore instead of pg_upgrade."
+    },
+    {
+      "title": "ERROR: cannot upgrade with different segment sizes",
+      "description": "The old and new clusters have different WAL segment sizes.",
+      "common_causes": "Different configuration options, custom build settings.",
+      "resolution": "Ensure matching segment sizes between versions. Rebuild with consistent configuration."
+    },
+    {
+      "title": "WARNING: user-defined postmaster startup scripts",
+      "description": "Custom startup scripts may not be compatible with the new version.",
+      "common_causes": "Custom initialization scripts, version-specific configurations.",
+      "resolution": "Review and update startup scripts. Test scripts with new version. Update configuration references."
+    },
+    {
+      "title": "ERROR: cannot upgrade with different checksum settings",
+      "description": "The old and new clusters have different data checksum settings.",
+      "common_causes": "Checksum enabled/disabled mismatch between versions.",
+      "resolution": "Enable/disable checksums to match between clusters. Use pg_checksums utility. Plan for checksum consistency."
+    }
+  ],
+  "10_troubleshooting_debugging": [
+    {
+      "title": "ERROR: server process was terminated by signal",
+      "description": "A PostgreSQL backend process was killed by an operating system signal.",
+      "common_causes": "Out of memory killer (OOM), manual process termination, system crashes, hardware issues.",
+      "resolution": "Check system logs for OOM events. Monitor memory usage. Investigate hardware stability. Review process management."
+    },
+    {
+      "title": "PANIC: could not write to file",
+      "description": "PostgreSQL cannot write to a critical file, causing the server to panic and shut down.",
+      "common_causes": "Disk full, hardware failure, file system read-only, permission issues.",
+      "resolution": "Check available disk space. Verify file system is not read-only. Check file permissions. Test disk write performance."
+    },
+    {
+      "title": "LOG: server process crashed with exit code",
+      "description": "A backend process terminated unexpectedly with a non-zero exit code.",
+      "common_causes": "Software bugs, memory corruption, invalid memory access, extension issues.",
+      "resolution": "Check PostgreSQL logs for detailed error messages. Review recent changes. Update to latest version. Disable problematic extensions."
+    },
+    {
+      "title": "WARNING: could not open statistics file",
+      "description": "PostgreSQL cannot access table statistics files, which may lead to poor query planning.",
+      "common_causes": "Statistics files corrupted or deleted, file system permissions issues, disk I/O errors.",
+      "resolution": "Run ANALYZE on affected tables. Check file system permissions on pg_stat_tmp directory. Verify disk health."
+    },
+    {
+      "title": "ERROR: could not open relation",
+      "description": "PostgreSQL cannot open a table or index file.",
+      "common_causes": "File system corruption, missing files, permission issues, disk failures.",
+      "resolution": "Check file system integrity. Verify file permissions. Test disk health. Restore from backup if files are missing."
+    },
+    {
+      "title": "FATAL: the database system is in recovery mode",
+      "description": "The database is currently performing crash recovery and cannot accept connections.",
+      "common_causes": "Improper shutdown, system crash, long recovery process, corrupted WAL files.",
+      "resolution": "Wait for recovery to complete. Monitor recovery progress in logs. Check for WAL corruption. Ensure sufficient disk space."
+    },
+    {
+      "title": "ERROR: invalid memory alloc request size",
+      "description": "PostgreSQL attempted to allocate an invalid amount of memory.",
+      "common_causes": "Memory corruption, integer overflow, software bugs, invalid data structures.",
+      "resolution": "Restart PostgreSQL server. Check for memory corruption. Update to latest version. Review recent configuration changes."
+    },
+    {
+      "title": "WARNING: autovacuum launcher shutting down",
+      "description": "The autovacuum launcher process is terminating, which may indicate system issues.",
+      "common_causes": "System shutdown, configuration changes, process crashes, resource exhaustion.",
+      "resolution": "Check system status. Review autovacuum configuration. Monitor system resources. Restart PostgreSQL if needed."
+    },
+    {
+      "title": "ERROR: could not fsync file",
+      "description": "PostgreSQL cannot synchronize file changes to disk storage.",
+      "common_causes": "Disk I/O errors, hardware failures, file system issues, storage device problems.",
+      "resolution": "Check disk health and I/O subsystem. Verify storage device status. Run file system checks. Replace failing hardware."
+    },
+    {
+      "title": "LOG: unexpected EOF on client connection",
+      "description": "A client connection was terminated unexpectedly without proper closure.",
+      "common_causes": "Network issues, client application crashes, firewall timeouts, connection pooler problems.",
+      "resolution": "Check network stability. Review client application logs. Verify firewall settings. Monitor connection pooler status."
+    },
+    {
+      "title": "ERROR: could not read from hash-join temporary file",
+      "description": "PostgreSQL cannot read from a temporary file created during hash join operations.",
+      "common_causes": "Disk I/O errors, insufficient disk space, temporary directory issues, hardware problems.",
+      "resolution": "Check disk space in temporary directory. Verify disk health. Test I/O performance. Increase work_mem to avoid disk operations."
+    },
+    {
+      "title": "WARNING: terminating connection due to administrator command",
+      "description": "A database connection was terminated by an administrator using pg_terminate_backend().",
+      "common_causes": "Manual session termination, automated monitoring scripts, maintenance procedures.",
+      "resolution": "This is usually intentional. Check with database administrators. Review monitoring scripts. Implement proper connection handling."
+    },
+    {
+      "title": "ERROR: could not send data to client",
+      "description": "PostgreSQL cannot send query results or data to the connected client.",
+      "common_causes": "Network connectivity issues, client disconnection, buffer overflow, firewall problems.",
+      "resolution": "Check network connectivity. Verify client application status. Review firewall settings. Monitor network performance."
+    },
+    {
+      "title": "FATAL: lock file exists",
+      "description": "PostgreSQL cannot start because a lock file indicates another instance may be running.",
+      "common_causes": "Previous PostgreSQL instance not properly shut down, stale lock file, multiple startup attempts.",
+      "resolution": "Check if PostgreSQL is already running. Remove stale lock file if no process exists. Ensure proper shutdown procedures."
+    },
+    {
+      "title": "ERROR: invalid page in block",
+      "description": "PostgreSQL detected an invalid or corrupted data page.",
+      "common_causes": "Hardware failure, disk corruption, memory errors, file system issues.",
+      "resolution": "Check hardware health. Run file system checks. Restore from backup. Consider zero_damaged_pages for recovery."
+    },
+    {
+      "title": "WARNING: worker process crashed",
+      "description": "A background worker process terminated unexpectedly.",
+      "common_causes": "Extension bugs, memory issues, resource exhaustion, configuration problems.",
+      "resolution": "Check worker process logs. Review extension configurations. Monitor system resources. Update problematic extensions."
+    },
+    {
+      "title": "ERROR: could not create socket",
+      "description": "PostgreSQL cannot create a network socket for client connections.",
+      "common_causes": "System resource limits, network configuration issues, permission problems, port conflicts.",
+      "resolution": "Check system socket limits. Verify network configuration. Ensure proper permissions. Check for port conflicts."
+    },
+    {
+      "title": "LOG: database system was interrupted",
+      "description": "PostgreSQL detected that the previous session was not properly shut down.",
+      "common_causes": "System crash, power failure, improper shutdown, kill signals.",
+      "resolution": "Allow recovery process to complete. Check system logs for crash causes. Implement proper shutdown procedures."
+    },
+    {
+      "title": "ERROR: could not map anonymous shared memory",
+      "description": "PostgreSQL cannot allocate anonymous shared memory segments.",
+      "common_causes": "System memory limits, shared memory configuration issues, resource exhaustion.",
+      "resolution": "Check system shared memory limits. Adjust kernel parameters. Monitor memory usage. Reduce PostgreSQL memory settings."
+    },
+    {
+      "title": "FATAL: could not reattach to shared memory",
+      "description": "A PostgreSQL process cannot reattach to existing shared memory segments.",
+      "common_causes": "Shared memory segment removed, system configuration changes, process restart issues.",
+      "resolution": "Restart PostgreSQL server completely. Check shared memory configuration. Verify system limits. Monitor process lifecycle."
+    },
+    {
+      "title": "ERROR: could not access status of transaction",
+      "description": "PostgreSQL cannot determine the status of a transaction, indicating system catalog issues.",
+      "common_causes": "System catalog corruption, transaction log issues, concurrent access problems.",
+      "resolution": "Check system catalog integrity. Review transaction log status. Restart PostgreSQL if needed."
+    },
+    {
+      "title": "WARNING: pgstat wait timeout",
+      "description": "The statistics collector is not responding within the expected timeout period.",
+      "common_causes": "Statistics collector overloaded, system resource constraints, configuration issues.",
+      "resolution": "Check statistics collector process. Monitor system resources. Adjust statistics collection settings."
+    },
+    {
+      "title": "ERROR: could not determine data directory",
+      "description": "PostgreSQL cannot locate or access its data directory.",
+      "common_causes": "PGDATA environment variable not set, data directory moved, permission issues.",
+      "resolution": "Set PGDATA environment variable. Verify data directory location and permissions. Check startup configuration."
+    },
+    {
+      "title": "FATAL: could not create semaphores",
+      "description": "PostgreSQL cannot create the required semaphores for inter-process communication.",
+      "common_causes": "System semaphore limits exceeded, resource exhaustion, kernel configuration.",
+      "resolution": "Increase system semaphore limits. Check kernel configuration. Monitor system resources."
+    },
+    {
+      "title": "ERROR: invalid command tag",
+      "description": "An internal command tag is invalid or corrupted.",
+      "common_causes": "Internal protocol errors, client library issues, network corruption.",
+      "resolution": "Check client library versions. Verify network integrity. Restart client connections."
+    },
+    {
+      "title": "WARNING: could not remove old lock file",
+      "description": "PostgreSQL cannot remove a stale lock file from a previous session.",
+      "common_causes": "File permission issues, file system problems, concurrent access.",
+      "resolution": "Check file permissions on lock directory. Verify file system integrity. Remove stale lock files manually."
+    },
+    {
+      "title": "ERROR: could not read from control file",
+      "description": "PostgreSQL cannot read the pg_control file containing cluster metadata.",
+      "common_causes": "Control file corruption, disk I/O errors, file system issues.",
+      "resolution": "Check disk integrity. Restore control file from backup. Use pg_resetwal as last resort."
+    },
+    {
+      "title": "PANIC: corrupted item pointer",
+      "description": "PostgreSQL detected corruption in internal data structure pointers.",
+      "common_causes": "Memory corruption, hardware failure, software bugs.",
+      "resolution": "Check hardware health. Run memory tests. Restore from backup. Report bug if reproducible."
+    },
+    {
+      "title": "ERROR: could not open two-phase state file",
+      "description": "PostgreSQL cannot access files related to two-phase commit transactions.",
+      "common_causes": "File system issues, permission problems, disk corruption.",
+      "resolution": "Check file system integrity. Verify file permissions. Resolve prepared transactions manually."
+    }
+  ]
+};

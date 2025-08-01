@@ -1,0 +1,675 @@
+// Auto-generated from joins.json
+window.joins = [
+  {
+    "title": "ERROR: JOIN operation memory exhaustion",
+    "description": "JOIN operation exceeded available memory limits, causing query failure",
+    "common_causes": "Insufficient work_mem setting, large result sets, complex join conditions, multiple concurrent joins",
+    "resolution": "Increase work_mem parameter, optimize join conditions, add appropriate indexes, consider query restructuring"
+  },
+  {
+    "title": "WARNING: Cartesian product detected in JOIN",
+    "description": "JOIN operation is producing a Cartesian product, resulting in excessive rows",
+    "common_causes": "Missing join conditions, incorrect join logic, unintended cross joins, data relationship issues",
+    "resolution": "Add proper join conditions, verify join logic, check data relationships, use explicit join syntax"
+  },
+  {
+    "title": "ERROR: JOIN condition data type mismatch",
+    "description": "JOIN condition failed due to incompatible data types between joined columns",
+    "common_causes": "Different data types in join columns, implicit conversion failures, encoding mismatches",
+    "resolution": "Cast data types explicitly, ensure compatible column types, verify encoding consistency"
+  },
+  {
+    "title": "NOTICE: Nested loop join performance degradation",
+    "description": "Nested loop join is performing poorly due to lack of appropriate indexes",
+    "common_causes": "Missing indexes on join columns, poor join column selectivity, large outer table",
+    "resolution": "Create indexes on join columns, improve join selectivity, consider alternative join algorithms"
+  },
+  {
+    "title": "ERROR: Hash join memory allocation failed",
+    "description": "Hash join failed due to insufficient memory for hash table creation",
+    "common_causes": "Large inner table, insufficient work_mem, memory fragmentation, concurrent memory usage",
+    "resolution": "Increase work_mem setting, optimize inner table size, reduce concurrent operations"
+  },
+  {
+    "title": "WARNING: Sort merge join spilling to disk",
+    "description": "Sort merge join is spilling sort operations to disk, degrading performance",
+    "common_causes": "Insufficient work_mem for sorting, large datasets, multiple sort operations",
+    "resolution": "Increase work_mem, add indexes to avoid sorting, optimize sort operations"
+  },
+  {
+    "title": "ERROR: Self-join infinite recursion detected",
+    "description": "Self-join operation resulted in infinite recursion or excessive depth",
+    "common_causes": "Incorrect recursive join logic, missing termination conditions, circular references",
+    "resolution": "Add proper termination conditions, verify recursive logic, implement depth limits"
+  },
+  {
+    "title": "NOTICE: JOIN order optimization needed",
+    "description": "Query planner's join order is suboptimal for current data distribution",
+    "common_causes": "Outdated statistics, poor cost estimation, complex join conditions",
+    "resolution": "Update table statistics, consider join hints, restructure query for better optimization"
+  },
+  {
+    "title": "ERROR: Outer join null handling error",
+    "description": "Outer join null value handling caused unexpected query results",
+    "common_causes": "Incorrect null handling logic, misunderstanding of outer join semantics, filter placement issues",
+    "resolution": "Review outer join logic, handle nulls explicitly, place filters appropriately"
+  },
+  {
+    "title": "WARNING: Anti-join performance bottleneck",
+    "description": "Anti-join (NOT EXISTS/NOT IN) operation is performing poorly",
+    "common_causes": "Null values in NOT IN conditions, missing indexes, suboptimal query structure",
+    "resolution": "Use NOT EXISTS instead of NOT IN with nulls, add appropriate indexes, restructure query"
+  },
+  {
+    "title": "ERROR: Semi-join optimization failure",
+    "description": "Semi-join optimization failed to improve query performance as expected",
+    "common_causes": "Poor selectivity estimation, missing statistics, inappropriate join method selection",
+    "resolution": "Update statistics, consider alternative query structures, verify join selectivity"
+  },
+  {
+    "title": "NOTICE: Cross join performance warning",
+    "description": "Cross join operation may produce excessive results and poor performance",
+    "common_causes": "Intentional cross join, missing join conditions, query logic errors",
+    "resolution": "Verify cross join necessity, add join conditions if missing, optimize result set size"
+  },
+  {
+    "title": "ERROR: JOIN buffer overflow",
+    "description": "JOIN operation buffer overflow occurred during query execution",
+    "common_causes": "Insufficient buffer space, large intermediate results, memory allocation issues",
+    "resolution": "Increase buffer sizes, optimize intermediate result sizes, review memory configuration"
+  },
+  {
+    "title": "WARNING: Implicit join conversion inefficiency",
+    "description": "Implicit join syntax is being converted inefficiently by the query planner",
+    "common_causes": "Ambiguous join conditions, complex WHERE clauses, optimizer limitations",
+    "resolution": "Use explicit JOIN syntax, simplify join conditions, restructure WHERE clauses"
+  },
+  {
+    "title": "ERROR: Multi-table join deadlock",
+    "description": "Multi-table join operation resulted in deadlock with concurrent transactions",
+    "common_causes": "Lock ordering conflicts, long-running joins, high concurrency",
+    "resolution": "Implement consistent lock ordering, optimize join performance, reduce transaction duration"
+  },
+  {
+    "title": "NOTICE: Lateral join complexity warning",
+    "description": "Lateral join operation is complex and may impact query performance",
+    "common_causes": "Complex lateral expressions, correlated subqueries, nested lateral joins",
+    "resolution": "Simplify lateral expressions, optimize correlated logic, consider alternative approaches"
+  },
+  {
+    "title": "ERROR: Join condition function volatility issue",
+    "description": "Function used in join condition has inappropriate volatility classification",
+    "common_causes": "Incorrect function volatility, optimization conflicts, function behavior changes",
+    "resolution": "Correct function volatility classification, ensure function stability, review optimization impact"
+  },
+  {
+    "title": "WARNING: Partition-wise join not utilized",
+    "description": "Partition-wise join optimization is not being utilized for partitioned tables",
+    "common_causes": "Mismatched partitioning schemes, missing partition pruning, configuration issues",
+    "resolution": "Align partitioning schemes, enable partition pruning, verify configuration settings"
+  },
+  {
+    "title": "ERROR: Join result set size estimation error",
+    "description": "Query planner severely underestimated join result set size",
+    "common_causes": "Inaccurate statistics, data correlation issues, complex join conditions",
+    "resolution": "Update statistics, analyze data correlations, consider manual cost adjustments"
+  },
+  {
+    "title": "NOTICE: Parallel join efficiency concern",
+    "description": "Parallel join execution is not achieving expected efficiency gains",
+    "common_causes": "Insufficient parallelism, load balancing issues, coordination overhead",
+    "resolution": "Adjust parallel worker settings, optimize load distribution, reduce coordination overhead"
+  },
+  {
+    "title": "ERROR: Join column collation mismatch",
+    "description": "Join failed due to collation differences between joined columns",
+    "common_causes": "Different collations, database encoding issues, locale inconsistencies",
+    "resolution": "Standardize collations, use explicit collation in joins, verify database locale settings"
+  },
+  {
+    "title": "WARNING: Subquery join materialization overhead",
+    "description": "Subquery materialization in joins is causing performance overhead",
+    "common_causes": "Large subquery results, repeated materialization, inefficient subquery logic",
+    "resolution": "Optimize subquery logic, consider CTEs, restructure to avoid repeated materialization"
+  },
+  {
+    "title": "ERROR: Join predicate pushdown failure",
+    "description": "Join predicate pushdown optimization failed to improve performance",
+    "common_causes": "Complex predicates, view definitions, optimizer limitations",
+    "resolution": "Simplify predicates, optimize view definitions, consider query restructuring"
+  },
+  {
+    "title": "NOTICE: Star schema join optimization opportunity",
+    "description": "Star schema joins could be optimized for better analytical query performance",
+    "common_causes": "Suboptimal join order, missing dimension indexes, fact table access patterns",
+    "resolution": "Optimize join order for star schema, create dimension indexes, improve fact table access"
+  },
+  {
+    "title": "ERROR: Recursive CTE join termination failure",
+    "description": "Recursive CTE with joins failed to terminate properly",
+    "common_causes": "Missing termination conditions, infinite recursion, incorrect recursive logic",
+    "resolution": "Add proper termination conditions, verify recursive logic, implement cycle detection"
+  },
+  {
+    "title": "WARNING: Join selectivity estimation inaccuracy",
+    "description": "Join selectivity estimation is significantly inaccurate, affecting query plans",
+    "common_causes": "Correlated data, outdated statistics, complex join conditions",
+    "resolution": "Update statistics, analyze data correlations, consider extended statistics"
+  },
+  {
+    "title": "ERROR: Foreign key join constraint violation",
+    "description": "Join operation violated foreign key constraints during execution",
+    "common_causes": "Data integrity issues, concurrent modifications, constraint validation timing",
+    "resolution": "Fix data integrity issues, implement proper transaction handling, verify constraint timing"
+  },
+  {
+    "title": "NOTICE: Join algorithm selection suboptimal",
+    "description": "Query planner selected suboptimal join algorithm for current data characteristics",
+    "common_causes": "Inaccurate cost estimates, missing statistics, algorithm selection logic",
+    "resolution": "Update statistics, adjust cost parameters, consider join hints"
+  },
+  {
+    "title": "ERROR: Join operation timeout exceeded",
+    "description": "Join operation exceeded configured timeout limits",
+    "common_causes": "Complex joins, large datasets, insufficient resources, poor optimization",
+    "resolution": "Optimize join conditions, add indexes, increase timeout limits, improve query structure"
+  },
+  {
+    "title": "WARNING: Join cardinality explosion detected",
+    "description": "Join operation resulted in cardinality explosion, producing excessive rows",
+    "common_causes": "Many-to-many relationships, missing join conditions, data quality issues",
+    "resolution": "Review data relationships, add proper join conditions, implement data quality controls"
+  },
+  {
+    "title": "ERROR: Join index scan direction conflict",
+    "description": "Join index scan direction conflicts with required ordering",
+    "common_causes": "Index ordering mismatch, complex ORDER BY requirements, join algorithm limitations",
+    "resolution": "Create indexes with appropriate ordering, optimize ORDER BY clauses, consider alternative approaches"
+  },
+  {
+    "title": "NOTICE: Join statistics correlation missing",
+    "description": "Missing correlation statistics affecting join cost estimation",
+    "common_causes": "Lack of extended statistics, correlated columns, complex data relationships",
+    "resolution": "Create extended statistics, analyze column correlations, improve cost estimation accuracy"
+  },
+  {
+    "title": "ERROR: Join operation lock escalation",
+    "description": "Join operation caused lock escalation, affecting concurrent access",
+    "common_causes": "Large result sets, long-running joins, lock granularity issues",
+    "resolution": "Optimize join performance, reduce result set sizes, adjust lock granularity settings"
+  },
+  {
+    "title": "WARNING: Join intermediate result spilling",
+    "description": "Join intermediate results are spilling to disk, degrading performance",
+    "common_causes": "Insufficient memory, large intermediate results, multiple join operations",
+    "resolution": "Increase available memory, optimize intermediate result sizes, restructure complex joins"
+  },
+  {
+    "title": "ERROR: Join condition expression evaluation failure",
+    "description": "Expression evaluation in join condition failed during execution",
+    "common_causes": "Invalid expressions, function errors, data type issues",
+    "resolution": "Validate expressions, fix function errors, ensure proper data types"
+  },
+  {
+    "title": "NOTICE: Join pruning opportunity missed",
+    "description": "Join pruning optimization opportunity was missed by the query planner",
+    "common_causes": "Complex join conditions, missing constraints, optimizer limitations",
+    "resolution": "Simplify join conditions, add appropriate constraints, consider query restructuring"
+  },
+  {
+    "title": "ERROR: Join hash table collision excessive",
+    "description": "Excessive hash table collisions in hash join operation",
+    "common_causes": "Poor hash function distribution, skewed data, insufficient hash table size",
+    "resolution": "Analyze data distribution, adjust hash table parameters, consider alternative join methods"
+  },
+  {
+    "title": "WARNING: Join plan stability issues",
+    "description": "Join execution plans are unstable across similar queries",
+    "common_causes": "Borderline cost estimates, statistics fluctuations, optimizer sensitivity",
+    "resolution": "Stabilize statistics, adjust cost parameters, consider plan hints for consistency"
+  },
+  {
+    "title": "ERROR: Join operation resource contention",
+    "description": "Join operation experiencing resource contention with concurrent operations",
+    "common_causes": "High concurrency, resource competition, insufficient system resources",
+    "resolution": "Optimize resource allocation, reduce concurrency during peak joins, scale system resources"
+  },
+  {
+    "title": "NOTICE: Join elimination opportunity available",
+    "description": "Join elimination optimization could be applied to improve performance",
+    "common_causes": "Unnecessary joins, redundant table access, query structure inefficiencies",
+    "resolution": "Eliminate unnecessary joins, optimize table access patterns, restructure queries"
+  },
+  {
+    "title": "ERROR: Join condition null semantics error",
+    "description": "Join condition null value semantics caused unexpected behavior",
+    "common_causes": "Misunderstanding null comparison, three-valued logic issues, filter placement",
+    "resolution": "Handle null comparisons explicitly, understand three-valued logic, place filters appropriately"
+  },
+  {
+    "title": "WARNING: Join performance regression detected",
+    "description": "Join performance has regressed compared to historical baselines",
+    "common_causes": "Data growth, statistics drift, configuration changes, system resource changes",
+    "resolution": "Identify regression causes, update statistics, review configuration changes, optimize resources"
+  },
+  {
+    "title": "ERROR: Join operation checkpoint interference",
+    "description": "Join operation interfered with database checkpoint processes",
+    "common_causes": "Long-running joins, checkpoint timing conflicts, resource competition",
+    "resolution": "Optimize join duration, coordinate checkpoint timing, manage resource allocation"
+  },
+  {
+    "title": "NOTICE: Join batch processing optimization needed",
+    "description": "Join operations could benefit from batch processing optimization",
+    "common_causes": "Large datasets, repetitive join patterns, processing inefficiencies",
+    "resolution": "Implement batch processing, optimize join patterns, improve processing efficiency"
+  },
+  {
+    "title": "ERROR: Join operation transaction isolation conflict",
+    "description": "Join operation conflicts with transaction isolation requirements",
+    "common_causes": "Inappropriate isolation levels, concurrent access patterns, consistency requirements",
+    "resolution": "Adjust isolation levels, optimize access patterns, ensure consistency requirements"
+  },
+  {
+    "title": "WARNING: Join cost model inaccuracy",
+    "description": "Join cost model estimates are consistently inaccurate",
+    "common_causes": "Outdated cost parameters, system changes, workload evolution",
+    "resolution": "Update cost parameters, recalibrate cost model, adapt to workload changes"
+  },
+  {
+    "title": "ERROR: Join operation replication lag impact",
+    "description": "Join operations are causing significant replication lag",
+    "common_causes": "Large join operations, replication bandwidth limitations, standby resource constraints",
+    "resolution": "Optimize join operations, increase replication bandwidth, scale standby resources"
+  },
+  {
+    "title": "NOTICE: Join query plan caching inefficiency",
+    "description": "Join query plan caching is inefficient for current workload patterns",
+    "common_causes": "Plan cache misses, parameter sensitivity, cache size limitations",
+    "resolution": "Optimize plan caching, reduce parameter sensitivity, adjust cache size settings"
+  },
+  {
+    "title": "ERROR: Join operation backup interference",
+    "description": "Join operations are interfering with backup processes",
+    "common_causes": "Long-running joins, backup timing conflicts, resource competition",
+    "resolution": "Coordinate join and backup timing, optimize join duration, manage resource allocation"
+  },
+  {
+    "title": "WARNING: Join result materialization overhead",
+    "description": "Join result materialization is causing significant overhead",
+    "common_causes": "Large result sets, repeated materialization, inefficient storage",
+    "resolution": "Optimize result set sizes, avoid repeated materialization, improve storage efficiency"
+  },
+  {
+    "title": "ERROR: Join operation memory leak detected",
+    "description": "Memory leak detected in join operation execution",
+    "common_causes": "Software bugs, resource cleanup failures, memory management issues",
+    "resolution": "Report software bugs, implement resource cleanup, monitor memory usage patterns"
+  },
+  {
+    "title": "NOTICE: Join workload balancing needed",
+    "description": "Join workload balancing is needed for optimal resource utilization",
+    "common_causes": "Uneven workload distribution, resource hotspots, scheduling inefficiencies",
+    "resolution": "Implement workload balancing, distribute resources evenly, optimize scheduling"
+  },
+  {
+    "title": "ERROR: Join operation constraint validation failure",
+    "description": "Constraint validation failed during join operation execution",
+    "common_causes": "Data integrity violations, constraint logic errors, validation timing issues",
+    "resolution": "Fix data integrity issues, correct constraint logic, adjust validation timing"
+  },
+  {
+    "title": "WARNING: Join execution plan volatility",
+    "description": "Join execution plans are volatile and changing frequently",
+    "common_causes": "Statistics instability, cost estimate sensitivity, optimizer behavior",
+    "resolution": "Stabilize statistics, reduce cost sensitivity, implement plan stability measures"
+  },
+  {
+    "title": "ERROR: Join operation disk space exhaustion",
+    "description": "Join operation exhausted available disk space for temporary files",
+    "common_causes": "Large intermediate results, insufficient temp space, multiple concurrent joins",
+    "resolution": "Increase temporary space, optimize intermediate results, coordinate concurrent operations"
+  },
+  {
+    "title": "NOTICE: Join monitoring and alerting gaps",
+    "description": "Join operation monitoring and alerting has gaps that need addressing",
+    "common_causes": "Insufficient monitoring coverage, missing alerts, inadequate metrics",
+    "resolution": "Implement comprehensive monitoring, create appropriate alerts, establish key metrics"
+  },
+  {
+    "title": "ERROR: Join operation security access violation",
+    "description": "Join operation violated security access controls",
+    "common_causes": "Insufficient privileges, security policy violations, access control bypasses",
+    "resolution": "Grant appropriate privileges, enforce security policies, implement proper access controls"
+  },
+  {
+    "title": "WARNING: Join performance tuning needed",
+    "description": "Join operations require performance tuning for optimal efficiency",
+    "common_causes": "Suboptimal configurations, resource constraints, inefficient algorithms",
+    "resolution": "Tune performance parameters, allocate sufficient resources, optimize algorithms"
+  },
+  {
+    "title": "ERROR: Join operation data consistency failure",
+    "description": "Join operation resulted in data consistency violations",
+    "common_causes": "Concurrent modifications, transaction isolation issues, consistency logic errors",
+    "resolution": "Implement proper concurrency control, adjust isolation levels, fix consistency logic"
+  },
+  {
+    "title": "NOTICE: Join automation opportunity identified",
+    "description": "Join operation automation opportunities have been identified",
+    "common_causes": "Manual processes, repetitive patterns, optimization opportunities",
+    "resolution": "Implement automation solutions, optimize repetitive patterns, reduce manual intervention"
+  },
+  {
+    "title": "ERROR: Join operation version compatibility issue",
+    "description": "Join operation compatibility issues with different PostgreSQL versions",
+    "common_causes": "Version differences, feature availability, syntax changes",
+    "resolution": "Address version compatibility, adapt to feature availability, update syntax as needed"
+  },
+  {
+    "title": "WARNING: Join capacity planning insufficient",
+    "description": "Join capacity planning is insufficient for projected growth",
+    "common_causes": "Growing data volumes, increasing complexity, scalability requirements",
+    "resolution": "Implement capacity planning, project growth requirements, design scalable solutions"
+  },
+  {
+    "title": "ERROR: Join operation disaster recovery gap",
+    "description": "Join operation disaster recovery procedures have gaps",
+    "common_causes": "Incomplete recovery plans, insufficient testing, missing procedures",
+    "resolution": "Complete recovery plans, conduct regular testing, establish comprehensive procedures"
+  },
+  {
+    "title": "NOTICE: Join best practices implementation needed",
+    "description": "Join best practices should be implemented for optimal performance",
+    "common_causes": "Lack of best practice knowledge, suboptimal implementations, maintenance gaps",
+    "resolution": "Study and implement best practices, optimize implementations, establish maintenance standards"
+  },
+  {
+    "title": "ERROR: Join operation compliance violation",
+    "description": "Join operation violated compliance or regulatory requirements",
+    "common_causes": "Compliance misunderstanding, implementation gaps, regulatory changes",
+    "resolution": "Review compliance requirements, fix implementation gaps, establish compliance monitoring"
+  },
+  {
+    "title": "WARNING: Join documentation inadequate",
+    "description": "Join operation documentation is inadequate for maintenance and troubleshooting",
+    "common_causes": "Insufficient documentation, outdated information, knowledge gaps",
+    "resolution": "Create comprehensive documentation, update information regularly, address knowledge gaps"
+  },
+  {
+    "title": "ERROR: Join operation training gap identified",
+    "description": "Training gaps identified in join operation management",
+    "common_causes": "Knowledge deficiencies, staff changes, complex implementations",
+    "resolution": "Provide comprehensive training, implement knowledge transfer, create learning resources"
+  },
+  {
+    "title": "NOTICE: Join innovation opportunity available",
+    "description": "Innovation opportunities available for join operation optimization",
+    "common_causes": "Emerging technologies, new approaches, optimization potential",
+    "resolution": "Research emerging technologies, evaluate new approaches, implement innovative solutions"
+  },
+  {
+    "title": "ERROR: Join operation vendor support needed",
+    "description": "Join operation issues require vendor support escalation",
+    "common_causes": "Complex technical issues, software bugs, specialized knowledge requirements",
+    "resolution": "Escalate to vendor support, provide detailed documentation, coordinate resolution efforts"
+  },
+  {
+    "title": "WARNING: Join cost-benefit analysis required",
+    "description": "Cost-benefit analysis required for current join implementation strategy",
+    "common_causes": "Unclear cost-benefit ratios, changing requirements, optimization opportunities",
+    "resolution": "Conduct cost-benefit analysis, evaluate alternatives, optimize implementation strategy"
+  },
+  {
+    "title": "ERROR: Join operation integration failure",
+    "description": "Join operation integration with external systems failed",
+    "common_causes": "Integration compatibility issues, API limitations, data format conflicts",
+    "resolution": "Resolve compatibility issues, work around API limitations, standardize data formats"
+  },
+  {
+    "title": "NOTICE: Join ecosystem optimization opportunity",
+    "description": "Join ecosystem integration could be optimized for better performance",
+    "common_causes": "Integration inefficiencies, ecosystem complexity, optimization opportunities",
+    "resolution": "Optimize ecosystem integration, simplify interactions, implement performance improvements"
+  },
+  {
+    "title": "ERROR: Join operation legacy system challenge",
+    "description": "Legacy system integration presents join operation challenges",
+    "common_causes": "Legacy limitations, migration complexity, compatibility issues",
+    "resolution": "Plan comprehensive migration strategy, address compatibility issues, implement gradual migration"
+  },
+  {
+    "title": "WARNING: Join future-proofing strategy needed",
+    "description": "Join implementation needs future-proofing strategy for long-term viability",
+    "common_causes": "Technology evolution, changing requirements, scalability needs",
+    "resolution": "Develop future-proofing strategy, implement flexible designs, plan for technology evolution"
+  },
+  {
+    "title": "ERROR: Join operation cross-platform compatibility failure",
+    "description": "Join implementation failed cross-platform compatibility requirements",
+    "common_causes": "Platform-specific limitations, compatibility issues, implementation differences",
+    "resolution": "Address platform-specific issues, implement compatibility layers, standardize implementations"
+  },
+  {
+    "title": "NOTICE: Join community best practices adoption needed",
+    "description": "Community best practices should be adopted for join management",
+    "common_causes": "Isolation from community practices, knowledge gaps, implementation inertia",
+    "resolution": "Engage with community, adopt proven practices, share experiences and learnings"
+  },
+  {
+    "title": "ERROR: Join research and development gap",
+    "description": "Research and development gap identified in join technology utilization",
+    "common_causes": "Limited R&D investment, technology lag, innovation barriers",
+    "resolution": "Invest in R&D activities, explore new technologies, remove innovation barriers"
+  },
+  {
+    "title": "WARNING: Join strategic alignment verification needed",
+    "description": "Join strategy alignment with business objectives needs verification",
+    "common_causes": "Strategy drift, changing business objectives, alignment gaps",
+    "resolution": "Verify strategic alignment, adjust strategies as needed, maintain business objective focus"
+  },
+  {
+    "title": "ERROR: Join quality assurance process failure",
+    "description": "Quality assurance process failed for join implementation",
+    "common_causes": "QA process gaps, insufficient testing, quality standard violations",
+    "resolution": "Improve QA processes, implement comprehensive testing, establish quality standards"
+  },
+  {
+    "title": "NOTICE: Join continuous improvement opportunity",
+    "description": "Continuous improvement opportunities identified for join management",
+    "common_causes": "Process inefficiencies, optimization opportunities, improvement potential",
+    "resolution": "Implement continuous improvement processes, optimize procedures, pursue improvement opportunities"
+  },
+  {
+    "title": "ERROR: Join risk management framework needed",
+    "description": "Risk management framework needed for join-related operations",
+    "common_causes": "Unmanaged risks, lack of risk framework, risk assessment gaps",
+    "resolution": "Develop risk management framework, conduct risk assessments, implement mitigation strategies"
+  },
+  {
+    "title": "WARNING: Join success metrics definition required",
+    "description": "Success metrics need to be defined for join performance evaluation",
+    "common_causes": "Unclear success criteria, measurement gaps, evaluation challenges",
+    "resolution": "Define clear success metrics, implement measurement systems, establish evaluation procedures"
+  },
+  {
+    "title": "ERROR: Join stakeholder communication breakdown",
+    "description": "Communication breakdown with stakeholders regarding join-related issues",
+    "common_causes": "Communication gaps, stakeholder misalignment, information sharing issues",
+    "resolution": "Improve communication processes, align stakeholder expectations, establish information sharing protocols"
+  },
+  {
+    "title": "NOTICE: Join performance baseline establishment needed",
+    "description": "Join performance baselines need to be established for monitoring",
+    "common_causes": "Lack of performance baselines, insufficient monitoring, measurement gaps",
+    "resolution": "Establish performance baselines, implement comprehensive monitoring, create measurement procedures"
+  },
+  {
+    "title": "ERROR: Join operation change management failure",
+    "description": "Join change management process failed during implementation",
+    "common_causes": "Poor change management, insufficient testing, coordination failures",
+    "resolution": "Improve change management procedures, implement thorough testing, enhance coordination processes"
+  },
+  {
+    "title": "WARNING: Join maintenance automation required",
+    "description": "Join maintenance automation is required for operational efficiency",
+    "common_causes": "Manual maintenance overhead, repetitive tasks, operational inefficiencies",
+    "resolution": "Implement maintenance automation, optimize repetitive tasks, improve operational efficiency"
+  },
+  {
+    "title": "ERROR: Join operation scalability limit reached",
+    "description": "Join operation has reached scalability limits for current architecture",
+    "common_causes": "Architecture limitations, resource constraints, design scalability issues",
+    "resolution": "Redesign for scalability, allocate additional resources, implement scalable architectures"
+  },
+  {
+    "title": "NOTICE: Join optimization framework needed",
+    "description": "Comprehensive join optimization framework needed for systematic improvements",
+    "common_causes": "Ad-hoc optimization, lack of systematic approach, optimization gaps",
+    "resolution": "Develop optimization framework, implement systematic approaches, address optimization gaps"
+  },
+  {
+    "title": "ERROR: Join operation data governance violation",
+    "description": "Join operation violated data governance policies and procedures",
+    "common_causes": "Policy violations, governance gaps, compliance failures",
+    "resolution": "Enforce governance policies, address governance gaps, ensure compliance adherence"
+  },
+  {
+    "title": "WARNING: Join performance predictability issues",
+    "description": "Join performance predictability is inconsistent across similar workloads",
+    "common_causes": "Performance variability, resource contention, optimization inconsistencies",
+    "resolution": "Improve performance predictability, reduce resource contention, standardize optimizations"
+  },
+  {
+    "title": "ERROR: Join operation audit trail incomplete",
+    "description": "Join operation audit trail is incomplete for compliance requirements",
+    "common_causes": "Insufficient logging, audit gaps, compliance requirement misunderstanding",
+    "resolution": "Implement comprehensive logging, address audit gaps, ensure compliance requirement understanding"
+  },
+  {
+    "title": "NOTICE: Join technology refresh opportunity",
+    "description": "Technology refresh opportunity identified for join implementations",
+    "common_causes": "Aging technology, new feature availability, performance improvement opportunities",
+    "resolution": "Evaluate technology refresh options, leverage new features, implement performance improvements"
+  },
+  {
+    "title": "ERROR: Join operation service level agreement breach",
+    "description": "Join operation performance breached service level agreements",
+    "common_causes": "Performance degradation, SLA definition issues, resource inadequacy",
+    "resolution": "Improve performance, review SLA definitions, allocate adequate resources"
+  },
+  {
+    "title": "WARNING: Join complexity management needed",
+    "description": "Join complexity management is needed for maintainable implementations",
+    "common_causes": "Increasing complexity, maintenance challenges, design complexity issues",
+    "resolution": "Implement complexity management, simplify designs, improve maintainability"
+  },
+  {
+    "title": "ERROR: Join operation business continuity gap",
+    "description": "Business continuity gaps identified in join operation procedures",
+    "common_causes": "Incomplete continuity plans, insufficient redundancy, recovery gaps",
+    "resolution": "Complete continuity plans, implement redundancy, address recovery gaps"
+  },
+  {
+    "title": "NOTICE: Join standardization opportunity available",
+    "description": "Standardization opportunities available for join implementations",
+    "common_causes": "Implementation inconsistencies, lack of standards, optimization opportunities",
+    "resolution": "Develop implementation standards, ensure consistency, optimize through standardization"
+  },
+  {
+    "title": "ERROR: Join operation knowledge management gap",
+    "description": "Knowledge management gaps identified in join operation expertise",
+    "common_causes": "Knowledge silos, expertise gaps, documentation inadequacies",
+    "resolution": "Implement knowledge management, address expertise gaps, improve documentation"
+  },
+  {
+    "title": "WARNING: Join resource optimization required",
+    "description": "Join resource optimization is required for cost-effective operations",
+    "common_causes": "Resource waste, inefficient utilization, cost optimization opportunities",
+    "resolution": "Optimize resource utilization, eliminate waste, implement cost-effective operations"
+  },
+  {
+    "title": "ERROR: Join operation partnership integration failure",
+    "description": "Partnership integration failed for join operations with external entities",
+    "common_causes": "Integration challenges, partnership complexity, coordination failures",
+    "resolution": "Address integration challenges, simplify partnership complexity, improve coordination"
+  },
+  {
+    "title": "NOTICE: Join sustainability consideration needed",
+    "description": "Sustainability considerations needed for long-term join operation viability",
+    "common_causes": "Environmental impact, resource sustainability, long-term viability concerns",
+    "resolution": "Implement sustainability measures, optimize resource usage, ensure long-term viability"
+  },
+  {
+    "title": "ERROR: Join operation competitive advantage erosion",
+    "description": "Join operation competitive advantages are eroding due to various factors",
+    "common_causes": "Technology commoditization, competitive pressure, advantage erosion",
+    "resolution": "Reinvent competitive advantages, innovate implementations, maintain competitive edge"
+  },
+  {
+    "title": "WARNING: Join transformation readiness assessment needed",
+    "description": "Transformation readiness assessment needed for join operation evolution",
+    "common_causes": "Transformation requirements, readiness gaps, evolution needs",
+    "resolution": "Conduct readiness assessment, address transformation gaps, prepare for evolution"
+  },
+  {
+    "title": "ERROR: JOIN buffer size exceeded maximum limit",
+    "description": "JOIN operation buffer exceeded the configured maximum size limit",
+    "common_causes": "Large result sets, insufficient buffer configuration, memory constraints",
+    "resolution": "Increase buffer size limits, optimize query to reduce result set, add memory resources"
+  },
+  {
+    "title": "WARNING: JOIN selectivity estimation highly inaccurate",
+    "description": "Query planner's JOIN selectivity estimates are significantly off from actual values",
+    "common_causes": "Outdated statistics, data skew, complex join predicates",
+    "resolution": "Update table statistics with ANALYZE, increase statistics target, consider manual hints"
+  },
+  {
+    "title": "ERROR: Nested loop JOIN depth limit exceeded",
+    "description": "Nested loop JOIN operation exceeded maximum nesting depth",
+    "common_causes": "Too many nested joins, recursive join patterns, query complexity",
+    "resolution": "Restructure query to reduce nesting, use CTEs, optimize join order"
+  },
+  {
+    "title": "NOTICE: Hash JOIN bucket distribution uneven",
+    "description": "Hash JOIN showing uneven distribution across hash buckets",
+    "common_causes": "Poor hash function performance, skewed data distribution, inadequate hash table size",
+    "resolution": "Analyze data distribution, adjust hash table parameters, consider alternative join methods"
+  },
+  {
+    "title": "ERROR: Sort-merge JOIN sort buffer overflow",
+    "description": "Sort buffer overflow during sort-merge JOIN operation",
+    "common_causes": "Large datasets requiring sorting, insufficient sort buffer, multiple concurrent sorts",
+    "resolution": "Increase work_mem, optimize sort operations, consider pre-sorted data access"
+  },
+  {
+    "title": "WARNING: JOIN condition function marked as volatile",
+    "description": "Function used in JOIN condition is marked as volatile, preventing optimization",
+    "common_causes": "Incorrect function volatility classification, optimization barriers",
+    "resolution": "Review function volatility, mark as STABLE or IMMUTABLE if appropriate"
+  },
+  {
+    "title": "ERROR: Cross JOIN result set memory allocation failed",
+    "description": "Memory allocation failed for cross JOIN result set",
+    "common_causes": "Cartesian product too large, insufficient memory, system resource limits",
+    "resolution": "Add proper join conditions, increase memory limits, restructure query"
+  },
+  {
+    "title": "NOTICE: Lateral JOIN correlation inefficient",
+    "description": "Lateral JOIN correlation is inefficient for current data patterns",
+    "common_causes": "Poor correlation selectivity, missing indexes on correlated columns",
+    "resolution": "Add indexes on correlated columns, optimize lateral expressions"
+  },
+  {
+    "title": "ERROR: Anti-join NOT IN with NULL values",
+    "description": "Anti-join using NOT IN failed due to NULL values in the list",
+    "common_causes": "NULL values in NOT IN subquery, incorrect null handling logic",
+    "resolution": "Use NOT EXISTS instead of NOT IN, handle NULLs explicitly with IS NOT NULL"
+  },
+  {
+    "title": "WARNING: Semi-join EXISTS subquery not optimized",
+    "description": "EXISTS subquery in semi-join is not being optimized effectively",
+    "common_causes": "Complex subquery structure, missing indexes, poor selectivity",
+    "resolution": "Simplify subquery, add appropriate indexes, consider IN clause alternative"
+  }
+];

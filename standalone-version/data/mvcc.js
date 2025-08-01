@@ -1,0 +1,109 @@
+// Auto-generated from mvcc.json
+window.mvcc = [
+  {
+    "title": "MVCC Overview",
+    "overview": "Multi-Version Concurrency Control (MVCC) is PostgreSQL's approach to handling concurrent transactions without locking readers. It allows multiple versions of data to exist simultaneously, enabling high concurrency and consistent reads.",
+    "key_features": "MVCC provides snapshot isolation, non-blocking reads, optimistic concurrency control, and automatic cleanup of old row versions through VACUUM operations.",
+    "use_cases": "Essential for high-concurrency applications, data warehousing, reporting systems, and any scenario requiring consistent reads while maintaining write performance."
+  },
+  {
+    "title": "Transaction Isolation Levels",
+    "definition": "PostgreSQL implements four standard SQL isolation levels using MVCC: Read Uncommitted, Read Committed, Repeatable Read, and Serializable.",
+    "key_concepts": "Each isolation level provides different guarantees about what data a transaction can see. Higher isolation levels prevent more anomalies but may reduce concurrency and performance.",
+    "performance_impact": "Read Committed (default) offers good performance with minimal blocking. Repeatable Read and Serializable provide stronger consistency but may cause serialization failures requiring retry logic.",
+    "business_use_cases": "Financial systems use Serializable for critical transactions, e-commerce uses Repeatable Read for order processing, and reporting systems often use Read Committed for better performance.",
+    "example_queries": [
+      {
+        "description": "Set transaction isolation level to Repeatable Read",
+        "query": "BEGIN;\nSET TRANSACTION ISOLATION LEVEL REPEATABLE READ;\nSELECT * FROM accounts WHERE account_id = 123;\n-- Other operations...\nCOMMIT;"
+      },
+      {
+        "description": "Check current isolation level",
+        "query": "SHOW transaction_isolation;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/transaction-iso.html"
+  },
+  {
+    "title": "Snapshot Isolation",
+    "definition": "Snapshot isolation ensures that all reads in a transaction see a consistent snapshot of the database as it existed at the start of the transaction.",
+    "key_concepts": "Each transaction gets a unique snapshot based on transaction IDs (XIDs). Readers never block writers, and writers never block readers, providing excellent concurrency.",
+    "performance_impact": "Eliminates read locks and reduces contention, but may require more storage for multiple row versions and can lead to update conflicts in high-contention scenarios.",
+    "business_use_cases": "Critical for financial reporting where consistent data across multiple queries is essential, inventory management systems, and audit trails where data consistency is paramount.",
+    "example_queries": [
+      {
+        "description": "Demonstrate snapshot isolation behavior",
+        "query": "-- Session 1\nBEGIN;\nSELECT balance FROM accounts WHERE id = 1; -- Shows 1000\n-- Session 2 updates balance to 1500\nSELECT balance FROM accounts WHERE id = 1; -- Still shows 1000\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/mvcc-intro.html"
+  },
+  {
+    "title": "Transaction IDs and Versioning",
+    "definition": "PostgreSQL uses transaction IDs (XIDs) to track row versions. Each row has xmin (creating transaction) and xmax (deleting transaction) fields to determine visibility.",
+    "key_concepts": "Row visibility is determined by comparing transaction IDs with the current transaction's snapshot. This enables multiple versions of the same logical row to coexist.",
+    "performance_impact": "XID comparison is very fast, but XID wraparound can occur after 2 billion transactions, requiring VACUUM to prevent data loss. Frequent updates create row versions that need cleanup.",
+    "business_use_cases": "Enables audit trails by preserving historical versions, supports point-in-time recovery, and allows for complex analytical queries without affecting operational performance.",
+    "example_queries": [
+      {
+        "description": "View transaction ID information for rows",
+        "query": "SELECT xmin, xmax, * FROM your_table WHERE id = 123;"
+      },
+      {
+        "description": "Check current transaction ID",
+        "query": "SELECT txid_current();"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/routine-vacuuming.html#VACUUM-FOR-WRAPAROUND"
+  },
+  {
+    "title": "VACUUM and Dead Tuples",
+    "definition": "VACUUM is PostgreSQL's cleanup process that removes dead tuples (obsolete row versions) and reclaims storage space, essential for MVCC maintenance.",
+    "key_concepts": "Dead tuples accumulate from UPDATE and DELETE operations. VACUUM marks space as reusable and updates statistics. AUTOVACUUM automates this process based on activity thresholds.",
+    "performance_impact": "Regular VACUUM prevents table bloat and maintains query performance. Insufficient vacuuming leads to storage bloat, slower queries, and potential XID wraparound issues.",
+    "business_use_cases": "Critical for high-transaction systems like e-commerce platforms, financial systems with frequent updates, and any application with regular data modifications requiring consistent performance.",
+    "example_queries": [
+      {
+        "description": "Manual VACUUM of a specific table",
+        "query": "VACUUM VERBOSE your_table_name;"
+      },
+      {
+        "description": "Check table bloat and dead tuples",
+        "query": "SELECT schemaname, tablename, n_dead_tup, n_live_tup, \n       round(n_dead_tup::numeric / (n_live_tup + n_dead_tup) * 100, 2) as dead_ratio\nFROM pg_stat_user_tables \nWHERE n_dead_tup > 0 \nORDER BY dead_ratio DESC;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/routine-vacuuming.html"
+  },
+  {
+    "title": "Read Phenomena and Anomalies",
+    "definition": "MVCC prevents various read phenomena like dirty reads, non-repeatable reads, and phantom reads through its versioning mechanism.",
+    "key_concepts": "Different isolation levels prevent different anomalies: Read Committed prevents dirty reads, Repeatable Read prevents non-repeatable reads, and Serializable prevents all anomalies including serialization anomalies.",
+    "performance_impact": "Higher isolation levels provide stronger consistency guarantees but may reduce concurrency and require retry logic for serialization failures.",
+    "business_use_cases": "Banking systems require Serializable isolation for money transfers, inventory systems use Repeatable Read to prevent overselling, and reporting systems balance consistency with performance needs.",
+    "example_queries": [
+      {
+        "description": "Demonstrate phantom read prevention",
+        "query": "-- Session 1 (Repeatable Read)\nBEGIN ISOLATION LEVEL REPEATABLE READ;\nSELECT COUNT(*) FROM orders WHERE status = 'pending';\n-- Session 2 inserts new pending order\nSELECT COUNT(*) FROM orders WHERE status = 'pending'; -- Same count\nCOMMIT;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/transaction-iso.html"
+  },
+  {
+    "title": "Concurrency Benefits",
+    "definition": "MVCC enables high concurrency by allowing readers and writers to operate simultaneously without blocking each other, unlike traditional locking mechanisms.",
+    "key_concepts": "Non-blocking reads mean SELECT queries never wait for write operations. Writers only block other writers on the same row. This dramatically improves system throughput in mixed workloads.",
+    "performance_impact": "Significantly higher concurrency compared to lock-based systems, but requires more storage for multiple row versions and CPU overhead for visibility checks.",
+    "business_use_cases": "Essential for web applications with mixed read/write workloads, real-time analytics on operational data, and systems requiring high availability with minimal blocking.",
+    "example_queries": [
+      {
+        "description": "Monitor concurrent activity",
+        "query": "SELECT pid, state, query_start, query \nFROM pg_stat_activity \nWHERE state = 'active' AND pid != pg_backend_pid();"
+      },
+      {
+        "description": "Check for blocking queries",
+        "query": "SELECT blocked_locks.pid AS blocked_pid,\n       blocked_activity.usename AS blocked_user,\n       blocking_locks.pid AS blocking_pid,\n       blocking_activity.usename AS blocking_user,\n       blocked_activity.query AS blocked_statement\nFROM pg_catalog.pg_locks blocked_locks\nJOIN pg_catalog.pg_stat_activity blocked_activity ON blocked_activity.pid = blocked_locks.pid\nJOIN pg_catalog.pg_locks blocking_locks ON blocking_locks.locktype = blocked_locks.locktype\nJOIN pg_catalog.pg_stat_activity blocking_activity ON blocking_activity.pid = blocking_locks.pid\nWHERE NOT blocked_locks.granted AND blocking_locks.granted;"
+      }
+    ],
+    "reference_link": "https://www.postgresql.org/docs/current/mvcc.html"
+  }
+];

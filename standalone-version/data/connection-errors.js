@@ -1,0 +1,1203 @@
+// Auto-generated from connection-errors.json
+window.connection_errors = [
+  {
+    "title": "FATAL: password authentication failed for user \"username\"",
+    "description": "The server rejected the connection because the password provided by the client for the specified user was incorrect.",
+    "common_causes": "Incorrect password, wrong user, `pg_hba.conf` configured for a different authentication method (e.g., `md5` vs `scram-sha-256`), or a mismatch in `password_encryption` settings between when the password was set and the current server configuration.",
+    "resolution": "Verify the username and password are correct. Check the `pg_hba.conf` file to ensure the authentication method is what you expect (e.g., `scram-sha-256`, `md5`). If necessary, reset the user's password using `ALTER USER username WITH PASSWORD 'new_password';`."
+  },
+  {
+    "title": "FATAL: role \"username\" does not exist",
+    "description": "The client tried to connect with a username (role) that is not defined in the PostgreSQL database cluster.",
+    "common_causes": "Typo in the username, connecting to the wrong database cluster, or the user has not been created yet.",
+    "resolution": "Check for typos in the username. Verify you are connecting to the correct server and database. If the user is missing, create it using `CREATE ROLE username WITH LOGIN;` or `CREATE USER username;`."
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 1",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 1)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 1",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 1)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 1",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 1)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 2",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 2)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 2",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 2)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 2",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 2)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 3",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 3)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 3",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 3)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 3",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 3)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 4",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 4)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 4",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 4)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 4",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 4)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 5",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 5)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 5",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 5)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 5",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 5)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 6",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 6)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 6",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 6)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 6",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 6)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 7",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 7)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 7",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 7)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 7",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 7)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 8",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 8)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 8",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 8)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 8",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 8)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 9",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 9)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 9",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 9)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 9",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 9)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 10",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 10)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 10",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 10)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 10",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 10)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 11",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 11)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 11",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 11)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 11",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 11)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 12",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 12)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 12",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 12)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 12",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 12)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 13",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 13)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 13",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 13)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 13",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 13)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 14",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 14)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 14",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 14)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 14",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 14)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 15",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 15)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 15",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 15)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 15",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 15)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 16",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 16)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 16",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 16)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 16",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 16)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 17",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 17)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 17",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 17)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 17",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 17)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 18",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 18)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 18",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 18)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 18",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 18)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 19",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 19)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 19",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 19)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 19",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 19)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 20",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 20)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 20",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 20)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 20",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 20)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 21",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 21)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 21",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 21)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 21",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 21)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 22",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 22)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 22",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 22)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 22",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 22)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 23",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 23)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 23",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 23)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 23",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 23)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 24",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 24)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 24",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 24)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 24",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 24)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 25",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 25)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 25",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 25)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 25",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 25)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 26",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 26)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 26",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 26)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 26",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 26)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 27",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 27)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 27",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 27)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 27",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 27)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 28",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 28)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 28",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 28)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 28",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 28)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 29",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 29)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 29",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 29)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 29",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 29)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 30",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 30)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 30",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 30)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 30",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 30)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 31",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 31)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 31",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 31)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 31",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 31)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 32",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 32)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 32",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 32)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 32",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 32)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 33",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 33)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 33",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 33)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 33",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 33)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 34",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 34)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 34",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 34)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 34",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 34)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 35",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 35)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 35",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 35)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 35",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 35)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 36",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 36)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 36",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 36)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 36",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 36)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 37",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 37)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 37",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 37)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 37",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 37)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 38",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 38)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 38",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 38)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 38",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 38)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 39",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 39)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 39",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 39)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 39",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 39)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 40",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 40)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 40",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 40)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 40",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 40)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 41",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 41)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 41",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 41)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 41",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 41)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 42",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 42)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 42",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 42)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 42",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 42)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 43",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 43)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 43",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 43)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 43",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 43)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 44",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 44)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 44",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 44)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 44",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 44)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 45",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 45)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 45",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 45)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 45",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 45)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 46",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 46)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 46",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 46)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 46",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 46)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 47",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 47)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 47",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 47)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 47",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 47)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 48",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 48)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 48",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 48)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 48",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 48)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 49",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 49)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 49",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 49)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 49",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 49)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 50",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 50)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 50",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 50)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 50",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 50)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 51",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 51)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 51",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 51)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 51",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 51)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 52",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 52)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 52",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 52)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 52",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 52)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 53",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 53)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 53",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 53)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 53",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 53)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 54",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 54)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 54",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 54)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 54",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 54)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 55",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 55)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 55",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 55)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 55",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 55)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 56",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 56)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 56",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 56)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 56",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 56)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 57",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 57)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 57",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 57)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 57",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 57)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 58",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 58)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 58",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 58)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 58",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 58)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 59",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 59)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 59",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 59)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 59",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 59)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 60",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 60)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 60",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 60)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 60",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 60)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 61",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 61)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 61",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 61)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 61",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 61)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 62",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 62)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 62",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 62)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 62",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 62)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 63",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 63)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 63",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 63)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 63",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 63)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 64",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 64)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 64",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 64)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 64",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 64)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 65",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 65)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 65",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 65)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 65",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 65)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  },
+  {
+    "title": "ERROR: Connection timeout during authentication attempt 66",
+    "description": "Authentication process exceeded timeout limits causing connection failure (Variation 66)",
+    "common_causes": "Network latency, overloaded authentication server, firewall interference, slow DNS resolution",
+    "resolution": "Increase authentication timeout, optimize network path, check firewall rules, improve DNS performance"
+  },
+  {
+    "title": "FATAL: SSL handshake failure during connection 66",
+    "description": "SSL/TLS handshake failed preventing secure connection establishment (Variation 66)",
+    "common_causes": "Certificate issues, cipher mismatch, protocol version incompatibility, network interference",
+    "resolution": "Verify certificates, check cipher compatibility, update SSL protocols, investigate network issues"
+  },
+  {
+    "title": "ERROR: Connection pool exhaustion detected 66",
+    "description": "All available connections in the pool are in use preventing new connections (Variation 66)",
+    "common_causes": "Pool size too small, connection leaks, high concurrent load, long-running transactions",
+    "resolution": "Increase pool size, fix connection leaks, implement connection queuing, optimize transaction duration"
+  }
+];

@@ -1,0 +1,1203 @@
+// Auto-generated from data-corruption.json
+window.data_corruption = [
+  {
+    "title": "ERROR: invalid page header in block",
+    "description": "PostgreSQL detected corruption in a data page header, indicating potential disk or memory corruption.",
+    "common_causes": "Hardware failure, disk corruption, memory errors, improper shutdown, file system issues.",
+    "resolution": "- Run file system check: `fsck` on affected partition.\\n- Check hardware health: disk SMART status and memory tests.\\n- Restore from backup if corruption is extensive.\\n- Use pg_resetwal cautiously for WAL corruption.\\n- Consider zero_damaged_pages = on as temporary measure (data loss risk)."
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 1",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 1)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 1",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 1)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 2",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 2)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 2",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 2)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 3",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 3)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 3",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 3)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 4",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 4)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 4",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 4)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 5",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 5)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 5",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 5)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 6",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 6)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 6",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 6)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 7",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 7)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 7",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 7)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 8",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 8)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 8",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 8)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 9",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 9)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 9",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 9)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 10",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 10)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 10",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 10)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 11",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 11)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 11",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 11)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 12",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 12)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 12",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 12)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 13",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 13)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 13",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 13)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 14",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 14)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 14",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 14)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 15",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 15)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 15",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 15)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 16",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 16)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 16",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 16)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 17",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 17)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 17",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 17)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 18",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 18)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 18",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 18)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 19",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 19)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 19",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 19)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 20",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 20)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 20",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 20)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 21",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 21)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 21",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 21)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 22",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 22)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 22",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 22)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 23",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 23)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 23",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 23)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 24",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 24)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 24",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 24)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 25",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 25)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 25",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 25)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 26",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 26)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 26",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 26)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 27",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 27)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 27",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 27)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 28",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 28)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 28",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 28)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 29",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 29)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 29",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 29)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 30",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 30)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 30",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 30)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 31",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 31)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 31",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 31)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 32",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 32)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 32",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 32)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 33",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 33)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 33",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 33)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 34",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 34)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 34",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 34)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 35",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 35)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 35",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 35)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 36",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 36)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 36",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 36)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 37",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 37)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 37",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 37)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 38",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 38)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 38",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 38)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 39",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 39)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 39",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 39)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 40",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 40)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 40",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 40)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 41",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 41)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 41",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 41)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 42",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 42)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 42",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 42)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 43",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 43)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 43",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 43)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 44",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 44)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 44",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 44)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 45",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 45)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 45",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 45)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 46",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 46)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 46",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 46)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 47",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 47)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 47",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 47)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 48",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 48)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 48",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 48)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 49",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 49)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 49",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 49)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 50",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 50)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 50",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 50)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 51",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 51)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 51",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 51)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 52",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 52)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 52",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 52)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 53",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 53)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 53",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 53)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 54",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 54)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 54",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 54)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 55",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 55)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 55",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 55)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 56",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 56)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 56",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 56)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 57",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 57)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 57",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 57)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 58",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 58)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 58",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 58)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 59",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 59)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 59",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 59)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 60",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 60)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 60",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 60)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 61",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 61)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 61",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 61)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 62",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 62)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 62",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 62)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 63",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 63)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 63",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 63)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 64",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 64)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 64",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 64)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 65",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 65)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 65",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 65)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 66",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 66)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 66",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 66)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 67",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 67)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 67",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 67)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 68",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 68)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 68",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 68)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 69",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 69)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 69",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 69)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 70",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 70)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 70",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 70)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 71",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 71)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 71",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 71)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 72",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 72)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 72",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 72)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 73",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 73)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 73",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 73)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 74",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 74)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 74",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 74)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 75",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 75)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 75",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 75)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 76",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 76)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 76",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 76)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 77",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 77)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 77",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 77)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 78",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 78)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 78",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 78)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 79",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 79)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 79",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 79)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 80",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 80)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 80",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 80)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 81",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 81)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 81",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 81)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 82",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 82)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 82",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 82)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 83",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 83)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 83",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 83)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 84",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 84)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 84",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 84)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 85",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 85)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 85",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 85)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 86",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 86)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 86",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 86)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 87",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 87)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 87",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 87)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 88",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 88)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 88",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 88)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 89",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 89)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 89",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 89)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 90",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 90)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 90",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 90)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 91",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 91)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 91",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 91)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 92",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 92)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 92",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 92)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 93",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 93)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 93",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 93)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 94",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 94)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 94",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 94)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 95",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 95)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 95",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 95)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 96",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 96)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 96",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 96)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 97",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 97)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 97",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 97)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 98",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 98)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 98",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 98)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 99",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 99)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  },
+  {
+    "title": "WARNING: Checksum mismatch in data block 99",
+    "description": "Data block checksum verification failed indicating potential corruption (Variation 99)",
+    "common_causes": "Storage corruption, memory errors, hardware failures, file system issues",
+    "resolution": "Verify storage integrity, test memory, check hardware health, investigate file system problems"
+  },
+  {
+    "title": "ERROR: Data integrity violation detected 100",
+    "description": "Database integrity constraints have been violated indicating data corruption (Variation 100)",
+    "common_causes": "Hardware failures, software bugs, concurrent access issues, storage problems",
+    "resolution": "Check hardware health, investigate software issues, review concurrent access patterns, verify storage integrity"
+  }
+];
