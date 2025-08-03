@@ -94,6 +94,11 @@ window.categories = {
     "intro": "JOIN operations are fundamental to relational databases, allowing you to combine data from multiple tables based on related columns. PostgreSQL supports various join types including INNER JOIN, LEFT/RIGHT/FULL OUTER JOIN, CROSS JOIN, and specialized joins like LATERAL and semi/anti-joins. The query planner chooses from different join algorithms (nested loop, hash join, sort-merge join) based on data characteristics and available indexes. This section explains different join types, their behavior, performance characteristics, and when to use each type effectively.",
     "dataFile": "joins-knowledge.json"
   },
+  "full-text-search": {
+    "title": "Full Text Search",
+    "intro": "Full Text Search (FTS) in PostgreSQL provides powerful capabilities for searching text content within your database. Unlike simple pattern matching, FTS offers sophisticated text analysis, ranking, stemming, and relevance scoring. This section covers FTS data types, indexing strategies, query techniques, performance optimization, and real-world business applications including e-commerce search, content management, and knowledge bases.",
+    "dataFile": "full-text-search.json"
+  },
   "index-errors": {
     "title": "Index Errors",
     "intro": "Issues related to index creation, maintenance, performance, and optimization in PostgreSQL.",

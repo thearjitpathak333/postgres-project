@@ -41,6 +41,7 @@ function loadCategories() {
             'index-errors': window.indexes,
             'indexes': window.indexes_knowledge,
             'joins': window.joins_knowledge,
+            'full-text-search': window.full_text_search,
             'glossary': window.glossary,
             'postgresql-installation-guide': window.installation,
             'system-catalog-tables': window.catalog,
@@ -122,7 +123,7 @@ function setupSidebar() {
         'index-errors',
         'join-errors'
     ];
-    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
+    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
     
     // Add non-error categories first
     nonErrorCategories.forEach(key => {
@@ -195,7 +196,7 @@ function setupSidebar() {
 }
 
 function getTopCategoryKey() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins', 'mvcc'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins', 'mvcc', 'full-text-search'];
     let maxErrors = 0;
     let topCategoryKey = null;
     
@@ -234,7 +235,8 @@ function getIconForCategory(category) {
         'index-errors': 'list-ol',
         'join-errors': 'project-diagram',
         'indexes': 'list-ol',
-        'joins': 'project-diagram'
+        'joins': 'project-diagram',
+        'full-text-search': 'search'
     };
     return icons[category] || 'circle';
 }
@@ -327,7 +329,7 @@ function loadDashboard() {
 }
 
 function calculateMetrics() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
     const totalCategories = Object.keys(categories).filter(key => key !== 'dashboard' && !excludeFromErrors.includes(key)).length;
     let totalErrors = 0;
     let categoryMostErrors = 'N/A';
@@ -363,7 +365,7 @@ function createChart(chartType = 'doughnut') {
     const ctx = document.getElementById('categoryChart');
     if (!ctx) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
     const data = Object.keys(categoryData)
         .filter(key => !excludeFromErrors.includes(key))
         .map(key => ({
@@ -516,7 +518,7 @@ function loadCommonIssues() {
     const commonIssuesList = document.getElementById('common-issues-list');
     if (!commonIssuesList) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
     const categoryStats = [];
     
     Object.keys(categoryData).forEach(key => {
@@ -610,7 +612,7 @@ function loadCategoryContent(categoryKey) {
 }
 
 function formatItemContent(item, categoryKey) {
-    if (categoryKey === 'indexes' || categoryKey === 'joins' || categoryKey === 'mvcc') {
+    if (categoryKey === 'indexes' || categoryKey === 'joins' || categoryKey === 'mvcc' || categoryKey === 'full-text-search') {
         if (item.overview) {
             return `
                 <div class="space-y-6">
