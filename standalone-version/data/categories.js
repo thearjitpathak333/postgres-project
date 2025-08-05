@@ -99,6 +99,21 @@ window.categories = {
     "intro": "Full Text Search (FTS) in PostgreSQL provides powerful capabilities for searching text content within your database. Unlike simple pattern matching, FTS offers sophisticated text analysis, ranking, stemming, and relevance scoring. This section covers FTS data types, indexing strategies, query techniques, performance optimization, and real-world business applications including e-commerce search, content management, and knowledge bases.",
     "dataFile": "full-text-search.json"
   },
+  "extensions-guide": {
+    "title": "Extensions Guide",
+    "intro": "PostgreSQL extensions provide powerful add-on functionality beyond the core database features. This guide covers essential extensions including pg_stat_statements for query monitoring, pgvector for AI/ML vector search, pg_trgm for similarity matching, pg_partman for automatic partitioning, and hypopg for hypothetical index testing. Learn installation, usage, monitoring, and performance considerations for each extension.",
+    "dataFile": "extensions-guide.json"
+  },
+  "performance-tuning": {
+    "title": "Performance Tuning",
+    "intro": "PostgreSQL performance tuning involves configuring key parameters that control memory allocation, caching behavior, and maintenance operations. This section covers essential tuning parameters including shared_buffers for memory pooling, work_mem for per-query operations, effective_cache_size for query planning optimization, and autovacuum_vacuum_threshold for maintenance scheduling. Learn proper configuration formulas and real-world enterprise values for optimal database performance.",
+    "dataFile": "performance-tuning.json"
+  },
+  "performance-tuning": {
+    "title": "Performance Tuning",
+    "intro": "PostgreSQL performance tuning involves configuring key parameters that control memory allocation, caching behavior, and maintenance operations. This section covers essential tuning parameters including shared_buffers for memory pooling, work_mem for per-query operations, effective_cache_size for query planning optimization, and autovacuum_vacuum_threshold for maintenance scheduling. Learn proper configuration formulas and real-world enterprise values for optimal database performance.",
+    "dataFile": "performance-tuning.json"
+  },
   "index-errors": {
     "title": "Index Errors",
     "intro": "Issues related to index creation, maintenance, performance, and optimization in PostgreSQL.",

@@ -42,6 +42,8 @@ function loadCategories() {
             'indexes': window.indexes_knowledge,
             'joins': window.joins_knowledge,
             'full-text-search': window.full_text_search,
+            'extensions-guide': window.extensions_guide,
+            'performance-tuning': window.performance_tuning,
             'glossary': window.glossary,
             'postgresql-installation-guide': window.installation,
             'system-catalog-tables': window.catalog,
@@ -123,7 +125,7 @@ function setupSidebar() {
         'index-errors',
         'join-errors'
     ];
-    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
+    const nonErrorCategories = ['dashboard', 'glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search', 'extensions-guide', 'performance-tuning'];
     
     // Add non-error categories first
     nonErrorCategories.forEach(key => {
@@ -196,7 +198,7 @@ function setupSidebar() {
 }
 
 function getTopCategoryKey() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins', 'mvcc', 'full-text-search'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'indexes', 'joins', 'mvcc', 'full-text-search', 'extensions-guide', 'performance-tuning'];
     let maxErrors = 0;
     let topCategoryKey = null;
     
@@ -236,7 +238,9 @@ function getIconForCategory(category) {
         'join-errors': 'project-diagram',
         'indexes': 'list-ol',
         'joins': 'project-diagram',
-        'full-text-search': 'search'
+        'full-text-search': 'search',
+        'extensions-guide': 'puzzle-piece',
+        'performance-tuning': 'tachometer-alt'
     };
     return icons[category] || 'circle';
 }
@@ -329,7 +333,7 @@ function loadDashboard() {
 }
 
 function calculateMetrics() {
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search', 'extensions-guide', 'performance-tuning'];
     const totalCategories = Object.keys(categories).filter(key => key !== 'dashboard' && !excludeFromErrors.includes(key)).length;
     let totalErrors = 0;
     let categoryMostErrors = 'N/A';
@@ -365,7 +369,7 @@ function createChart(chartType = 'doughnut') {
     const ctx = document.getElementById('categoryChart');
     if (!ctx) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search', 'extensions-guide', 'performance-tuning'];
     const data = Object.keys(categoryData)
         .filter(key => !excludeFromErrors.includes(key))
         .map(key => ({
@@ -518,7 +522,7 @@ function loadCommonIssues() {
     const commonIssuesList = document.getElementById('common-issues-list');
     if (!commonIssuesList) return;
     
-    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search'];
+    const excludeFromErrors = ['glossary', 'postgresql-installation-guide', 'system-catalog-tables', 'architecture', 'acid-properties', 'mvcc', 'indexes', 'joins', 'full-text-search', 'extensions-guide', 'performance-tuning'];
     const categoryStats = [];
     
     Object.keys(categoryData).forEach(key => {
@@ -612,7 +616,7 @@ function loadCategoryContent(categoryKey) {
 }
 
 function formatItemContent(item, categoryKey) {
-    if (categoryKey === 'indexes' || categoryKey === 'joins' || categoryKey === 'mvcc' || categoryKey === 'full-text-search') {
+    if (categoryKey === 'indexes' || categoryKey === 'joins' || categoryKey === 'mvcc' || categoryKey === 'full-text-search' || categoryKey === 'extensions-guide' || categoryKey === 'performance-tuning') {
         if (item.overview) {
             return `
                 <div class="space-y-6">
@@ -629,6 +633,52 @@ function formatItemContent(item, categoryKey) {
                     <div class="border-l-4 border-purple-500 pl-4">
                         <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Use Cases</h4>
                         <p class="text-medium-gray leading-relaxed">${item.use_cases}</p>
+                    </div>
+                </div>
+            `;
+        } else if (categoryKey === 'performance-tuning') {
+            return `
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Definition</h4>
+                        <p class="text-medium-gray leading-relaxed">${item.definition}</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-purple-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Key Concepts</h4>
+                        <p class="text-medium-gray leading-relaxed">${item.key_concepts}</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Performance Impact</h4>
+                        <p class="text-medium-gray leading-relaxed">${item.performance_impact}</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-cyan-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">pg_settings Sample Query</h4>
+                        <div class="code-block">
+                            <pre class="bg-gray-100 p-3 rounded text-sm whitespace-pre-wrap break-words"><code class="text-blue-600">${item.pg_settings_sample}</code></pre>
+                            <button class="copy-btn" onclick="copyToClipboard(this)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border-l-4 border-yellow-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Tuning Formula</h4>
+                        <p class="text-medium-gray leading-relaxed">${item.tuning_formula}</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-indigo-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Enterprise Values</h4>
+                        <p class="text-medium-gray leading-relaxed">${item.enterprise_values}</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-green-500 pl-4">
+                        <h4 class="text-lg font-semibold text-dark-charcoal mb-2">Reference</h4>
+                        <a href="${item.reference_link}" target="_blank" class="text-blue-600 hover:text-blue-700 hover:underline">
+                            PostgreSQL Documentation
+                        </a>
                     </div>
                 </div>
             `;
